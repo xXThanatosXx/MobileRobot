@@ -42,6 +42,15 @@ Presione
 Crtl + alt + t
 
 ```
+Cambiar ruta a carpeta Downloads o donde descargó los archvivos de instalación:
 ```bash
-sudo apt-get update && sudo apt-get install -y paquete1 paquete2 paquete3
+cd Downloads
+```
+Convertir archivo en ejecutable:
+```bash
+sudo chmod +x ros2_install.sh
+```
+Verificar si el archivo es ejecutable:
+```bash
+ls -la
 ```
