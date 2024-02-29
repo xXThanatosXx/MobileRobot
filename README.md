@@ -26,8 +26,9 @@ Para configurar el entorno necesario para el curso en un sistema operativo Ubunt
 
 Para complementar tu aprendizaje en el curso de Mobile Robot, aquí tienes algunos enlaces a recursos externos que podrían ser de tu interés:
 
-- [VM-Player (Robot Operating System)](https://customerconnect.vmware.com/en/downloads/info/slug/desktop_end_user_computing/vmware_workstation_player/17_0)
+- [VM-Player 17.5.1](https://customerconnect.vmware.com/en/downloads/info/slug/desktop_end_user_computing/vmware_workstation_player/17_0)
 - [ubuntu24.0.3](https://ubuntu.com/download/desktop)
+- [Documentación Oficial de ROS2 HUMble (Robot Operating System)](https://docs.ros.org/en/humble/index.html)
 - 📄 [📂](./Scripts/)Scripts de instalación de ros
 
 
