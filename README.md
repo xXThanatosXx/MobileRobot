@@ -26,9 +26,9 @@ Para configurar el entorno necesario para el curso en un sistema operativo Ubunt
 
 Para complementar tu aprendizaje en el curso de Mobile Robot, aquí tienes algunos enlaces a recursos externos que podrían ser de tu interés:
 
-# [VM-Player (Robot Operating System)]([https://www.ros.org/](https://customerconnect.vmware.com/en/downloads/info/slug/desktop_end_user_computing/vmware_workstation_player/17_0))
-# [ubuntu24.0.3]([http://gazebosim.org/](https://ubuntu.com/download/desktop))
-# 📄 [📂](./Scripts/)Scripts de instalación de ros
+- [VM-Player (Robot Operating System)]([https://www.ros.org/](https://customerconnect.vmware.com/en/downloads/info/slug/desktop_end_user_computing/vmware_workstation_player/17_0))
+- [ubuntu24.0.3]([http://gazebosim.org/](https://ubuntu.com/download/desktop))
+- 📄 [📂](./Scripts/)Scripts de instalación de ros
 
 ### Instalación de Dependencias
 
