@@ -29,7 +29,7 @@ def saludo_robot():
 saludo_robot()
 
 
-## Configuración del Entorno
+### Configuración del Entorno
 
 Para configurar el entorno necesario para el curso en un sistema operativo Ubuntu, necesitarás instalar algunas dependencias y configurar tu entorno de desarrollo. Abre una terminal y sigue los siguientes pasos.
 
