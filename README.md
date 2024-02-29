@@ -21,8 +21,7 @@ A lo largo del curso, utilizaremos varios ejemplos de código Python para demost
 ### Instalación de ROS2 Humble
 El objetivo de la presente práctica es instalar y configurar el entorno de trabajo de ROS2 Humble en Ubuntu 22.04, empleando una máquina virtual con VMWorkStation Player 17.\\
 
-Para configurar el entorno necesario para el curso en un sistema operativo Ubuntu, necesitarás instalar algunas dependencias y configurar tu entorno de desarrollo. Abre una terminal y sigue los siguientes pasos.
-## Recursos Adicionales
+# Recursos Adicionales
 
 Para complementar tu aprendizaje en el curso de Mobile Robot, aquí tienes algunos enlaces a recursos externos que podrían ser de tu interés:
 
@@ -31,6 +30,7 @@ Para complementar tu aprendizaje en el curso de Mobile Robot, aquí tienes algun
 - [Documentación Oficial de ROS2 HUMble (Robot Operating System)](https://docs.ros.org/en/humble/index.html)
 - 📄 [📂](./Scripts/)Scripts de instalación de ros
 
+Para configurar el entorno necesario para el curso en un sistema operativo Ubuntu, necesitarás instalar algunas dependencias y configurar tu entorno de desarrollo. Abre una terminal y sigue los siguientes pasos.
 
 ### Instalación de Dependencias
 
