@@ -27,3 +27,15 @@ def saludo_robot():
     print("Hola, soy un robot móvil.")
 
 saludo_robot()
+
+
+## Configuración del Entorno
+
+Para configurar el entorno necesario para el curso en un sistema operativo Ubuntu, necesitarás instalar algunas dependencias y configurar tu entorno de desarrollo. Abre una terminal y sigue los siguientes pasos.
+
+### Instalación de Dependencias
+
+Para instalar las dependencias necesarias, ejecuta el siguiente comando en tu terminal:
+
+```bash
+sudo apt-get update && sudo apt-get install -y paquete1 paquete2 paquete3
