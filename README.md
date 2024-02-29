@@ -18,15 +18,6 @@ Para utilizar los logos en tus proyectos o documentos, simplemente navega a la c
 
 A lo largo del curso, utilizaremos varios ejemplos de código Python para demostrar conceptos y técnicas en robótica móvil. Puedes encontrar estos ejemplos en la carpeta `codigo/`.
 
-### Ejemplo de Código Python
-
-Aquí tienes un ejemplo de cómo incrustar un fragmento de código Python en este README:
-
-```python
-def saludo_robot():
-    print("Hola, soy un robot móvil.")
-
-saludo_robot()
 
 
 ### Configuración del Entorno
