@@ -54,3 +54,68 @@ Verificar si el archivo es ejecutable:
 ```bash
 ls -la
 ```
+Ejecutar instalador:
+```bash
+./ros2_install.sh
+```
+Regresar al directorio principal
+```bash
+cd
+```
+Hacer source al bashrc:
+```bash
+source .bashrc
+```
+###instalar paquetes adicionales
+En nueva terminal ejecutar los siguientes comandos en el espacio de trabajo principal
+
+Presione Crtl + alt + t
+```bash
+source .bashrc
+```
+```bash
+cd ..
+```
+```bash
+sudo apt-get update 
+```
+```bash
+sudo apt-get install ros-$ROS_DISTRO-joint-state-publisher ros-$ROS_DISTRO-xacro ros-$ROS_DISTRO-joint-state-publisher-gui ros-$ROS_DISTRO-tf2-* ros-$ROS_DISTRO-gazebo-* ros-$ROS_DISTRO-rviz-default-plugins
+```
+Cambiar a directorio de descargas
+```bash
+cd Downloads
+```
+Configurar el archivo install ros packages.sh como ejecutable:
+```bash
+sudo chmod +x install_ros_packages.sh
+```
+Verificar configuración
+```bash
+ls -la
+```
+Ejecutar el script:
+```bash
+./install_ros_packages.sh
+```
+Actualizar el espacio de trabajo en la ruta (home\ros):
+```bash
+source .bashrc
+```
+instalar pip en Python:
+```bash
+sudo apt-get install python3-pip
+```
+instalar paquete transform 3d:
+```bash
+pip install transforms3d
+```
+instalar terminal:
+```bash
+sudo apt-get install terminator
+```
+Revisar la versión de Ros instalada:
+```bash
+rosversion -d
+```
+
