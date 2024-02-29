@@ -40,5 +40,8 @@ Abre una terminal y sigue los siguientes pasos.
 Presione 
 ```bash
 Crtl + alt + t
+
+```
+```bash
 sudo apt-get update && sudo apt-get install -y paquete1 paquete2 paquete3
 ```
