@@ -33,11 +33,12 @@ Para complementar tu aprendizaje en el curso de Mobile Robot, aquí tienes algun
 
 ### Instalación de Dependencias
 Para configurar el entorno necesario para el curso en un sistema operativo Ubuntu, necesitarás instalar algunas dependencias y configurar tu entorno de desarrollo. 
-Primero Descargue los archivos de instalación ros2_install.sh y install_ros_packages.sh que se encuentran en la carpeta  [📂](./Scripts/)
+Primero Descargue los archivos de instalación ros2_install.sh y install_ros_packages.sh que se encuentran en la carpeta  [📂](./Scripts/)Scripts.
 
 Abre una terminal y sigue los siguientes pasos.
 
-Para instalar las dependencias necesarias, ejecuta el siguiente comando en tu terminal:
-
+Presione 
 ```bash
+Crtl + alt + t
 sudo apt-get update && sudo apt-get install -y paquete1 paquete2 paquete3
+```
