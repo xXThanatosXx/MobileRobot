@@ -35,8 +35,9 @@ Para complementar tu aprendizaje en el curso de Mobile Robot, aquí tienes algun
 Para configurar el entorno necesario para el curso en un sistema operativo Ubuntu, necesitarás instalar algunas dependencias y configurar tu entorno de desarrollo. 
 Primero Descargue los archivos de instalación ros2_install.sh y install_ros_packages.sh que se encuentran en la carpeta  [📂](./Scripts/)Scripts y siga los pasos que se indican en el video.
 
-
-[![Enlace Video de instalación Ros2 Humble](./Logos/imagen1.png)](https://youtu.be/sk0WTxr-yic?si=M51wHld4yW2u4Ymt)
+<p align="center">
+<img src="[![Enlace Video de instalación Ros2 Humble](./Logos/imagen1.png height="300")](https://youtu.be/sk0WTxr-yic?si=M51wHld4yW2u4Ymt)>
+</p>
 
 
 Abre una terminal y sigue los siguientes pasos.
