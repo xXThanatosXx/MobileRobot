@@ -41,9 +41,9 @@ Primero Descargue los archivos de instalación ros2_install.sh y install_ros_pac
     <img src="./Logos/imagen1.png" height="300">
   </a>
 </p>
-
-<a href="https://forms.gle/gT6W2tXAkv47Y1SP6" target="_blank">**CIPRO - Haga clic aquí para más información**</a>.
-
+<p align="center">
+<a href="https://youtu.be/sk0WTxr-yic?si=M51wHld4yW2u4Ymt" target="_blank">**Enlace a Video de instalación - Haga clic aquí para más información**</a>.
+</p>
 
 Abre una terminal y sigue los siguientes pasos.
 
