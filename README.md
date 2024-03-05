@@ -93,7 +93,7 @@ Revisar acciones activas en ROS:
 ros2 action list
 ```
 <p align="center">
-<img src="./Logos/action.png" height="100">
+<img src="./Logos/action.png" height="50">
 </p>
 
 ```bash
