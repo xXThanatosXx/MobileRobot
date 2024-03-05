@@ -1,13 +1,10 @@
-# MobileRobot-Clase Turtle Sim
+# Clase Turtle Sim
 
 
-# Instalación de ROS2 Humble
-El objetivo de la presente práctica es conocer sobre el manejo de los paquetes en ros.
+El objetivo de la presente práctica es conocer los conceptos básico de ROS2 Humble (paquete, nodo, topicos, info y rqt), para la simulación del comportamiento de un robot móvil
 
-
-### Instalación de Dependencias
-Para configurar el entorno necesario para el curso en un sistema operativo Ubuntu, necesitarás instalar algunas dependencias y configurar tu entorno de desarrollo. 
-Primero Descargue los archivos de instalación ros2_install.sh y install_ros_packages.sh que se encuentran en la carpeta  [📂](./Scripts/)Scripts y siga los pasos que se indican en el video.
+### Instalación de paquete Turtlesim
+Ejecute los siguientes comandos en una terminal en la ruta (home/ros/).
 
 
 <p align="center">
@@ -26,18 +23,18 @@ Presione
 Crtl + alt + t
 
 ```
-Cambiar ruta a carpeta Downloads o donde descargó los archvivos de instalación:
 ```bash
-cd Downloads
+sudo apt install ros-humble-turtlesim
 ```
-Convertir archivo en ejecutable:
+Revisar si los paquetes están instalados:
 ```bash
-sudo chmod +x ros2_install.sh
+ros2 pkg executables turtlesim
 ```
-Verificar si el archivo es ejecutable:
-```bash
-ls -la
-```
+En la terminal debe aparecer los siguientes paquetes:
+<p align="center">
+  <a img src="./Logos/Turtle%pkgs.png" height="100">
+  </a>
+</p>
 Ejecutar instalador:
 ```bash
 ./ros2_install.sh
