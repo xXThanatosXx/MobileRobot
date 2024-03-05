@@ -120,4 +120,32 @@ Revisar la versión de Ros instalada:
 ```bash
 rosversion -d
 ```
+# Desinstalación de ROS2 Humble
+En una nueva terminal ejecutar:
+```bash
+sudo apt remove --purge ros-humble-*
+```
 
+```bash
+sudo apt autoremove
+```
+
+```bash
+sudo rm /etc/apt/sources.list.d/ros2.list
+```
+```bash
+sudo apt update
+```
+
+```bash
+nano ~/.bashrc
+```
+Eliminar las lineas:
+```bash
+# source ROS 2 environment
+source /opt/ros/humble/setup.bash
+```
+Actualizar bash:
+```bash
+source ~/.bashrc
+```
