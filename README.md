@@ -36,7 +36,7 @@ Para configurar el entorno necesario para el curso en un sistema operativo Ubunt
 Primero Descargue los archivos de instalación ros2_install.sh y install_ros_packages.sh que se encuentran en la carpeta  [📂](./Scripts/)Scripts y siga los pasos que se indican en el video.
 
 <p align="center">
-<img src="[![Enlace Video de instalación Ros2 Humble](./Logos/imagen1.png height="300")](https://youtu.be/sk0WTxr-yic?si=M51wHld4yW2u4Ymt)>
+[![Enlace Video de instalación Ros2 Humble](./Logos/imagen1.png )](https://youtu.be/sk0WTxr-yic?si=M51wHld4yW2u4Ymt)
 </p>
 
 
