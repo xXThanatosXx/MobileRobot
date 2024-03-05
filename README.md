@@ -12,6 +12,7 @@ Ejecute los siguientes comandos en una terminal en la ruta (home/ros/).
     <img src="./Logos/imagen1.png" height="300">
   </a>
 </p>
+
 <p align="center">
 <a href="https://youtu.be/sk0WTxr-yic?si=M51wHld4yW2u4Ymt" target="_blank">**Enlace a Video de instalación - Haga clic aquí para más información**</a>.
 </p>
@@ -31,9 +32,11 @@ Revisar si los paquetes están instalados:
 ros2 pkg executables turtlesim
 ```
 En la terminal debe aparecer los siguientes paquetes:
+
 <p align="center">
-  < img src="./Logos/Turtle%20pkgs.png" height="100">
+<img src="./Logos/Turtle%20pkgs.png" height="100">
 </p>
+
   
 Ejecutar instalador:
 ```bash
