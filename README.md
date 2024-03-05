@@ -19,7 +19,7 @@ Para utilizar los logos en tus proyectos o documentos, simplemente navega a la c
 A lo largo del curso, utilizaremos varios ejemplos de código Python para demostrar conceptos y técnicas en robótica móvil. Puedes encontrar estos ejemplos en la carpeta `codigo/`.
 
 # Instalación de ROS2 Humble
-El objetivo de la presente práctica es instalar y configurar el entorno de trabajo de ROS2 Humble en Ubuntu 22.04, empleando una máquina virtual con VMWorkStation Player 17.\\
+El objetivo de la presente práctica es instalar y configurar el entorno de trabajo de ROS2 Humble en Ubuntu 22.04, empleando una máquina virtual con VMWorkStation Player 17.
 
 ## Recursos Adicionales
 
@@ -33,7 +33,10 @@ Para complementar tu aprendizaje en el curso de Mobile Robot, aquí tienes algun
 
 ### Instalación de Dependencias
 Para configurar el entorno necesario para el curso en un sistema operativo Ubuntu, necesitarás instalar algunas dependencias y configurar tu entorno de desarrollo. 
-Primero Descargue los archivos de instalación ros2_install.sh y install_ros_packages.sh que se encuentran en la carpeta  [📂](./Scripts/)Scripts.
+Primero Descargue los archivos de instalación ros2_install.sh y install_ros_packages.sh que se encuentran en la carpeta  [📂](./Scripts/)Scripts y siga los pasos que se indican en el video.
+
+[Ver el video tutorial](https://youtu.be/sk0WTxr-yic?si=M51wHld4yW2u4Ymt)
+
 
 Abre una terminal y sigue los siguientes pasos.
 
