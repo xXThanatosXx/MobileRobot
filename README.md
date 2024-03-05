@@ -32,7 +32,7 @@ ros2 pkg executables turtlesim
 ```
 En la terminal debe aparecer los siguientes paquetes:
 <p align="center">
-  <a img src="./Logos/Turtle%pkgs.png" height="100">
+  <a img src="./Logos/Turtle%20pkgs.png" height="100">
   </a>
 </p>
 Ejecutar instalador:
