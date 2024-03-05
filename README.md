@@ -38,7 +38,7 @@ Primero Descargue los archivos de instalación ros2_install.sh y install_ros_pac
 
 <p align="center">
   <a href="https://youtu.be/sk0WTxr-yic?si=M51wHld4yW2u4Ymt">
-    <img src="./Logos/imagen1.png" width="30%" alt="Enlace Video de instalación Ros2 Humble">
+    <img src="./Logos/imagen1.png" width="20%" alt="Enlace Video de instalación Ros2 Humble">
   </a>
 </p>
 
