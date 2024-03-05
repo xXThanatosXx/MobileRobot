@@ -38,96 +38,96 @@ En la terminal debe aparecer los siguientes paquetes:
 </p>
 
   
-Ejecutar instalador:
+Ejecutar el simulador Turtlesim en la terminal:
 ```bash
-./ros2_install.sh
+ros2 run turtlesim turtlesim_node
 ```
-Regresar al directorio principal
+Ejecutar el paquete de Teleoperación en una nueva terminal:
 ```bash
-cd
-```
-Hacer source al bashrc:
-```bash
-source .bashrc
-```
-###instalar paquetes adicionales
-En nueva terminal ejecutar los siguientes comandos en el espacio de trabajo principal
-
-Presione Crtl + alt + t
-```bash
-source .bashrc
-```
-```bash
-cd ..
-```
-```bash
-sudo apt-get update 
-```
-```bash
-sudo apt-get install ros-$ROS_DISTRO-joint-state-publisher ros-$ROS_DISTRO-xacro ros-$ROS_DISTRO-joint-state-publisher-gui ros-$ROS_DISTRO-tf2-* ros-$ROS_DISTRO-gazebo-* ros-$ROS_DISTRO-rviz-default-plugins
-```
-Cambiar a directorio de descargas
-```bash
-cd Downloads
-```
-Configurar el archivo install ros packages.sh como ejecutable:
-```bash
-sudo chmod +x install_ros_packages.sh
-```
-Verificar configuración
-```bash
-ls -la
-```
-Ejecutar el script:
-```bash
-./install_ros_packages.sh
-```
-Actualizar el espacio de trabajo en la ruta (home\ros):
-```bash
-source .bashrc
-```
-instalar pip en Python:
-```bash
-sudo apt-get install python3-pip
-```
-instalar paquete transform 3d:
-```bash
-pip install transforms3d
-```
-instalar terminal:
-```bash
-sudo apt-get install terminator
-```
-Revisar la versión de Ros instalada:
-```bash
-rosversion -d
-```
-# Desinstalación de ROS2 Humble
-En una nueva terminal ejecutar:
-```bash
-sudo apt remove --purge ros-humble-*
+Presione CRTL + SHIFT + t
 ```
 
 ```bash
-sudo apt autoremove
+ros2 run turtlesim turtle_teleop_key
 ```
+Debe aparaecer un ventana como se muestra a continuación:
+<p align="center">
+<img src="./Logos/Tortuga.png height="100">
+</p>
+
+Emplee las teclas de flechas para desplazar  y las letras (G,B,V,C,D,E,R,T), para orientar la tortuga sobre la terminal de teleoperación.
+<p align="center">
+<img src="./Logos/Teleop.png" height="100">
+</p>
+
+<p align="center">
+<img src="./Logos/TortugaTeleop.png" height="100">
+</p>
+
+Revisar nodos activos en ros es...
+```bash
+ros2 node list
+```
+<p align="center">
+<img src="./Logos/nodelist.png" height="100">
+</p>
+
+Revisar tópicos activos
+```bash
+ros2 topic list
+```
+<p align="center">
+<img src="./Logos/topiclist.png" height="100">
+</p>
+
+Revisar servicios activos en ROS:
+```bash
+ros2 service list
+```
+<p align="center">
+<img src="./Logos/servicelist.png" height="100">
+</p>
+
+Revisar acciones activas en ROS:
+```bash
+ros2 action list
+```
+<p align="center">
+<img src="./Logos/action.png" height="100">
+</p>
 
 ```bash
-sudo rm /etc/apt/sources.list.d/ros2.list
+ros2 action list
 ```
-```bash
-sudo apt update
-```
+Ejecutar rqt y abrir plugins (Dynamic Reconfigure, topic monitor, Matplot):
 
 ```bash
-nano ~/.bashrc
+rqt_graph
 ```
-Eliminar las lineas:
 ```bash
-# source ROS 2 environment
-source /opt/ros/humble/setup.bash
+ros2 run turtlesim turtle_teleop_key --ros-args --remap turtle1/cmd_vel:=Luisa/cmd_vel
 ```
-Actualizar bash:
 ```bash
-source ~/.bashrc
+ros2 topic info /Luisa/cmd_vel
+```
+```bash
+ros2 topic echo /Luisa/cmd_vel
+```
+```bash
+rqt 
+```
+```bash
+ros2 topic list -t
+```
+```bash
+ros2 interface show geometry_msgs/msg/Twist
+```
+```bash
+ros2 topic pub --rate 1 /Luisa/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0,  y: 0.0, z: 1.8}}"
+```
+```bash
+ros2 topic type /Luisa/pose
+```
+```bash
+ros2 interface proto turtlesim/msg/Pose
 ```
