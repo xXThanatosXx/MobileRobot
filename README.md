@@ -1,26 +1,8 @@
-# MobileRobot
+# MobileRobot-Clase Turtle Sim
 
-Bienvenido al repositorio del curso de Mobile Robot. Este curso está diseñado para estudiantes e investigadores interesados en el campo de la robótica móvil y cubre desde conceptos básicos hasta aplicaciones avanzadas de robótica móvil.
-
-## Estructura del Repositorio
-
-Este repositorio está organizado de la siguiente manera:
-
-- `logos/`: Carpeta que contiene los logos relacionados con el curso.
-- `código/`: Ejemplos de código fuente en Python para diferentes módulos del curso.
-- `README.md`: Este archivo, que proporciona una visión general y guía sobre el repositorio.
 
 # Instalación de ROS2 Humble
-El objetivo de la presente práctica es instalar y configurar el entorno de trabajo de ROS2 Humble en Ubuntu 22.04, empleando una máquina virtual con VMWorkStation Player 17.
-
-## Recursos Adicionales
-
-Para complementar tu aprendizaje en el curso de Mobile Robot, aquí tienes algunos enlaces a recursos externos que podrían ser de tu interés:
-
-- [VM-Player 17.5.1](https://customerconnect.vmware.com/en/downloads/info/slug/desktop_end_user_computing/vmware_workstation_player/17_0)
-- [ubuntu24.0.3](https://ubuntu.com/download/desktop)
-- [Documentación Oficial de ROS2 HUMble (Robot Operating System)](https://docs.ros.org/en/humble/index.html)
-- 📄 [📂](./Scripts/)Scripts de instalación de ros
+El objetivo de la presente práctica es conocer sobre el manejo de los paquetes en ros.
 
 
 ### Instalación de Dependencias
