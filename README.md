@@ -52,16 +52,16 @@ ros2 run turtlesim turtle_teleop_key
 ```
 Debe aparaecer un ventana como se muestra a continuación:
 <p align="center">
-<img src="./Logos/Tortuga.png" height="100">
+<img src="./Logos/Tortuga.png" height="300">
 </p>
 
 Emplee las teclas de flechas para desplazar  y las letras (G,B,V,C,D,E,R,T), para orientar la tortuga sobre la terminal de teleoperación.
 <p align="center">
-<img src="./Logos/Teleop.png" height="100">
+<img src="./Logos/Teleop.png" height="300">
 </p>
 
 <p align="center">
-<img src="./Logos/TortugaTeleop.png" height="100">
+<img src="./Logos/TortugaTeleop.png" height="300">
 </p>
 
 Revisar nodos activos en ros es...
@@ -69,7 +69,7 @@ Revisar nodos activos en ros es...
 ros2 node list
 ```
 <p align="center">
-<img src="./Logos/nodelist.png" height="100">
+<img src="./Logos/nodelist.png" height="70">
 </p>
 
 Revisar tópicos activos
@@ -85,7 +85,7 @@ Revisar servicios activos en ROS:
 ros2 service list
 ```
 <p align="center">
-<img src="./Logos/servicelist.png" height="100">
+<img src="./Logos/servicelist.png" height="300">
 </p>
 
 Revisar acciones activas en ROS:
