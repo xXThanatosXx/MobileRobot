@@ -4,7 +4,7 @@
 El objetivo de la presente práctica es conocer los conceptos básico de ROS2 Humble (paquete, nodo, topicos, info y rqt), para la simulación del comportamiento de un robot móvil
 
 ### Instalación de paquete Turtlesim
-Ejecute los siguientes comandos en una terminal en la ruta (home/ros/).
+
 
 
 <p align="center">
