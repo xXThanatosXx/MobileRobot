@@ -146,9 +146,7 @@ ros2 topic info /turtle2/cmd_vel
 ```bash
 ros2 topic echo /turtle2/cmd_vel
 ```
-```bash
-rqt 
-```
+
 ```bash
 ros2 topic list -t
 ```
