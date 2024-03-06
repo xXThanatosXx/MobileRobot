@@ -36,7 +36,9 @@ En la terminal debe aparecer los siguientes paquetes:
 <p align="center">
 <img src="./Logos/Turtle%20pkgs.png" height="100">
 </p>
-## Nodo: Los nodos son las unidades básicas de ejecución en ROS y cada uno se encarga de una tarea específica, como controlar un sensor, realizar cálculos, procesar datos, o controlar actuadores.
+
+## Nodo
+Los nodos son las unidades básicas de ejecución en ROS y cada uno se encarga de una tarea específica, como controlar un sensor, realizar cálculos, procesar datos, o controlar actuadores.
   
 Ejecutar el simulador Turtlesim en la terminal:
 ```bash
