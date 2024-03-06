@@ -125,9 +125,12 @@ En el servicio de service caller, anexe una nueva tortuga "turtle2" en las corde
 rqt
 ```
 <p align="center">
-<img src="./Logos/RQT.png" height="50">
+<img src="./Logos/RQT.png" height="300">
 </p>
 
+<p align="center">
+<img src="./Logos/Plugins.png" height="100">
+</p>
 
 
 
@@ -138,10 +141,10 @@ rqt_graph
 ros2 run turtlesim turtle_teleop_key --ros-args --remap turtle1/cmd_vel:=Luisa/cmd_vel
 ```
 ```bash
-ros2 topic info /Luisa/cmd_vel
+ros2 topic info /turtle2/cmd_vel
 ```
 ```bash
-ros2 topic echo /Luisa/cmd_vel
+ros2 topic echo /turtle2/cmd_vel
 ```
 ```bash
 rqt 
@@ -153,10 +156,10 @@ ros2 topic list -t
 ros2 interface show geometry_msgs/msg/Twist
 ```
 ```bash
-ros2 topic pub --rate 1 /Luisa/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0,  y: 0.0, z: 1.8}}"
+ros2 topic pub --rate 1 /turtle2/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0,  y: 0.0, z: 1.8}}"
 ```
 ```bash
-ros2 topic type /Luisa/pose
+ros2 topic type /turtle2/pose
 ```
 ```bash
 ros2 interface proto turtlesim/msg/Pose
