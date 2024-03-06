@@ -100,6 +100,13 @@ ros2 service list
 <p align="center">
 <img src="./Logos/servicelist.png" height="300">
 </p>
+## Action
+es un medio de comunicación entre nodos diseñado para ejecutar tareas que toman un tiempo considerable y para las cuales es deseable obtener retroalimentación sobre el progreso de la tarea. A diferencia de los servicios en ROS, que son adecuados para solicitudes síncronas de petición-respuesta que se esperan completar rápidamente, las acciones permiten una interacción más compleja y de larga duración entre nodos.
+
+- 'Comunicación Asíncrona'
+- 'Retroalimentación durante la Ejecución'
+- 'Cancelación de Tareas'
+
 
 Revisar acciones activas en ROS:
 ```bash
