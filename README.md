@@ -74,6 +74,8 @@ ros2 node list
 <img src="./Logos/nodelist.png" height="70">
 </p>
 
+## TOPIC
+Los topics en ROS proporcionan una manera eficiente y flexible de intercambiar datos entre nodos, lo que facilita la construcción de sistemas robóticos complejos mediante la composición de nodos con funciones específicas.
 Revisar tópicos activos
 ```bash
 ros2 topic list
