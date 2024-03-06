@@ -83,7 +83,9 @@ ros2 topic list
 <p align="center">
 <img src="./Logos/topiclist.png" height="100">
 </p>
+
 ## Service
+
 Un servicio en ROS (Robot Operating System) es una forma de comunicación entre nodos que se basa en el modelo de petición-respuesta. A diferencia de los topics, que están diseñados para un flujo de datos unidireccional y continuo bajo el paradigma de publicación-suscripción, los servicios permiten una interacción bidireccional y síncrona entre dos nodos. Un nodo ofrece un servicio bajo un nombre específico, mientras que otro nodo puede llamar a este servicio, enviando un mensaje de petición y esperando recibir un mensaje de respuesta.
 -Comunicación síncrona.
 -Bidireccional.
