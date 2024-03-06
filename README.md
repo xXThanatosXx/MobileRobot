@@ -129,7 +129,7 @@ rqt
 </p>
 
 <p align="center">
-<img src="./Logos/Plugins.png" height="100">
+<img src="./Logos/Plugins.png" height="500">
 </p>
 
 
