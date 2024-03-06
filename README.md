@@ -138,7 +138,7 @@ rqt
 rqt_graph
 ```
 ```bash
-ros2 run turtlesim turtle_teleop_key --ros-args --remap turtle1/cmd_vel:=Luisa/cmd_vel
+ros2 run turtlesim turtle_teleop_key --ros-args --remap turtle1/cmd_vel:=turtle2/cmd_vel
 ```
 ```bash
 ros2 topic info /turtle2/cmd_vel
