@@ -118,9 +118,6 @@ ros2 action list
 <img src="./Logos/action.png" height="50">
 </p>
 
-```bash
-ros2 action list
-```
 Ejecutar rqt y abrir plugins (Dynamic Reconfigure, topic monitor, Matplot):
 
 ```bash
