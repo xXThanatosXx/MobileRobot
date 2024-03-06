@@ -119,12 +119,17 @@ ros2 action list
 </p>
 
 Ejecutar rqt y abrir plugins (Dynamic Reconfigure, topic monitor, Matplot):
+En el servicio de service caller, anexe una nueva tortuga "turtle2" en las cordenadas x,y (1,1)
+
 ```bash
 rqt
 ```
 <p align="center">
-<img src="./Logos/action.png" height="50">
+<img src="./Logos/RQT.png" height="50">
 </p>
+
+
+
 
 ```bash
 rqt_graph
