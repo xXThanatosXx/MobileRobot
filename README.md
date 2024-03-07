@@ -1,4 +1,4 @@
-# Clase Turtle Sim
+# Clase Robot URDF
 
 
 El objetivo de la presente práctica es conocer los conceptos básico de ROS2 Humble (paquete, nodo, topicos, info y rqt), para la simulación del comportamiento de un robot móvil
@@ -24,13 +24,55 @@ Presione
 Crtl + alt + t
 
 ```
+Crear un directorio llamado difrobot_ws y un sub directorio src
 ```bash
-sudo apt install ros-humble-turtlesim
+mkdir -p difrobot_ws/src
 ```
-Revisar si los paquetes están instalados:
+Abrir carpeta difrobot_ws:
 ```bash
-ros2 pkg executables turtlesim
+cd difrobot_ws/
 ```
+Compilar proyecto
+```bash
+colcon build
+```
+
+revisar si se crearon las carpetas build, install log y src
+```bash
+ls
+```
+Cambiar a directorio src
+```bash
+cd src/
+```
+
+Crear paquete difrobot_py_examples
+```bash
+ros2 pkg create --build-type ament_python difrobot_py_examples
+```
+Compilar proyecto
+```bash
+cd ..
+```
+```bash
+colcon build
+```
+
+Crear paquete difrobot_description
+```bash
+cd src/
+```
+```bash
+ros2 pkg create --build-type ament_cmake difrobot_description
+```
+Compilar proyecto
+```bash
+cd ..
+```
+```bash
+colcon build
+```
+
 En la terminal debe aparecer los siguientes paquetes:
 
 <p align="center">
