@@ -162,3 +162,10 @@ ros2 topic type /turtle2/pose
 ```bash
 ros2 interface proto turtlesim/msg/Pose
 ```
+
+## Restablecer ventana RQT
+Como volver a la configuración de ventanas en rqt en ros2 humble
+```bash
+rm -rf ~/.config/ros.org/rqt_gui.ini
+
+```
