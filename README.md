@@ -94,7 +94,7 @@ colcon build
 ```
 En una nueva terminal actualizar el bash:
 ```bash
-. isntall/setup.bash
+. install/setup.bash
 ```
 instalar en el proyecto el paquete urdf-tutorial
 ```bash
