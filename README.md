@@ -75,9 +75,9 @@ colcon build
 
 
 
-En la terminal buscar la ruta difrobot_description y ejecutar VsCode:
+En la terminal buscar la ruta difrobot_wsy ejecutar VsCode:
 ```bash
-cd difrobot_description
+cd difrobot_ws
 ```
 ```bash
 code .
@@ -89,6 +89,9 @@ En Vscode seleccionar la ruta difrobot_ws/src/difrobot_description/ crear las ca
 
 
 Compilar el paquete difrobot_description en la ruta difrobot_ws
+```bash
+cd difrobot_ws
+```
 ```bash
 colcon build
 ```
