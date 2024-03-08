@@ -84,7 +84,7 @@ code .
 ```
 En Vscode seleccionar la ruta difrobot_ws/src/difrobot_description/ crear las carpetas y el archivo mostrado en  la imagen:
 <p align="center">
-<img src="./Logos/CarpetaDes.png" height="100">
+<img src="./Logos/CarpetaDes.png" height="400">
 </p>
 
 ## Nodo
