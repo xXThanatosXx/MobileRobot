@@ -1,31 +1,10 @@
-# MobileRobot
-
-Bienvenido al repositorio del curso de Mobile Robot. Este curso está diseñado para estudiantes e investigadores interesados en el campo de la robótica móvil y cubre desde conceptos básicos hasta aplicaciones avanzadas de robótica móvil.
-
-## Estructura del Repositorio
-
-Este repositorio está organizado de la siguiente manera:
-
-- `logos/`: Carpeta que contiene los logos relacionados con el curso.
-- `código/`: Ejemplos de código fuente en Python para diferentes módulos del curso.
-- `README.md`: Este archivo, que proporciona una visión general y guía sobre el repositorio.
-
-# Instalación de ROS2 Humble
-El objetivo de la presente práctica es instalar y configurar el entorno de trabajo de ROS2 Humble en Ubuntu 22.04, empleando una máquina virtual con VMWorkStation Player 17.
-
-## Recursos Adicionales
-
-Para complementar tu aprendizaje en el curso de Mobile Robot, aquí tienes algunos enlaces a recursos externos que podrían ser de tu interés:
-
-- [VM-Player 17.5.1](https://customerconnect.vmware.com/en/downloads/info/slug/desktop_end_user_computing/vmware_workstation_player/17_0)
-- [ubuntu24.0.3](https://ubuntu.com/download/desktop)
-- [Documentación Oficial de ROS2 HUMble (Robot Operating System)](https://docs.ros.org/en/humble/index.html)
-- 📄 [📂](./Scripts/)Scripts de instalación de ros
+# Clase Robot URDF
 
 
-### Instalación de Dependencias
-Para configurar el entorno necesario para el curso en un sistema operativo Ubuntu, necesitarás instalar algunas dependencias y configurar tu entorno de desarrollo. 
-Primero Descargue los archivos de instalación ros2_install.sh y install_ros_packages.sh que se encuentran en la carpeta  [📂](./Scripts/)Scripts y siga los pasos que se indican en el video.
+El objetivo de la presente práctica es conocer los conceptos básico de ROS2 Humble (paquete, nodo, topicos, info y rqt), para la simulación del comportamiento de un robot móvil
+
+### Instalación de paquete Turtlesim
+
 
 
 <p align="center">
@@ -33,6 +12,7 @@ Primero Descargue los archivos de instalación ros2_install.sh y install_ros_pac
     <img src="./Logos/imagen1.png" height="300">
   </a>
 </p>
+
 <p align="center">
 <a href="https://youtu.be/sk0WTxr-yic?si=M51wHld4yW2u4Ymt" target="_blank">**Enlace a Video de instalación - Haga clic aquí para más información**</a>.
 </p>
@@ -44,108 +24,95 @@ Presione
 Crtl + alt + t
 
 ```
-Cambiar ruta a carpeta Downloads o donde descargó los archvivos de instalación:
+Crear un directorio llamado difrobot_ws y un sub directorio src
 ```bash
-cd Downloads
+mkdir -p difrobot_ws/src
 ```
-Convertir archivo en ejecutable:
+Abrir carpeta difrobot_ws:
 ```bash
-sudo chmod +x ros2_install.sh
+cd difrobot_ws/
 ```
-Verificar si el archivo es ejecutable:
+Compilar proyecto
 ```bash
-ls -la
+colcon build
 ```
-Ejecutar instalador:
-```bash
-./ros2_install.sh
-```
-Regresar al directorio principal
-```bash
-cd
-```
-Hacer source al bashrc:
-```bash
-source .bashrc
-```
-###instalar paquetes adicionales
-En nueva terminal ejecutar los siguientes comandos en el espacio de trabajo principal
 
-Presione Crtl + alt + t
+revisar si se crearon las carpetas build, install log y src
 ```bash
-source .bashrc
+ls
 ```
+Cambiar a directorio src
+```bash
+cd src/
+```
+
+Crear paquete difrobot_py_examples
+```bash
+ros2 pkg create --build-type ament_python difrobot_py_examples
+```
+Compilar proyecto
 ```bash
 cd ..
 ```
 ```bash
-sudo apt-get update 
-```
-```bash
-sudo apt-get install ros-$ROS_DISTRO-joint-state-publisher ros-$ROS_DISTRO-xacro ros-$ROS_DISTRO-joint-state-publisher-gui ros-$ROS_DISTRO-tf2-* ros-$ROS_DISTRO-gazebo-* ros-$ROS_DISTRO-rviz-default-plugins
-```
-Cambiar a directorio de descargas
-```bash
-cd Downloads
-```
-Configurar el archivo install ros packages.sh como ejecutable:
-```bash
-sudo chmod +x install_ros_packages.sh
-```
-Verificar configuración
-```bash
-ls -la
-```
-Ejecutar el script:
-```bash
-./install_ros_packages.sh
-```
-Actualizar el espacio de trabajo en la ruta (home\ros):
-```bash
-source .bashrc
-```
-instalar pip en Python:
-```bash
-sudo apt-get install python3-pip
-```
-instalar paquete transform 3d:
-```bash
-pip install transforms3d
-```
-instalar terminal:
-```bash
-sudo apt-get install terminator
-```
-Revisar la versión de Ros instalada:
-```bash
-rosversion -d
-```
-# Desinstalación de ROS2 Humble
-En una nueva terminal ejecutar:
-```bash
-sudo apt remove --purge ros-humble-*
+colcon build
 ```
 
+Crear paquete difrobot_description
 ```bash
-sudo apt autoremove
+cd src/
+```
+```bash
+ros2 pkg create --build-type ament_cmake difrobot_description
+```
+Compilar proyecto
+```bash
+cd ..
+```
+```bash
+colcon build
 ```
 
+
+
+En la terminal buscar la ruta difrobot_description y ejecutar VsCode:
 ```bash
-sudo rm /etc/apt/sources.list.d/ros2.list
+cd difrobot_description
 ```
 ```bash
-sudo apt update
+code .
+```
+En Vscode seleccionar la ruta difrobot_ws/src/difrobot_description/ crear las carpetas y el archivo mostrado en  la imagen:
+<p align="center">
+<img src="./Logos/CarpetaDes.png" height="400">
+</p>
+
+
+Compilar el paquete difrobot_description en la ruta difrobot_ws
+```bash
+colcon build
+```
+En una nueva terminal actualizar el bash:
+```bash
+. isntall/setup.bash
+```
+instalar en el proyecto el paquete urdf-tutorial
+```bash
+sudo apt-get install ros-humble-urdf-tutorial
+```
+Ejecutar RVIZ con el modelo difrobot.urdf.xacro:
+```bash
+ros2 launch urdf_tutorial display.launch.py model:=/home/ros/difrobot_ws/src/difrobot_description/urdf/difrobot.urdf.xacro
 ```
 
+<p align="center">
+<img src="./Logos/Rviz.png" height="400">
+</p>
+
+
+## Restablecer ventana RQT
+Como volver a la configuración de ventanas en rqt en ros2 humble
 ```bash
-nano ~/.bashrc
-```
-Eliminar las lineas:
-```bash
-# source ROS 2 environment
-source /opt/ros/humble/setup.bash
-```
-Actualizar bash:
-```bash
-source ~/.bashrc
+rm -rf ~/.config/ros.org/rqt_gui.ini
+
 ```
