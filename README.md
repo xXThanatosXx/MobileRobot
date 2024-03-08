@@ -88,7 +88,7 @@ En Vscode seleccionar la ruta difrobot_ws/src/difrobot_description/ crear las ca
 </p>
 
 
-Compialr el paquete difrobot_description en la ruta difrobot_ws
+Compilar el paquete difrobot_description en la ruta difrobot_ws
 ```bash
 colcon build
 ```
@@ -104,6 +104,10 @@ Ejecutar RVIZ con el modelo difrobot.urdf.xacro:
 ```bash
 ros2 launch urdf_tutorial display.launch.py model:=/home/ros/difrobot_ws/src/difrobot_description/urdf/difrobot.urdf.xacro
 ```
+
+<p align="center">
+<img src="./Logos/Rviz.png" height="400">
+</p>
 
 
 ## Restablecer ventana RQT
