@@ -73,10 +73,18 @@ cd ..
 colcon build
 ```
 
-En la terminal debe aparecer los siguientes paquetes:
 
+
+En la terminal buscar la ruta difrobot_description y ejecutar VsCode:
+```bash
+cd difrobot_description
+```
+```bash
+code .
+```
+En Vscode seleccionar la ruta difrobot_ws/src/difrobot_description/ crear las carpetas y el archivo mostrado en  la imagen:
 <p align="center">
-<img src="./Logos/Turtle%20pkgs.png" height="100">
+<img src="./Logos/CarpetaDes.png" height="100">
 </p>
 
 ## Nodo
