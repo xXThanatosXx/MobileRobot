@@ -87,6 +87,31 @@ En Vscode seleccionar la ruta difrobot_ws/src/difrobot_description/ crear las ca
 <img src="./Logos/CarpetaDes.png" height="400">
 </p>
 
+```python
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="difrobot">
+
+    <link name="base_footprint"/>
+    
+    <link name="base_link">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            
+            <geometry>
+                <mesh filename="package://difrobot_description/meshes/base_link.STL" />
+            </geometry>
+        </visual>
+    
+    </link>
+
+    <joint name="base_joint" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="base_link"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.033"/>
+        
+    </joint>
+</robot>
+```
 
 Compilar el paquete difrobot_description en la ruta difrobot_ws
 ```bash
