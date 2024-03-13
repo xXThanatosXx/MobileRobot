@@ -113,7 +113,7 @@ En el archivo difrobot.urdf.xacro en Visual Studio code, escriba los siguientes 
     </joint>
 </robot>
 ```
-En el archivo CMAKEList agrege los comando de ruta de archivos URDF:
+En el archivo CMAKELists agrege el comando con la ruta de archivos meshes y urdf:
 
 ```c++
 install(
