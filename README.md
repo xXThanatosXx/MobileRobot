@@ -87,7 +87,8 @@ En Vscode seleccionar la ruta difrobot_ws/src/difrobot_description/ crear las ca
 <img src="./Logos/CarpetaDes.png" height="400">
 </p>
 
-```python
+En el archivo difrobot.urdf.xacro en Visual Studio code, escriba los siguientes comandos:
+```xml
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="difrobot">
 
@@ -112,7 +113,15 @@ En Vscode seleccionar la ruta difrobot_ws/src/difrobot_description/ crear las ca
     </joint>
 </robot>
 ```
+En el archivo CMAKEList agrege los comando de ruta de archivos URDF:
 
+```c++
+install(
+  DIRECTORY meshes urdf
+  DESTINATION share/${PROJECT_NAME}
+
+)
+```
 Compilar el paquete difrobot_description en la ruta difrobot_ws
 ```bash
 cd difrobot_ws
