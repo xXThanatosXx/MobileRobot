@@ -1,4 +1,4 @@
-# Clase Robot URDF
+# Clase Robot Gazebo
 
 
 El objetivo de la presente práctica es conocer los conceptos básico de ROS2 Humble (paquete, nodo, topicos, info y rqt), para la simulación del comportamiento de un robot móvil
