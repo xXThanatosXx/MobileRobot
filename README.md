@@ -173,7 +173,15 @@ Cree un archivo (difrobot_gazebo.xacro) en la carpeta urdf
 <img src="./Logos/image-3.png" height="400">
 </p>
 
-Modifique
+Modifique los siguientes parametros:
+
+- mu1 y mu2: Coeficientes de fricción en las direcciones de contacto primarias y secundarias. Valores extremadamente altos indican alta fricción.
+- kp: Coeficiente de rigidez del resorte (spring stiffness) en la simulación.
+- kd: Coeficiente de amortiguación (damping).
+- minDepth: Profundidad mínima de penetración permitida en la colisión.
+- maxVel: Velocidad máxima permitida en la simulación.
+- fdir1: Dirección de la fricción primaria, especificada como un vector (1 0 0).
+
 ```xml
 <?xml version="1.0"?>
 
@@ -226,9 +234,12 @@ Modifique
 
 Copie la carpeta models en difrobot_description y cree el archivo gazebo.launch.py 
 
+
+
 <p align="center">
 <img src="./Logos/models.png" height="400">
 </p>
+
 
 
 ```python
