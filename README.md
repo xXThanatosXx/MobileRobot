@@ -34,9 +34,10 @@ Primero Descargue los archivos de instalación ros2_install.sh y install_ros_pac
   </a>
 </p>
 <p align="center">
-<a href="https://www.youtube.com/watch?si=A5CDzYbwtK9ze-UW&v=YznWZz4OKRc&feature=youtu.be" target="_blank">**Enlace a Instalación de Ubuntu - Haga clic aquí para más información**</a>.
+<a href="https://www.youtube.com/watch?si=A5CDzYbwtK9ze-UW&v=YznWZz4OKRc&feature=youtu.be" target="_blank">**Enlace a Instalación de Ubuntu - Haga clic aquí para más información**</a>
+</p>
+<p align="center">
 <a href="https://youtu.be/sk0WTxr-yic?si=M51wHld4yW2u4Ymt" target="_blank">**Enlace a Video de instalación Ros2 Humble- Haga clic aquí para más información**</a>.
-
 </p>
 
 
