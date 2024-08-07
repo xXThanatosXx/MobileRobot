@@ -75,7 +75,7 @@ uMeas = np.zeros(N)  # Velocidad lineal en metros/segundos [m/s]
 wMeas = np.zeros(N)  # Velocidad angular en radianes/segundos [rad/s]
 
 ################## COMUNICACION SERIAL #########################
-port = 'COM3'
+port = 'COM8'
 baudRate = 115200 # Baudios
 arduino = serialArduino(port,baudRate,2)
 arduino.readSerialStart()

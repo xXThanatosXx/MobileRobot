@@ -59,7 +59,7 @@ unsigned long lastTime = 0, sampleTime = 100;
 
 
 //////// VARIABLES PARA CALCULAR VELOCIDADES ANGULARES /////////
-double constValue = 4.1975; // (1000*2*pi)/R ---> R = 1496.88 - 350RPM Resolucion encoder cuadruple
+double constValue = 1.315584713; // (1000*2*pi)/R ---> R = 1496.88 - 350RPM Resolucion encoder cuadruple
 
 
 // Configuracion de las salidas pwm
@@ -75,15 +75,15 @@ void IRAM_ATTR encoderR()
   if(digitalRead(C1R)) bitSet(actR,1); else bitClear(actR,1);
   
   
-  if(antR == 2 && actR ==0) nR--;
-  if(antR == 0 && actR ==1) nR--;
-  if(antR == 3 && actR ==2) nR--;
-  if(antR == 1 && actR ==3) nR--;
+  if(antR == 2 && actR ==0) nR++;
+  if(antR == 0 && actR ==1) nR++;
+  if(antR == 3 && actR ==2) nR++;
+  if(antR == 1 && actR ==3) nR++;
   
-  if(antR == 1 && actR ==0) nR++;
-  if(antR == 3 && actR ==1) nR++;
-  if(antR == 0 && actR ==2) nR++;
-  if(antR == 2 && actR ==3) nR++;    
+  if(antR == 1 && actR ==0) nR--;
+  if(antR == 3 && actR ==1) nR--;
+  if(antR == 0 && actR ==2) nR--;
+  if(antR == 2 && actR ==3) nR--;    
 
 }
 void IRAM_ATTR encoderL()
@@ -94,21 +94,21 @@ void IRAM_ATTR encoderL()
   if(digitalRead(C1L)) bitSet(actL,1); else bitClear(actL,1);
   
   
-  if(antL == 2 && actL ==0) nL++;
-  if(antL == 0 && actL ==1) nL++;
-  if(antL == 3 && actL ==2) nL++;
-  if(antL == 1 && actL ==3) nL++;
+  if(antL == 2 && actL ==0) nL--;
+  if(antL == 0 && actL ==1) nL--;
+  if(antL == 3 && actL ==2) nL--;
+  if(antL == 1 && actL ==3) nL--;
   
-  if(antL == 1 && actL ==0) nL--;
-  if(antL == 3 && actL ==1) nL--;
-  if(antL == 0 && actL ==2) nL--;
-  if(antL == 2 && actL ==3) nL--;     
+  if(antL == 1 && actL ==0) nL++;
+  if(antL == 3 && actL ==1) nL++;
+  if(antL == 0 && actL ==2) nL++;
+  if(antL == 2 && actL ==3) nL++;     
 }
 
 
 void setup()
 {
-  SerialBT.begin("Robot_movil_autonomo_esp32"); 
+  SerialBT.begin("Robot_movil_autonomoY"); 
 
   // Configuracion de los pines
   pinMode(C1R, INPUT);
