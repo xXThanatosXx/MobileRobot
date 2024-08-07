@@ -16,7 +16,9 @@ El objetivo de la presente práctica es instalar y configurar el entorno de trab
 ## Recursos Adicionales
 
 Para complementar tu aprendizaje en el curso de Mobile Robot, aquí tienes algunos enlaces a recursos externos que podrían ser de tu interés:
-Descargar VMware-player-17.5.2-23775571.exe.tar y descomprimir y ejecutar el archivo .exe
+
+Nota: Descargar VMware-player-17.5.2-23775571.exe.tar y descomprimir y ejecutar el archivo .exe
+
 - [VMware-player-17.5.2-23775571.exe.tar](https://softwareupdate.vmware.com/cds/vmw-desktop/player/17.5.2/23775571/windows/core/)
   
 - [ubuntu24.0.3](https://ubuntu.com/download/desktop)
