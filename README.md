@@ -16,8 +16,9 @@ El objetivo de la presente práctica es instalar y configurar el entorno de trab
 ## Recursos Adicionales
 
 Para complementar tu aprendizaje en el curso de Mobile Robot, aquí tienes algunos enlaces a recursos externos que podrían ser de tu interés:
-
-- [VM-Player 17.5.1](https://customerconnect.vmware.com/en/downloads/info/slug/desktop_end_user_computing/vmware_workstation_player/17_0)
+Descargar VMware-player-17.5.2-23775571.exe.tar y descomprimir y ejecutar el archivo .exe
+- [VMware-player-17.5.2-23775571.exe.tar](https://softwareupdate.vmware.com/cds/vmw-desktop/player/17.5.2/23775571/windows/core/)
+  
 - [ubuntu24.0.3](https://ubuntu.com/download/desktop)
 - [Documentación Oficial de ROS2 HUMble (Robot Operating System)](https://docs.ros.org/en/humble/index.html)
 - 📄 [📂](./Scripts/)Scripts de instalación de ros
