@@ -159,8 +159,9 @@ ros2 topic pub --rate 1 /turtle2/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 2
 ```bash
 ros2 topic type /turtle2/pose
 ```
+
 ```bash
-ros2 interface proto turtlesim/msg/Pose
+ros2 topic echo /turtle1/pose
 ```
 
 ## Restablecer ventana RQT
