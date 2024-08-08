@@ -42,8 +42,9 @@ Primero Descargue los archivos de instalación ros2_install.sh y install_ros_pac
 <p align="center">
 <a href="https://youtu.be/sk0WTxr-yic?si=M51wHld4yW2u4Ymt" target="_blank">**Enlace a Video de instalación Ros2 Humble- Haga clic aquí para más información**</a>.
 </p>
-
-
+<p align="center">
+<a href="https://www.youtube.com/watch?v=FrRKkO6UKnQ" target="_blank">**Enlace a Video de instalación VSCode- Haga clic aquí para más información**</a>.
+</p>
 
 Abre una terminal y sigue los siguientes pasos.
 
