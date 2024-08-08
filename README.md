@@ -164,6 +164,171 @@ ros2 topic type /turtle2/pose
 ros2 topic echo /turtle1/pose
 ```
 
+## Crear Nodo Python para extrar mensajes de posición
+- Crear la carpeta difrobot y sub carpeta src, organice los archivos como se muestra en la imagen:
+
+<p align="center">
+<img src="./Logos/image.png" height="300">
+</p>
+
+```bash
+mkdir -p difrobot_ws/src
+```
+```bash
+cd difrobot_ws/
+```
+```bash
+colcon build
+```
+```bash
+cd src/
+```
+```bash
+ros2 pkg create --build-type ament_python difrobot_py_examples
+```
+```bash
+cd ..
+```
+```bash
+colcon build
+```
+- copiar el archivo simple_turtlesim_kinematics.py en la carpeta difrobot_py_examples
+- Modificar el contenido de la los archivos package.xml y setup.py
+
+
+package.xml
+```xml
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>difrobot_py_examples</name>
+  <version>0.0.0</version>
+  <description>TODO: Package description</description>
+  <maintainer email="ros@todo.todo">ros</maintainer>
+  <license>TODO: License declaration</license>
+
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>rcl_interfaces</depend>
+  <depend>turtlesim</depend>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>
+```
+setup.py
+```python
+from setuptools import find_packages, setup
+
+package_name = 'difrobot_py_examples'
+
+setup(
+    name=package_name,
+    version='0.0.0',
+    packages=find_packages(exclude=['test']),
+    data_files=[
+        ('share/ament_index/resource_index/packages',
+            ['resource/' + package_name]),
+        ('share/' + package_name, ['package.xml']),
+    ],
+    install_requires=['setuptools'],
+    zip_safe=True,
+    maintainer='ros',
+    maintainer_email='ros@todo.todo',
+    description='TODO: Package description',
+    license='TODO: License declaration',
+    tests_require=['pytest'],
+    entry_points={
+        'console_scripts': [
+            'simple_turtlesim_kinematics = difrobot_py_examples.simple_turtlesim_kinematics:main',
+        ],
+    },
+)
+
+```
+
+simple_turtlesim_kinematics.py
+
+```python
+import rclpy
+from rclpy.node import Node
+from turtlesim.msg import Pose
+import math
+
+
+class SimpleTurtlesimKinematics(Node):
+    
+    def __init__(self):
+        super().__init__("simple_turtlesim_kinematics")
+        self.turtle1_pose_sub_ = self.create_subscription(Pose, "/turtle1/pose", self.turtle1PoseCallback, 10) 
+        self.turtle2_pose_sub_ = self.create_subscription(Pose, "/turtle2/pose", self.turtle2PoseCallback, 10)
+
+        self.last_turtle1_pose_ = Pose()
+        self.last_turtle2_pose_ = Pose()
+
+    
+    def turtle1PoseCallback(self, pose):
+        self.last_turtle1_pose_ = pose
+
+
+    def turtle2PoseCallback(self, pose):
+        self.last_turtle2_pose_ = pose
+        Tx = self.last_turtle2_pose_.x - self.last_turtle1_pose_.x
+        Ty = self.last_turtle2_pose_.y - self.last_turtle1_pose_.y
+        theta_rad = self.last_turtle2_pose_.theta - self.last_turtle1_pose_.theta
+        theta_deg = 180 * theta_rad / 3.14
+        self.get_logger().info("""\n
+                      Translation Vector turtle1 -> turtle2\n
+                      Tx: %f\n
+                      Ty: %f\n
+                      Rotation Matrix turtle1 -> turtle2\n 
+                      theta (rad): %f\n
+                      theta (deg): %f\n
+                      |R11   R12|:  |%f %f|\n
+                      |R21   R22|   |%f %f|\n""" %
+                      (
+                        Tx, Ty, theta_rad, theta_deg,
+                        math.cos(theta_rad), -math.sin(theta_rad),
+                        math.sin(theta_rad), math.cos(theta_rad)
+                      )
+                    )
+        
+
+def main():
+    rclpy.init()
+
+    simple_turtlesim_kinematics = SimpleTurtlesimKinematics()
+    rclpy.spin(simple_turtlesim_kinematics)
+    
+    simple_turtlesim_kinematics.destroy_node()
+    rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()
+```
+```bash
+colcon build 
+```
+
+```bash
+. install/setup.bash 
+```
+
+
+
+Ejecutar el script
+
+```bash
+ros2 run difrobot_py_examples simple_turtlesim_kinematics 
+```
+
 ## Restablecer ventana RQT
 Como volver a la configuración de ventanas en rqt en ros2 humble
 ```bash
