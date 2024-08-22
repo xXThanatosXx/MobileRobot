@@ -5,7 +5,7 @@ El objetivo de la presente práctica es conocer los conceptos básico de ROS2 Hu
 
 ### Configuración de urdf para Gazebo
 
-Agregar a las articulaciones el componente con los tags: Colision, Inertial 
+1. Agregar a las articulaciones el componente con los tags: Colision, Inertial  en el archivo difrobot.urdf.xacro:
 
 ```xml
 <?xml version="1.0"?>
@@ -165,7 +165,7 @@ Agregar a las articulaciones el componente con los tags: Colision, Inertial
 </robot>
 ```
 
-Cree un archivo (difrobot_gazebo.xacro) en la carpeta urdf
+2. Cree un archivo (difrobot_gazebo.xacro) en la carpeta urdf
 
 
 
@@ -228,7 +228,6 @@ Modifique los siguientes parametros:
   </gazebo>
 
 </robot>
-
 ```
 ## Crear Launch File para gazebo
 
@@ -339,6 +338,36 @@ if(BUILD_TESTING)
 endif()
 
 ament_package()
+```
+
+Agregar las dependencias en package.xml
+
+```xml
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>difrobot_description</name>
+  <version>0.0.0</version>
+  <description>TODO: Package description</description>
+  <maintainer email="faustoandresescobar@gmail.com">ros</maintainer>
+  <license>TODO: License declaration</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>ros2launch</exec_depend>
+
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
+
 ```
 Abre una terminal y sigue los siguientes pasos.
 
