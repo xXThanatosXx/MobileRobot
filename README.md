@@ -129,6 +129,59 @@ Revisar la versión de Ros instalada:
 ```bash
 rosversion -d
 ```
+# Instalación de ROS2 Humble con Docker
+1. [Instalar Docker](https://www.docker.com/)
+ 
+2. [Instalar Xlaunch](https://sourceforge.net/projects/xming/)
+ 
+
+Abrir una terminal cmd y ejecutar los comandos:
+
+Descargar Imagen Docker Ros2 humble
+```bash
+docker pull xxthanatosxx/ros2-humble:1.0.0
+
+```
+Verificar imagen
+```bash
+docker images
+
+```
+Crear contenedor (ros2-humble-container)
+```bash
+docker run -it --name ros2-humble-container xxthanatosxx/ros2-humble:1.0.0 /bin/bash
+
+```
+Iniciar el contenedor
+```bash
+docker start ros2-humble-container
+```
+Detener el contenedor
+```bash
+docker stop ros2-humble-container
+```
+# Crear imagen Docker a partir de contenedor
+
+
+```bash
+docker ps -a
+```
+Crear imagen de Contenedor: nombre ros2-humb y el CONTAINER ID 6485864c931d.
+```bash
+docker commit 6485864c931d xxthanatosxx/ros2-humble:1.0.0
+```
+Verificar imagen
+```bash
+docker images
+
+```
+Subir imagen a Docker Hub
+```bash
+docker push xxthanatosxx/ros2-humble:1.0.0
+
+```
+
+
 # Desinstalación de ROS2 Humble
 En una nueva terminal ejecutar:
 ```bash
