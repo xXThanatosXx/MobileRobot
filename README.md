@@ -253,6 +253,11 @@ setup(
 
 ```
 
+- rclpy: Es la librería de ROS 2 para Python. Proporciona las herramientas necesarias para crear nodos y manejar la comunicación en un sistema ROS 2.
+- Node: Clase base para la creación de nodos en ROS 2.
+- Pose: Es el tipo de mensaje que define la posición y orientación de un objeto en 2D, utilizado en la simulación turtlesim.
+- math: Librería estándar de Python que proporciona funciones matemáticas.
+
 simple_turtlesim_kinematics.py
 
 ```python
@@ -320,8 +325,13 @@ colcon build
 ```bash
 . install/setup.bash 
 ```
-
-
+Crear una tortuga
+```bash
+ros2 service call /spawn turtlesim/srv/Spawn "x: 2.0
+y: 2.0
+theta: 0.0
+name: 'turtle2'" 
+```
 
 Ejecutar el script
 
