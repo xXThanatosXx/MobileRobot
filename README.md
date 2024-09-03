@@ -1,34 +1,10 @@
-# MobileRobot
-
-Bienvenido al repositorio del curso de Mobile Robot. Este curso está diseñado para estudiantes e investigadores interesados en el campo de la robótica móvil y cubre desde conceptos básicos hasta aplicaciones avanzadas de robótica móvil.
-
-## Estructura del Repositorio
-
-Este repositorio está organizado de la siguiente manera:
-
-- `logos/`: Carpeta que contiene los logos relacionados con el curso.
-- `código/`: Ejemplos de código fuente en Python para diferentes módulos del curso.
-- `README.md`: Este archivo, que proporciona una visión general y guía sobre el repositorio.
-
-# Instalación de ROS2 Humble
-El objetivo de la presente práctica es instalar y configurar el entorno de trabajo de ROS2 Humble en Ubuntu 22.04, empleando una máquina virtual con VMWorkStation Player 17.
-
-## Recursos Adicionales
-
-Para complementar tu aprendizaje en el curso de Mobile Robot, aquí tienes algunos enlaces a recursos externos que podrían ser de tu interés:
-
-Nota: Descargar VMware-player-17.5.2-23775571.exe.tar y descomprimir y ejecutar el archivo .exe
-
-- [VMware-player-17.5.2-23775571.exe.tar](https://softwareupdate.vmware.com/cds/vmw-desktop/player/17.5.2/23775571/windows/core/)
-  
-- [ubuntu22.4.3](https://releases.ubuntu.com/jammy/ubuntu-22.04.4-desktop-amd64.iso)
-- [Documentación Oficial de ROS2 HUMble (Robot Operating System)](https://docs.ros.org/en/humble/index.html)
-- 📄 [📂](./Scripts/)Scripts de instalación de ros
+# Clase Robot URDF
 
 
-### Instalación de Dependencias
-Para configurar el entorno necesario para el curso en un sistema operativo Ubuntu, necesitarás instalar algunas dependencias y configurar tu entorno de desarrollo. 
-Primero Descargue los archivos de instalación ros2_install.sh y install_ros_packages.sh que se encuentran en la carpeta  [📂](./Scripts/)Scripts y siga los pasos que se indican en el video.
+El objetivo de la presente práctica es conocer los conceptos básico de ROS2 Humble (paquete, nodo, topicos, info y rqt), para la simulación del comportamiento de un robot móvil
+
+### Instalación de paquete Turtlesim
+
 
 
 <p align="center">
@@ -36,14 +12,9 @@ Primero Descargue los archivos de instalación ros2_install.sh y install_ros_pac
     <img src="./Logos/imagen1.png" height="300">
   </a>
 </p>
+
 <p align="center">
-<a href="https://www.youtube.com/watch?si=A5CDzYbwtK9ze-UW&v=YznWZz4OKRc&feature=youtu.be" target="_blank">**Enlace a Instalación de Ubuntu - Haga clic aquí para más información**</a>
-</p>
-<p align="center">
-<a href="https://youtu.be/sk0WTxr-yic?si=M51wHld4yW2u4Ymt" target="_blank">**Enlace a Video de instalación Ros2 Humble- Haga clic aquí para más información**</a>.
-</p>
-<p align="center">
-<a href="https://www.youtube.com/watch?v=FrRKkO6UKnQ" target="_blank">**Enlace a Video de instalación VSCode- Haga clic aquí para más información**</a>.
+<a href="https://youtu.be/sk0WTxr-yic?si=M51wHld4yW2u4Ymt" target="_blank">**Enlace a Video de instalación - Haga clic aquí para más información**</a>.
 </p>
 
 Abre una terminal y sigue los siguientes pasos.
@@ -53,243 +24,307 @@ Presione
 Crtl + alt + t
 
 ```
-Cambiar ruta a carpeta Downloads o donde descargó los archvivos de instalación:
+Crear un directorio llamado difrobot_ws y un sub directorio src
 ```bash
-cd Downloads
+mkdir -p difrobot_ws/src
 ```
-Convertir archivo en ejecutable:
+Abrir carpeta difrobot_ws:
 ```bash
-sudo chmod +x ros2_install.sh
+cd difrobot_ws/
 ```
-Verificar si el archivo es ejecutable:
+Compilar proyecto
 ```bash
-ls -la
+colcon build
 ```
-Ejecutar instalador:
-```bash
-./ros2_install.sh
-```
-Regresar al directorio principal
-```bash
-cd
-```
-Hacer source al bashrc:
-```bash
-source .bashrc
-```
-###instalar paquetes adicionales
-En nueva terminal ejecutar los siguientes comandos en el espacio de trabajo principal
 
-Presione Crtl + alt + t
+revisar si se crearon las carpetas build, install log y src
 ```bash
-source .bashrc
+ls
 ```
+Cambiar a directorio src
+```bash
+cd src/
+```
+
+Crear paquete difrobot_py_examples
+```bash
+ros2 pkg create --build-type ament_python difrobot_py_examples
+```
+Compilar proyecto
 ```bash
 cd ..
 ```
 ```bash
-sudo apt-get update 
-```
-```bash
-sudo apt-get install ros-$ROS_DISTRO-joint-state-publisher ros-$ROS_DISTRO-xacro ros-$ROS_DISTRO-joint-state-publisher-gui ros-$ROS_DISTRO-tf2-* ros-$ROS_DISTRO-gazebo-* ros-$ROS_DISTRO-rviz-default-plugins
-```
-Cambiar a directorio de descargas
-```bash
-cd Downloads
-```
-Configurar el archivo install ros packages.sh como ejecutable:
-```bash
-sudo chmod +x install_ros_packages.sh
-```
-Verificar configuración
-```bash
-ls -la
-```
-Ejecutar el script:
-```bash
-./install_ros_packages.sh
-```
-Actualizar el espacio de trabajo en la ruta (home\ros):
-```bash
-source .bashrc
-```
-instalar pip en Python:
-```bash
-sudo apt-get install python3-pip
-```
-instalar paquete transform 3d:
-```bash
-pip install transforms3d
-```
-instalar terminal:
-```bash
-sudo apt-get install terminator
-```
-Revisar la versión de Ros instalada:
-```bash
-rosversion -d
-```
-# Instalación de ROS2 Humble con Docker
-1. [Instalar Docker](https://www.docker.com/)
- 
-2. [Instalar Xlaunch](https://sourceforge.net/projects/xming/)
- 
-Docker File:
-
-```python
-#change the distro if needed, you can also use a ubuntu image and make your custom ROS install on it.
-FROM ros:humble
-ARG DEBIAN_FRONTEND=noninteractive
-
-USER root
-
-RUN apt-get update
-
-RUN apt-get install -y build-essential sudo terminator iproute2 gedit lsb-release lsb-core wget nano
-
-RUN adduser user
-RUN adduser user sudo
-#remove password
-RUN passwd -d user
-
-USER user
+colcon build
 ```
 
-Crear Imagen Ros2 Humble:
+Crear paquete difrobot_description
+```bash
+cd src/
+```
+```bash
+ros2 pkg create --build-type ament_cmake difrobot_description
+```
+Compilar proyecto
+```bash
+cd ..
+```
+```bash
+colcon build
+```
+
+
+
+En la terminal buscar la ruta difrobot_wsy ejecutar VsCode:
+```bash
+cd difrobot_ws
+```
+```bash
+code .
+```
+En Vscode seleccionar la ruta difrobot_ws/src/difrobot_description/ crear las carpetas y el archivo mostrado en  la imagen:
+<p align="center">
+<img src="./Logos/CarpetaDes.png" height="400">
+</p>
+
+En el archivo difrobot.urdf.xacro en Visual Studio code, escriba los siguientes comandos:
+```xml
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="difrobot">
+
+    <link name="base_footprint"/>
+    
+    <link name="base_link">
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            
+            <geometry>
+                <mesh filename="package://difrobot_description/meshes/base_link.STL" />
+            </geometry>
+        </visual>
+    
+    </link>
+
+    <joint name="base_joint" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="base_link"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.033"/>
+        
+    </joint>
+</robot>
+```
+En el archivo CMAKELists agrege el comando con la ruta de archivos meshes y urdf:
+
+```c++
+install(
+  DIRECTORY meshes urdf
+  DESTINATION share/${PROJECT_NAME}
+
+)
+```
+Compilar el paquete difrobot_description en la ruta difrobot_ws
+```bash
+cd difrobot_ws
+```
+```bash
+colcon build
+```
+En una nueva terminal actualizar el bash:
+```bash
+. install/setup.bash
+```
+instalar en el proyecto el paquete urdf-tutorial
+```bash
+sudo apt-get install ros-humble-urdf-tutorial
+```
+Ejecutar RVIZ con el modelo difrobot.urdf.xacro:
+```bash
+ros2 launch urdf_tutorial display.launch.py model:=/home/ros/difrobot_ws/src/difrobot_description/urdf/difrobot.urdf.xacro
+```
+
+<p align="center">
+<img src="./Logos/Rviz.png" height="400">
+</p>
+
+## Creación de lanzador (launcher)
+El gráfico en RQT muestra la configuración común en ROS2 donde se describe un robot, se publica su estado de las juntas, y se calculan las transformaciones de los enlaces del robot basándose en ese estado, permitiendo así un seguimiento de la posición del robot en el espacio
+
+<p align="center">
+<img src="./Logos/RQTDif.png" height="300">
+</p>
+
+
+- robot_description: tópico o parámetro que contiene la descripción URDF (Unified Robot Description Format) del robot, que define los modelos de los enlaces y juntas del robot.
+
+- joint_state_publisher: nodo que se suscribe a la descripción del robot y publica el estado de las juntas (es decir, la posición, velocidad y esfuerzo de cada junta) del robot en tiempo real.
+- joint_states: tópico donde se publican los estados de las juntas. Este tópico es utilizado por otros nodos para obtener información actualizada sobre las posiciones y movimientos de las juntas del robot.
+- robot_state_publisher: nodo se suscribe al tópico /joint_states y utiliza la información sobre los estados de las juntas y la descripción del robot para calcular la cinemática del robot. Luego, publica la información de transformación (es decir, la posición y orientación en el espacio) de cada enlace del robot en el tópico /tf.
+- tf: tópico que lleva mensajes para mantener el seguimiento de todas las transformaciones de coordenadas en el tiempo. Esto es crucial para tareas como la navegación y la manipulación, donde es necesario conocer la posición y orientación de diferentes partes del robot en un marco de referencia común.
+- transform_listener_impl_562b8b60fe90: un nodo o un componente que escucha las transformaciones publicadas en el tópico /tf. Su nombre sugiere que es una instancia de un oyente de transformadas, lo cual es una parte común de los sistemas que necesitan seguir las transformaciones de coordenadas para el seguimiento o la planificación del movimiento.
+
+### Ejecutar el nodo con Rviz
+
+```bash
+. install/setup.bash
+```
+
+
+```bash
+ros2 launch urdf_tutorial display.launch.py model:=/home/ros/difrobot_ws/src/difrobot_description/urdf/difrobot.urdf.xacro
+```
+Crear carpeta (rviz) en la ruta y guardar el archivo con el nombre (display.rviz)
+```bash
+/home/ros/difrobot_ws/src/difrobot_description/rviz
+```
+
 ![alt text](image.png)
 
 
-Guardar con el nombre (ros2-humble-img):
+En una nueva terminal buscar la ruta difrobot y abrir vscode
+```bash
+cd difrobot_ws
+```
+
+```bash
+. code
+```
+
+Crear la carpeta launch y el archivo display.launch.py en la ruta difrobot_description
+
 ![alt text](image-1.png)
 
+Contenido del archivo display.launch.py
 
-### Crear el contenedor
-```bash
-docker run --name ros2-humble --user=user --env=DISPLAY=host.docker.internal:0 --volume="C:\\:/mnt/c" --restart=no --runtime=runc --network=host -t -d ros2-humble-img
-```
+```python
+import os
+from ament_index_python.packages import get_package_share_directory
 
-![alt text](image-2.png)
+from launch import LaunchDescription
+from launch.actions import DeclareLaunchArgument
+from launch.substitutions import Command, LaunchConfiguration
 
-
-1. Opcional: crear contenedor con acceso a carpeta
-```bash
-docker run --name ros2-humble --user=user --env=DISPLAY=host.docker.internal:0 --volume="C:\\:/mnt/c" --volume="C:\\Users\\UNIMAR\\Documents\\Docker\\shared_folder:/mnt/shared_folder" --restart=no --runtime=runc --network=host -t -d ros2-humble-img
-```
-verificar carpeta
-```bash
-cd /mnt/shared_folder
-```
-Copiar carpeta Host to Docker
-```bash
-docker cp "C:\Users\UNIMAR\Documents\Docker\shared_folder" ros2-humble:/home/user/test
-```
-Copiar carpeta Docker to Host
-```bash
-docker cp ros2-humble:/ruta/dentro/del/contenedor "C:\Users\UNIMAR\Documents\Docker\local_folder"
-
-```
+from launch_ros.actions import Node
+from launch_ros.parameter_descriptions import ParameterValue
 
 
+def generate_launch_description():
+    difrobot_description_dir = get_package_share_directory("difrobot_description")
 
-### ROS2 Configuración
+    model_arg = DeclareLaunchArgument(name="model", default_value=os.path.join(
+                                        difrobot_description_dir, "urdf", "difrobot.urdf.xacro"
+                                        ),
+                                      description="Absolute path to robot urdf file")
 
-```bash
-source /opt/ros/humble/setup.bash
-```
-```bash
-nano .bashrc
-```
-![alt text](image-3.png)
+    robot_description = ParameterValue(Command(["xacro ", LaunchConfiguration("model")]),
+                                       value_type=str)
 
-Hacer source en bash:
-```bash
-source /opt/ros/humble/setup.bash
-```
-```bash
-sudo apt-get install ros-humble-rviz2
-```
+    robot_state_publisher_node = Node(
+        package="robot_state_publisher",
+        executable="robot_state_publisher",
+        parameters=[{"robot_description": robot_description}]
+    )
 
-```bash
-source ~/.bashrc
-```
+    joint_state_publisher_gui_node = Node(
+        package="joint_state_publisher_gui",
+        executable="joint_state_publisher_gui"
+    )
 
-```bash
-rviz2
-```
-### Descargar imagen Docker
-Abrir una terminal cmd y ejecutar los comandos:
+    rviz_node = Node(
+        package="rviz2",
+        executable="rviz2",
+        name="rviz2",
+        output="screen",
+        arguments=["-d", os.path.join(difrobot_description_dir, "rviz", "display.rviz")],
+    )
 
-Descargar Imagen Docker Ros2 humble
-```bash
-docker pull xxthanatosxx/ros2-humble:1.0.0
-
-```
-Verificar imagen
-```bash
-docker images
-
-```
-Crear contenedor (ros2-humble-container)
-```bash
-docker run -it --name ros2-humble-container xxthanatosxx/ros2-humble:1.0.0 /bin/bash
-
-```
-Iniciar el contenedor
-```bash
-docker start ros2-humble-container
-```
-Detener el contenedor
-```bash
-docker stop ros2-humble-container
-```
-# Crear imagen Docker a partir de contenedor
-
-
-```bash
-docker ps -a
-```
-Crear imagen de Contenedor: nombre ros2-humb y el CONTAINER ID 6485864c931d.
-```bash
-docker commit 6485864c931d xxthanatosxx/ros2-humble:1.0.0
-```
-Verificar imagen
-```bash
-docker images
-
-```
-Subir imagen a Docker Hub
-```bash
-docker push xxthanatosxx/ros2-humble:1.0.0
-
+    return LaunchDescription([
+        model_arg,
+        joint_state_publisher_gui_node,
+        robot_state_publisher_node,
+        rviz_node
+    ])
 ```
 
+Modificar el archvio CMAKe y agregar la ruta de las carpetas launch y rviz
 
-# Desinstalación de ROS2 Humble
-En una nueva terminal ejecutar:
-```bash
-sudo apt remove --purge ros-humble-*
+
+```c++
+cmake_minimum_required(VERSION 3.8)
+project(difrobot_description)
+
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+
+# find dependencies
+find_package(ament_cmake REQUIRED)
+
+
+install(
+  DIRECTORY meshes urdf launch rviz
+  DESTINATION share/${PROJECT_NAME}
+
+)
+
+if(BUILD_TESTING)
+  find_package(ament_lint_auto REQUIRED)
+  set(ament_cmake_copyright_FOUND TRUE)
+  set(ament_cmake_cpplint_FOUND TRUE)
+  ament_lint_auto_find_test_dependencies()
+endif()
+
+ament_package()
 ```
 
-```bash
-sudo apt autoremove
+Actualizar el archivo package.xml, con las dependencias robot_state_publisher, joint_state_publisher_gui, rviz2, ros2launch
+
+```xml
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>difrobot_description</name>
+  <version>0.0.0</version>
+  <description>TODO: Package description</description>
+  <maintainer email="faustoandresescobar@gmail.com">ros</maintainer>
+  <license>TODO: License declaration</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>ros2launch</exec_depend>
+
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
 ```
 
+En una nueva terminal 
 ```bash
-sudo rm /etc/apt/sources.list.d/ros2.list
+cd difrobot_ws
 ```
 ```bash
-sudo apt update
+colcon build
+```
+En una nueva terminal 
+```bash
+. install/setup.bash
+```
+```bash
+ros2 launch difrobot_description display.launch.py
 ```
 
+
+
+## Restablecer ventana RQT
+Como volver a la configuración de ventanas en rqt en ros2 humble
 ```bash
-nano ~/.bashrc
-```
-Eliminar las lineas:
-```bash
-# source ROS 2 environment
-source /opt/ros/humble/setup.bash
-```
-Actualizar bash:
-```bash
-source ~/.bashrc
+rm -rf ~/.config/ros.org/rqt_gui.ini
+
 ```
