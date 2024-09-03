@@ -134,7 +134,89 @@ rosversion -d
  
 2. [Instalar Xlaunch](https://sourceforge.net/projects/xming/)
  
+Docker File:
 
+```python
+#change the distro if needed, you can also use a ubuntu image and make your custom ROS install on it.
+FROM ros:humble
+ARG DEBIAN_FRONTEND=noninteractive
+
+USER root
+
+RUN apt-get update
+
+RUN apt-get install -y build-essential sudo terminator iproute2 gedit lsb-release lsb-core wget nano
+
+RUN adduser user
+RUN adduser user sudo
+#remove password
+RUN passwd -d user
+
+USER user
+```
+
+Crear Imagen Ros2 Humble:
+![alt text](image.png)
+
+
+Guardar con el nombre (ros2-humble-img):
+![alt text](image-1.png)
+
+
+### Crear el contenedor
+```bash
+docker run --name ros2-humble --user=user --env=DISPLAY=host.docker.internal:0 --volume="C:\\:/mnt/c" --restart=no --runtime=runc --network=host -t -d ros2-humble-img
+```
+
+![alt text](image-2.png)
+
+
+1. Opcional: crear contenedor con acceso a carpeta
+```bash
+docker run --name ros2-humble --user=user --env=DISPLAY=host.docker.internal:0 --volume="C:\\:/mnt/c" --volume="C:\\Users\\UNIMAR\\Documents\\Docker\\shared_folder:/mnt/shared_folder" --restart=no --runtime=runc --network=host -t -d ros2-humble-img
+```
+verificar carpeta
+```bash
+cd /mnt/shared_folder
+```
+Copiar carpeta Host to Docker
+```bash
+docker cp "C:\Users\UNIMAR\Documents\Docker\shared_folder" ros2-humble:/home/user/test
+```
+Copiar carpeta Docker to Host
+```bash
+docker cp ros2-humble:/ruta/dentro/del/contenedor "C:\Users\UNIMAR\Documents\Docker\local_folder"
+
+```
+
+
+
+### ROS2 Configuración
+
+```bash
+source /opt/ros/humble/setup.bash
+```
+```bash
+nano .bashrc
+```
+![alt text](image-3.png)
+
+Hacer source en bash:
+```bash
+source /opt/ros/humble/setup.bash
+```
+```bash
+sudo apt-get install ros-humble-rviz2
+```
+
+```bash
+source ~/.bashrc
+```
+
+```bash
+rviz2
+```
+### Descargar imagen Docker
 Abrir una terminal cmd y ejecutar los comandos:
 
 Descargar Imagen Docker Ros2 humble
