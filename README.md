@@ -14,12 +14,12 @@ El objetivo de la presente práctica es conocer los conceptos básico de ROS2 Hu
 </p>
 
 <p align="center">
-<a href="https://youtu.be/8bd2w0vGEu0" target="_blank">**Enlace a Video Importación URDF - Haga clic aquí para más información**</a>.
+<a href="https://youtu.be/CHqcLUrJlHI?si=XcHWo3aaolUZyH_P" target="_blank">**Enlace a Video Importación URDF - Haga clic aquí para más información**</a>.
 </p>
 
 
 <p align="center">
-<a href="https://youtu.be/CHqcLUrJlHI?si=XcHWo3aaolUZyH_P" target="_blank">**Enlace a Video Creación de Launcher - Haga clic aquí para más información**</a>.
+<a href="https://youtu.be/8bd2w0vGEu0" target="_blank">**Enlace a Video Creación de Launcher - Haga clic aquí para más información**</a>.
 </p>
 
 
