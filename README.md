@@ -1,7 +1,7 @@
 # Clase Robot URDF
 
 
-El objetivo de la presente práctica es conocer los conceptos básico de ROS2 Humble (paquete, nodo, topicos, info y rqt), para la simulación del comportamiento de un robot móvil
+El objetivo de la presente práctica es conocer los conceptos básico de ROS2 Humble (paquete, nodo, topicos, info y rqt), importar los modelos y crear un launcher para la simulación del comportamiento de un robot móvil
 
 ### Instalación de paquete Turtlesim
 
@@ -14,8 +14,14 @@ El objetivo de la presente práctica es conocer los conceptos básico de ROS2 Hu
 </p>
 
 <p align="center">
-<a href="https://youtu.be/sk0WTxr-yic?si=M51wHld4yW2u4Ymt" target="_blank">**Enlace a Video de instalación - Haga clic aquí para más información**</a>.
+<a href="https://youtu.be/8bd2w0vGEu0" target="_blank">**Enlace a Video Importación URDF - Haga clic aquí para más información**</a>.
 </p>
+
+
+<p align="center">
+<a href="https://youtu.be/CHqcLUrJlHI?si=XcHWo3aaolUZyH_P" target="_blank">**Enlace a Video Creación de Launcher - Haga clic aquí para más información**</a>.
+</p>
+
 
 Abre una terminal y sigue los siguientes pasos.
 
