@@ -45,7 +45,6 @@ Copiar carpeta models
 ```bash
 cp -r ~/difrobot_description/models ~/.gazebo```
 ```
-
 Aplicar cambios
 
 ```bash
