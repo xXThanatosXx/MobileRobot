@@ -4,6 +4,12 @@
 El objetivo de la presente práctica es conocer los conceptos básico de ROS2 Humble (paquete, nodo, topicos, info y rqt), para la simulación del comportamiento de un robot móvil en Gazebo.
 
 ### Compilación del proyecto de clase
+
+
+<p align="center">
+<a href="https://youtu.be/1gEeBYGCAZc" target="_blank">**Enlace a Video Gazebo - Haga clic aquí para más información**</a>
+</p>
+
 Clonar repositorio
 ```bash
 git clone --branch Clase-robot-Gazebo --single-branch https://github.com/xXThanatosXx/MobileRobot.git
