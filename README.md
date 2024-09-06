@@ -3,6 +3,59 @@
 
 El objetivo de la presente práctica es conocer los conceptos básico de ROS2 Humble (paquete, nodo, topicos, info y rqt), para la simulación del comportamiento de un robot móvil en Gazebo.
 
+### Compilación del proyecto de clase
+Clonar repositorio
+```bash
+git clone --branch Clase-robot-Gazebo --single-branch https://github.com/xXThanatosXx/MobileRobot.git
+
+```
+mover archivos a home
+
+```bash
+mv ~/MobileRobot/difrobot_ws ~/difrobot_ws
+```
+Limpiar Cache de CMake
+```bash
+rm -rf ~/difrobot_ws/build/difrobot_controller
+```
+
+compilar
+```bash
+colcon build
+```
+Modificar el registro de Gazebo 
+```bash
+sudo nano /usr/share/gazebo/setup.sh
+
+```
+Remplezar las lineas
+```bash
+export GAZEBO_MASTER_URI=""
+export GAZEBO_MODEL_DATABASE_URI=""
+```
+Modificar el registro de gazebo 11
+```bash
+sudo nano /usr/share/gazebo-11/setup.sh
+```
+```bash
+export GAZEBO_MASTER_URI=""
+export GAZEBO_MODEL_DATABASE_URI=""
+```
+Copiar carpeta models
+```bash
+cp -r ~/difrobot_description/models ~/.gazebo```
+```
+
+Aplicar cambios
+
+```bash
+source /usr/share/gazebo-11/setup.sh
+
+```
+
+
+
+
 ### Configuración de urdf para Gazebo
 
 1. Agregar a las articulaciones el componente con los tags: Colision, Inertial  en el archivo difrobot.urdf.xacro:
@@ -436,6 +489,8 @@ En una nueva terminal :
 ```bash
 ros2 launch difrobot_description gazebo.launch.py
 ```
+
+
 
 <p align="center">
 <img src="./Logos/GazeboResult.png" height="400">
