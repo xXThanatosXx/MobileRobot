@@ -43,7 +43,8 @@ export GAZEBO_MODEL_DATABASE_URI=""
 ```
 Copiar carpeta models
 ```bash
-cp -r ~/difrobot_description/models ~/.gazebo```
+cp -r ~/difrobot_ws/src/difrobot_description/models ~/.gazebo
+
 ```
 Aplicar cambios
 
