@@ -1,0 +1,42 @@
+1. Crear packete
+
+ros2 pkg create --build-type ament_cmake difrobot_firmware
+
+2. ejecutar nodo de transmision
+
+ros2 run difrobot_firmware simple_serial_transmitter.py 
+
+--ros-args -p port:=/dev/ttyACM0
+
+3. Publicar estado de led
+ros2 topic pub /serial_transmitter std_msgs/msg/String "data: '0'" 
+
+
+4. Receiver
+
+ros2 run difrobot_firmware simple_serial_receiver.py --ros-args -p port:=/dev/ttyACM0
+
+
+ros2 topic list
+
+ros2 topic echo /serial_receiver
+
+
+# Instalaci final
+Clonar repositorio
+
+
+# instalar paquetes adicionales
+
+sudo apt-get install libserial-dev
+colcon build --cmake-clean-cache
+
+
+Cd bumperbot_ws
+rosdep update
+
+rosdep install --from-paths src --ignore-src -r -y
+
+
+
+

@@ -3,19 +3,22 @@
 
 El objetivo de la presente práctica es conocer los conceptos básico de ROS2 Humble (paquete, nodo, topicos, info y rqt), para la simulación del comportamiento de un robot móvil en Gazebo.
 
-### Compilación del proyecto de clase
+### Compilación del proyecto de clase-Odometría
 
 
 <p align="center">
-<a href="https://youtu.be/1gEeBYGCAZc" target="_blank">**Enlace a Video Gazebo - Haga clic aquí para más información**</a>
+<a href="https://virtual.umariana.edu.co/campus/mod/url/view.php?id=324738" target="_blank">**Enlace a Video Instalación de Arduino**</a>
 </p>
 
-Clonar repositorio
 ```bash
-git clone --branch Clase-robot-Gazebo --single-branch https://github.com/xXThanatosXx/MobileRobot.git
+ros2 pkg create --build-type ament_cmake difrobot_firmware
+Clonar repositorio
+```
+```bash
+git clone --branch Clase-Odometry --single-branch https://github.com/xXThanatosXx/MobileRobot.git
 
 ```
-mover archivos a home
+Mover archivos a home
 
 ```bash
 mv ~/MobileRobot/difrobot_ws ~/difrobot_ws
@@ -25,32 +28,27 @@ Limpiar Cache de CMake
 rm -rf ~/difrobot_ws/build/difrobot_controller
 ```
 
-compilar
+Compilar
 ```bash
 colcon build
 ```
-Modificar el registro de Gazebo 
+Instalar paquete serial-dev
 ```bash
-sudo nano /usr/share/gazebo/setup.sh
+sudo apt-get install libserial-dev
+```
+Instalar el paquete `pyserial`:
 
-```
-Remplezar las lineas
 ```bash
-export GAZEBO_MASTER_URI=""
-export GAZEBO_MODEL_DATABASE_URI=""
+   pip install pyserial
 ```
-Modificar el registro de gazebo 11
+## En caso de tener inconvenientes
+Limpiar cache
 ```bash
-sudo nano /usr/share/gazebo-11/setup.sh
+colcon build --cmake-clean-cache
 ```
+Instalar dependencias
 ```bash
-export GAZEBO_MASTER_URI=""
-export GAZEBO_MODEL_DATABASE_URI=""
-```
-Copiar carpeta models
-```bash
-cp -r ~/difrobot_ws/src/difrobot_description/models ~/.gazebo
-
+rosdep install --from-paths src --ignore-src -r -y
 ```
 Aplicar cambios
 
@@ -59,414 +57,457 @@ source /usr/share/gazebo-11/setup.sh
 
 ```
 
+## Nodo de Transmisión
 
 
+### Simple Serial Transmitter Node
 
-### Configuración de urdf para Gazebo
+Este script en Python implementa un nodo de ROS2 que escucha mensajes en un tópico específico y los envía a un dispositivo conectado a través de un puerto serial (como un Arduino).
 
-1. Agregar a las articulaciones el componente con los tags: Colision, Inertial  en el archivo difrobot.urdf.xacro:
+### Descripción General
 
-```xml
-<?xml version="1.0"?>
+El nodo llamado `simple_serial_transmitter` se suscribe a un tópico de ROS2 (`serial_transmitter`) y transmite los datos recibidos a un dispositivo serial (por ejemplo, Arduino) a través de un puerto serial utilizando los parámetros de puerto y baudrate configurados.
 
-<robot name="difrobot" xmlns:xacro="http://ros.org/wiki/xacro">
+### Requisitos
 
-  <!-- Include Gazebo Parameters -->
-  <xacro:include filename="$(find difrobot_description)/urdf/difrobot_gazebo.xacro" />
+- ROS2 (Humble o compatible).
+- Biblioteca `pyserial` para manejar la comunicación serial.
+- Un dispositivo conectado al puerto serial que reciba y procese los datos (por ejemplo, Arduino).
 
-  <link name="base_footprint"/>
+### Configuración de los Parámetros
+
+El programa permite configurar los siguientes parámetros:
+
+1. **`port`**: El puerto serial al que está conectado el dispositivo (por defecto `/dev/ttyACM0`).
+2. **`baudrate`**: La tasa de baudios para la comunicación serial (por defecto `115200`).
+
+### Estructura del Código
+
+#### 1. **Clase `SimpleSerialTransmitter`**
+
+- **`__init__()`**: 
+  - Inicializa el nodo ROS2 con el nombre `"simple_serial_transmitter"`.
+  - Declara los parámetros `port` y `baudrate` para configurar el puerto serial y la tasa de baudios.
+  - Abre el puerto serial con los valores configurados.
+  - Crea una suscripción al tópico `serial_transmitter`, que recibe mensajes de tipo `std_msgs/String`.
   
-  <link name="base_link">
-    <inertial>
-      <origin xyz="0 0 0.04" rpy="0.0 0.25 0.3" />
-      <mass value="8.2573504e-01"/>
-      <inertia ixx="2.2124416e-02" ixy="-1.2294101e-04" ixz="3.4938785e-04"
-               iyy="2.1193702e-02" iyz="-5.0120904e-05"
-               izz="2.0064271e-02" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://difrobot_description/meshes/base_link.STL" />
-      </geometry>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://difrobot_description/meshes/base_link.STL" />
-      </geometry>
-    </collision>
-  </link>
+- **`msgCallback(msg)`**:
+  - Esta función se ejecuta cuando llega un nuevo mensaje en el tópico `serial_transmitter`.
+  - Publica el contenido del mensaje en el puerto serial conectado al dispositivo.
+  - Muestra en los logs del nodo el nombre del puerto serial y el mensaje recibido.
 
-  <joint name="base_joint" type="fixed">
-    <parent link="base_footprint"/>
-    <child link="base_link" />
-    <origin xyz="0 0 0.033" rpy="0 0 0"/>
-  </joint>
+#### 2. **Función `main()`**
 
-  <link name="wheel_right_link">
-    <inertial>
-      <origin xyz="0 -0.014 0" rpy="0 0 0" />
-      <mass value="0.0530086090966721" />
-      <inertia ixx="1.88176298336665E-05" ixy="-4.8444933029987E-10" ixz="1.88163708851143E-08"
-               iyy="3.11510738647764E-05" iyz="-6.93560663069607E-11"
-               izz="1.8801969558182E-05" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="1.57 0 0" />
-      <geometry>
-        <mesh filename="package://difrobot_description/meshes/wheel_right_link.STL" />
-      </geometry>
-    </visual>
-    <collision>
-      <origin xyz="0 -0.015 0" rpy="1.57 0 0" />
-      <geometry>
-        <sphere radius="0.033"/>
-      </geometry>
-    </collision>
-  </link>
+- Inicializa el sistema de ROS2.
+- Crea una instancia de la clase `SimpleSerialTransmitter`.
+- Hace girar el nodo para que permanezca en funcionamiento y escuche mensajes.
+- Al finalizar, destruye el nodo y apaga el sistema de ROS2.
 
-  <joint name="wheel_right_joint" type="continuous">
-    <origin xyz="0 -0.0701101849418637 0" rpy="0 0 0" />
-    <parent link="base_link" />
-    <child link="wheel_right_link" />
-    <axis xyz="0 1 0" />
-  </joint>
-  
-  <link
-    name="wheel_left_link">
-    <inertial>
-      <origin xyz="0 0.014 0" rpy="0 0 0" />
-      <mass value="0.0530086043217644" />
-      <inertia ixx="1.8792911368909E-05"  ixy="3.31256392204584E-10" ixz="-1.14082001662767E-08"
-               iyy="3.11510738759073E-05" iyz="-3.60499245082192E-10"
-               izz="1.88266886146847E-05" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="-1.57 0 0" />
-      <geometry>
-        <mesh filename="package://difrobot_description/meshes/wheel_left_link.STL" />
-      </geometry>
-    </visual>
-    <collision>
-      <origin xyz="0 0.015 0" rpy="-1.57 0 0" />
-      <geometry>
-        <sphere radius="0.033"/>
-      </geometry>
-    </collision>
-  </link>
+### Uso
 
-  <joint name="wheel_left_joint" type="continuous">
-    <origin xyz="0 0.0701101849418642 0" rpy="0 0 0" />
-    <parent link="base_link" />
-    <child link="wheel_left_link" />
-    <axis xyz="0 1 0" />
-  </joint>
+Ejecutar nodo de transmision
 
-  <link name="caster_front_link">
-    <inertial>
-      <origin xyz="3.89968128948481E-07 2.40073004698083E-07 0.00219173397061506" rpy="0 0 0" />
-      <mass value="1.44379265037903E-06" />
-      <inertia ixx="7.23075276010246E-11" ixy="-6.10956883467859E-16" ixz="2.22849693525031E-15"
-               iyy="3.8713793085917E-11"  iyz="2.93909858781952E-15"
-               izz="1.00967486676306E-10" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://difrobot_description/meshes/caster_front_link.STL" />
-      </geometry>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <sphere radius="0.005"/>
-      </geometry>
-    </collision>
-  </link>
-
-  <joint name="caster_front_joint" type="fixed">
-    <origin xyz="0.04755 0 -0.0275" rpy="0 0 0" />
-    <parent link="base_link" />
-    <child link="caster_front_link" />
-    <axis xyz="0 0 0" />
-  </joint>
-  
-  <link name="caster_rear_link">
-    <inertial>
-      <origin xyz="3.8996812895542E-07 2.40073004698083E-07 0.00219173397061509" rpy="0 0 0" />
-      <mass value="1.44379265037902E-06" />
-      <inertia ixx="7.23075276010246E-11" ixy="-6.10956872363424E-16" ixz="2.22849693527207E-15"
-               iyy="3.87137930859167E-11" iyz="2.939098587861E-15"
-               izz="1.00967486676306E-10" />
-    </inertial>
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <mesh filename="package://difrobot_description/meshes/caster_rear_link.STL" />
-      </geometry>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <geometry>
-        <sphere radius="0.005"/>
-      </geometry>
-    </collision>
-  </link>
-
-  <joint name="caster_rear_joint" type="fixed">
-    <origin xyz="-0.04755 0 -0.0275" rpy="0 0 0" />
-    <parent link="base_link" />
-    <child link="caster_rear_link" />
-    <axis xyz="0 0 0" />
-  </joint>
-
-</robot>
+![alt text](image-1.png)
+```bash
+ros2 run difrobot_firmware simple_serial_transmitter.py 
+```
+```bash
+--ros-args -p port:=/dev/ttyACM0
+```
+Publicar estado de led
+```bash
+ros2 topic pub /serial_transmitter std_msgs/msg/String "data: '0'" 
 ```
 
-2. Cree un archivo (difrobot_gazebo.xacro) en la carpeta urdf
+***simple_serial_transmitter.py***
+```python
+#!/usr/bin/env python3
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+import serial
 
 
+class SimpleSerialTransmitter(Node):
+    def __init__(self):
+        super().__init__("simple_serial_transmitter")
 
-<p align="center">
-<img src="./Logos/image-3.png" height="400">
-</p>
+        self.declare_parameter("port", "/dev/ttyACM0")
+        self.declare_parameter("baudrate", 115200)
 
-Modifique los siguientes parametros:
+        self.port_ = self.get_parameter("port").value
+        self.baudrate_ = self.get_parameter("baudrate").value
 
-- mu1 y mu2: Coeficientes de fricción en las direcciones de contacto primarias y secundarias. Valores extremadamente altos indican alta fricción.
-- kp: Coeficiente de rigidez del resorte (spring stiffness) en la simulación.
-- kd: Coeficiente de amortiguación (damping).
-- minDepth: Profundidad mínima de penetración permitida en la colisión.
-- maxVel: Velocidad máxima permitida en la simulación.
-- fdir1: Dirección de la fricción primaria, especificada como un vector (1 0 0).
+        self.sub_ = self.create_subscription(String, "serial_transmitter", self.msgCallback, 10)
+        self.sub_
+        self.arduino_ = serial.Serial(port=self.port_, baudrate=self.baudrate_, timeout=0.1)
 
-```xml
-<?xml version="1.0"?>
+    def msgCallback(self, msg):
+        self.get_logger().info("New message received, publishing on serial: %s" % self.arduino_.name)
+        self.arduino_.write(msg.data.encode("utf-8"))
 
-<robot name="difrobot" xmlns:xacro="http://ros.org/wiki/xacro">
 
-  <!-- Wheels -->
-  <gazebo reference="wheel_left_link">
-    <mu1>1000000000000000.0</mu1>
-    <mu2>1000000000000000.0</mu2>
-    <kp>1000000000000.0</kp>
-    <kd>10.0</kd>
-    <minDepth>0.001</minDepth>
-    <maxVel>0.1</maxVel>
-    <fdir1>1 0 0</fdir1>
-  </gazebo>
-  
-  <gazebo reference="wheel_right_link">
-    <mu1>1000000000000000.0</mu1>
-    <mu2>1000000000000000.0</mu2>
-    <kp>1000000000000.0</kp>
-    <kd>10.0</kd>
-    <minDepth>0.001</minDepth>
-    <maxVel>0.1</maxVel>
-    <fdir1>1 0 0</fdir1>
-  </gazebo>
-  
-  <!-- Caster Wheels -->
-  <gazebo reference="caster_rear_link">
-    <mu1>0.1</mu1>
-    <mu2>0.1</mu2>
-    <kp>1000000.0</kp>
-    <kd>100.0</kd>
-    <minDepth>0.001</minDepth>
-    <maxVel>1.0</maxVel>
-  </gazebo>
-  
-  <gazebo reference="caster_front_link">
-    <mu1>0.1</mu1>
-    <mu2>0.1</mu2>
-    <kp>1000000.0</kp>
-    <kd>100.0</kd>
-    <minDepth>0.001</minDepth>
-    <maxVel>1.0</maxVel>
-  </gazebo>
+def main():
+    rclpy.init()
 
-</robot>
+    simple_serial_transmitter = SimpleSerialTransmitter()
+    rclpy.spin(simple_serial_transmitter)
+    
+    simple_serial_transmitter.destroy_node()
+    rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()
+
 ```
-## Crear Launch File para gazebo
+***Programa simple_serial_receiver.ino***
+```c++
+#define LED_PIN 13
 
-Copie la carpeta models en difrobot_description y cree el archivo gazebo.launch.py 
+void setup() {
+  pinMode(LED_PIN, OUTPUT);
+  digitalWrite(LED_PIN, LOW); 
 
+  Serial.begin(115200);
+  Serial.setTimeout(1);
+}
 
+void loop() {
+  if (Serial.available())
+  {
+    int x = Serial.readString().toInt();
+    if(x == 0)
+    {
+      // turn off the led
+      digitalWrite(LED_PIN, LOW); 
+    }
+    else
+    {
+      // turn on the led
+      digitalWrite(LED_PIN, HIGH); 
+    }
+  }
+  delay(0.1);
+}
+```
+## Nodo de Recepción
 
-<p align="center">
-<img src="./Logos/models.png" height="400">
-</p>
+### Simple Serial Receiver Node
 
+Este script en Python crea un nodo de ROS2 que se comunica con un dispositivo Arduino a través de un puerto serial y publica los datos leídos en un tópico de ROS2.
 
+## Descripción General
+
+El nodo llamado `simple_serial_receiver` se conecta a un puerto serial configurado con un baudrate específico, lee datos enviados desde el dispositivo (como un Arduino) y publica estos datos en el tópico de ROS2 llamado `serial_receiver`.
+
+### Requisitos
+
+- ROS2 (en este caso, Humble o compatible).
+- Biblioteca `pyserial` para interactuar con el puerto serial.
+- Un dispositivo (como un Arduino) conectado al puerto serial que envíe datos.
+
+### Configuración de los Parámetros
+
+El programa admite dos parámetros configurables:
+
+1. **`port`**: El puerto serial al que está conectado el dispositivo (por defecto `/dev/ttyACM0`).
+2. **`baudrate`**: La tasa de baudios para la comunicación serial (por defecto `115200`).
+
+Ambos parámetros se pueden modificar desde la línea de comandos o en un archivo de configuración para adaptarse a diferentes dispositivos.
+
+### Estructura del Código
+
+#### 1. **Clase `SimpleSerialReceiver`**
+
+- **`__init__()`**: 
+  - Inicializa el nodo ROS2 con el nombre `"simple_serial_receiver"`.
+  - Declara los parámetros del puerto serial (`port`) y la tasa de baudios (`baudrate`).
+  - Abre el puerto serial usando los parámetros configurados.
+  - Crea un publicador para el tópico `serial_receiver` que envía mensajes de tipo `std_msgs/String`.
+  - Define un temporizador (`timer_`) que se ejecuta con una frecuencia de 0.01 segundos (10ms) para leer los datos del puerto serial periódicamente.
+
+- **`timerCallback()`**:
+  - Esta función se ejecuta con la frecuencia configurada por el temporizador.
+  - Verifica si el puerto serial está abierto.
+  - Lee una línea de datos del puerto serial.
+  - Intenta decodificar los datos leídos a UTF-8 para asegurarse de que el mensaje es legible.
+  - Publica los datos leídos en el tópico `serial_receiver` en formato de string.
+
+#### 2. **Función `main()`**
+
+- Inicia el sistema de ROS2.
+- Crea una instancia de la clase `SimpleSerialReceiver`.
+- Hace girar el nodo para que permanezca en funcionamiento y escuche eventos.
+- Al terminar, destruye el nodo y apaga el sistema de ROS2.
+
+### Uso
+
+Ejecutar nodo de recepción
+![alt text](image.png)
+
+```bash
+ros2 run difrobot_firmware simple_serial_receiver.py --ros-args -p port:=/dev/ttyACM0
+```
+Listar topicos
+```bash
+ros2 topic list
+```
+Escuchar puerto
+```bash
+ros2 topic echo /serial_receiver
+```
+
+***simple_serial_receiver.py***
 
 ```python
-import os
-from os import pathsep
-from ament_index_python.packages import get_package_share_directory, get_package_prefix
-
-from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, SetEnvironmentVariable
-from launch.substitutions import Command, LaunchConfiguration
-from launch.launch_description_sources import PythonLaunchDescriptionSource
-
-from launch_ros.actions import Node
-from launch_ros.parameter_descriptions import ParameterValue
+#!/usr/bin/env python3
+import serial
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
 
 
-def generate_launch_description():
-    difrobot_description = get_package_share_directory("difrobot_description")
-    difrobot_description_prefix = get_package_prefix("difrobot_description")
-    gazebo_ros_dir = get_package_share_directory("gazebo_ros")
+class SimpleSerialReceiver(Node):
+    def __init__(self):
+        super().__init__("simple_serial_receiver")
 
-    model_arg = DeclareLaunchArgument(name="model", default_value=os.path.join(
-                                        difrobot_description, "urdf", "difrobot.urdf.xacro"
-                                        ),
-                                      description="Absolute path to robot urdf file"
-    )
+        self.declare_parameter("port", "/dev/ttyACM0")
+        self.declare_parameter("baudrate", 115200)
 
-    model_path = os.path.join(difrobot_description, "models")
-    model_path += pathsep + os.path.join(difrobot_description_prefix, "share")
+        self.port_ = self.get_parameter("port").value
+        self.baudrate_ = self.get_parameter("baudrate").value
 
-    env_var = SetEnvironmentVariable("GAZEBO_MODEL_PATH", model_path)
+        self.pub_ = self.create_publisher(String, "serial_receiver", 10)
+        self.arduino_ = serial.Serial(port=self.port_, baudrate=self.baudrate_, timeout=0.1)
 
-    robot_description = ParameterValue(Command(["xacro ", LaunchConfiguration("model")]),
-                                       value_type=str)
+        self.frequency_ = 0.01
+        self.timer_ = self.create_timer(self.frequency_, self.timerCallback)
 
-    robot_state_publisher_node = Node(
-        package="robot_state_publisher",
-        executable="robot_state_publisher",
-        parameters=[{"robot_description": robot_description}]
-    )
+    def timerCallback(self):
+        if rclpy.ok() and self.arduino_.is_open:
+            data = self.arduino_.readline()
 
-    start_gazebo_server = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(gazebo_ros_dir, "launch", "gzserver.launch.py")
-        )
-    )
+            try:
+                data.decode("utf-8")
+            except:
+                return
 
-    start_gazebo_client = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(gazebo_ros_dir, "launch", "gzclient.launch.py")
-        )
-    )
+            msg = String()
+            msg.data = str(data)
+            self.pub_.publish(msg)
 
-    spawn_robot = Node(package="gazebo_ros", executable="spawn_entity.py",
-                        arguments=["-entity", "difrobot",
-                                   "-topic", "robot_description",
-                                  ],
-                        output="screen"
-    )
 
-    return LaunchDescription([
-        env_var,
-        model_arg,
-        start_gazebo_server,
-        start_gazebo_client,
-        robot_state_publisher_node,
-        spawn_robot
-    ])
+def main():
+    rclpy.init()
+
+    simple_serial_receiver = SimpleSerialReceiver()
+    rclpy.spin(simple_serial_receiver)
+    
+    simple_serial_receiver.destroy_node()
+    rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()
+```
+***Programa simple_serial_transmitter.ino***
+```c++
+int x = 0;
+
+void setup() {
+  Serial.begin(115200);
+  Serial.setTimeout(1);
+}
+
+void loop() {
+  Serial.println(x);
+  x++;
+  delay(0.1);
+}
+```
+## Configuración de motor
+
+***Programa simple_motor_control.ino***
+```c++
+// L298N H-Bridge Connection PINs
+#define L298N_enA 6  // PWM 9
+#define L298N_in2 7 // Dir Motor A 13
+#define L298N_in1 8  // Dir Motor A 12
+
+float cmd = 0;
+
+void setup() {
+  // Set pin modes
+  pinMode(L298N_enA, OUTPUT);
+  pinMode(L298N_in1, OUTPUT);
+  pinMode(L298N_in2, OUTPUT);
+  
+  // Set Motor Rotation Direction
+  digitalWrite(L298N_in1, HIGH);
+  digitalWrite(L298N_in2, LOW);
+
+  Serial.begin(115200);
+}
+
+void loop() {
+  if (Serial.available())
+  {
+    cmd = Serial.readString().toFloat();
+  }
+  analogWrite(L298N_enA, cmd*100);
+}
+```
+## Configuración de Encoder
+
+### Componentes
+
+- Arduino
+- Módulo Puente H L298N
+- Motor DC
+- Encoder de rueda
+- Fuente de alimentación adecuada para el motor
+
+- `right_wheel_meas_vel`: Almacena la velocidad medida de la rueda en rad/s.
+
+1. Función rightEncoderCallback():
+Esta función se ejecuta cada vez que se detecta un flanco ascendente en el pin right_encoder_phaseA (pulsos del encoder). Lee el estado del pin right_encoder_phaseB para determinar la dirección de rotación del motor:
+
+- Si right_encoder_phaseB está en ALTO, la rotación es positiva (sentido horario).
+- Si right_encoder_phaseB está en BAJO, la rotación es negativa (sentido antihorario).
+
+
+2. Calcula la velocidad de la rueda derecha usando la siguiente fórmula:
+La ecuación para calcular la velocidad de la rueda derecha es:
+
+La ecuación para calcular la velocidad de la rueda es:
+
+\[
+\text{right\_wheel\_meas\_vel} = \left( 10 \times \text{right\_encoder\_counter} \times \left( \frac{60.0}{385.0} \right) \right) \times 0.10472
+\]
+- right_encoder_counter: Número de pulsos del encoder.
+- 60.0 / 385.0: Convierte pulsos en revoluciones por minuto (RPM).
+
+- (385) numero de Ticks en una vuelta: resolución del encoder
+
+- 0.10472: Conversión de RPM a radianes por segundo (rad/s).
+La constante de conversión de RPM a radianes por segundo es:
+
+\[
+1 \, \text{RPM} = \frac{2 \pi}{60} \, \text{rad/s} \approx 0.10472 \, \text{rad/s}
+\]
+
+
+- 10: Ajuste para convertir los pulsos medidos cada 100 ms a una velocidad por segundo.
+
+***Programa Simple_encoder_reader.ino***
+```c++
+// L298N H-Bridge Connection PINs
+#define L298N_enA 6  // PWM 9
+#define L298N_in2 7  // Dir Motor A 13
+#define L298N_in1 8  // Dir Motor A 12
+
+#define right_encoder_phaseA 2  // Interrupt 3
+#define right_encoder_phaseB 3  // 5
+
+unsigned int right_encoder_counter = 0;
+String right_encoder_sign = "p";
+double right_wheel_meas_vel = 0.0;    // rad/s
+
+void setup() {
+  // Set pin modes
+  pinMode(L298N_enA, OUTPUT);
+  pinMode(L298N_in1, OUTPUT);
+  pinMode(L298N_in2, OUTPUT);
+  
+  // Set Motor Rotation Direction
+  digitalWrite(L298N_in1, HIGH);
+  digitalWrite(L298N_in2, LOW);
+
+  Serial.begin(115200);
+
+  pinMode(right_encoder_phaseB, INPUT);
+  attachInterrupt(digitalPinToInterrupt(right_encoder_phaseA), rightEncoderCallback, RISING);
+}
+
+void loop() {
+  right_wheel_meas_vel = (10 * right_encoder_counter * (60.0/385.0)) * 0.10472;
+  String encoder_read = "r" + right_encoder_sign + String(right_wheel_meas_vel);
+  Serial.println(encoder_read);
+  right_encoder_counter = 0;
+  analogWrite(L298N_enA, 100);
+  delay(100);
+}
+
+void rightEncoderCallback()
+{
+  if(digitalRead(right_encoder_phaseB) == HIGH)
+  {
+    right_encoder_sign = "p";
+  }
+  else
+  {
+    right_encoder_sign = "n";
+  }
+  right_encoder_counter++;
+}
 
 ```
-display.launch.py
-```python
-import os
-from ament_index_python.packages import get_package_share_directory
-
-from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument
-from launch.substitutions import Command, LaunchConfiguration
-
-from launch_ros.actions import Node
-from launch_ros.parameter_descriptions import ParameterValue
-
-
-def generate_launch_description():
-    difrobot_description_dir = get_package_share_directory("difrobot_description")
-
-    model_arg = DeclareLaunchArgument(name="model", default_value=os.path.join(
-                                        difrobot_description_dir, "urdf", "difrobot.urdf.xacro"
-                                        ),
-                                      description="Absolute path to robot urdf file")
-
-    robot_description = ParameterValue(Command(["xacro ", LaunchConfiguration("model")]),
-                                       value_type=str)
-
-    robot_state_publisher_node = Node(
-        package="robot_state_publisher",
-        executable="robot_state_publisher",
-        parameters=[{"robot_description": robot_description}]
-    )
-
-    joint_state_publisher_gui_node = Node(
-        package="joint_state_publisher_gui",
-        executable="joint_state_publisher_gui"
-    )
-
-    rviz_node = Node(
-        package="rviz2",
-        executable="rviz2",
-        name="rviz2",
-        output="screen",
-        arguments=["-d", os.path.join(difrobot_description_dir, "rviz", "display.rviz")],
-    )
-
-    return LaunchDescription([
-        model_arg,
-        joint_state_publisher_gui_node,
-        robot_state_publisher_node,
-        rviz_node
-    ])
-```
-Agregar carpeta models en cmake
-
+***Archivo CMakeList.txt***
 ```c++
 cmake_minimum_required(VERSION 3.8)
-project(difrobot_description)
+project(difrobot_firmware)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# find dependencies
+
+# Encuentra los paquetes necesarios de Python
 find_package(ament_cmake REQUIRED)
+find_package(ament_cmake_python REQUIRED)
+find_package(rclpy REQUIRED)
+find_package(std_msgs REQUIRED)
 
+# Instalar el paquete de Python
+ament_python_install_package(${PROJECT_NAME})
 
-install(
-  DIRECTORY meshes urdf models launch rviz
-  DESTINATION share/${PROJECT_NAME}
-
+# Instalar scripts Python
+install(PROGRAMS
+  ${PROJECT_NAME}/simple_serial_transmitter.py
+  ${PROJECT_NAME}/simple_serial_receiver.py
+  DESTINATION lib/${PROJECT_NAME}
 )
 
-if(BUILD_TESTING)
-  find_package(ament_lint_auto REQUIRED)
-  set(ament_cmake_copyright_FOUND TRUE)
-  set(ament_cmake_cpplint_FOUND TRUE)
-  ament_lint_auto_find_test_dependencies()
-endif()
+
+# Exportar dependencias necesarias
+ament_export_dependencies(
+  rclpy
+  std_msgs
+)
 
 ament_package()
 ```
-
-Agregar las dependencias en package.xml
+***Archivo package.xml***
 
 ```xml
+
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>difrobot_description</name>
+  <name>difrobot_firmware</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="faustoandresescobar@gmail.com">ros</maintainer>
+  <maintainer email="ros@todo.todo">ros</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
 
-  <exec_depend>robot_state_publisher</exec_depend>
-  <exec_depend>joint_state_publisher_gui</exec_depend>
-  <exec_depend>rviz2</exec_depend>
-  <exec_depend>ros2launch</exec_depend>
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
 
+  <exec_depend>python3-serial</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
@@ -475,30 +516,4 @@ Agregar las dependencias en package.xml
     <build_type>ament_cmake</build_type>
   </export>
 </package>
-
 ```
-Abre una terminal y sigue los siguientes pasos.
-
-
-compilar el proyecto
-```bash
-cd difrobot_ws/
-```
-
-```bash
-colcon build
-```
-En una nueva terminal :
-```bash
-. install/setup.bash
-```
-```bash
-ros2 launch difrobot_description gazebo.launch.py
-```
-
-
-
-<p align="center">
-<img src="./Logos/GazeboResult.png" height="400">
-</p>
-
