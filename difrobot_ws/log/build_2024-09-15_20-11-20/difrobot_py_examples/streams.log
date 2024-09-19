@@ -1,0 +1,24 @@
+[2.194s] Invoking command in '/home/user/difrobot_ws/src/difrobot_py_examples': PYTHONPATH=/home/user/difrobot_ws/build/difrobot_py_examples/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/user/difrobot_ws/install/difrobot_py_examples/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/difrobot_py_examples build --build-base /home/user/difrobot_ws/build/difrobot_py_examples/build install --record /home/user/difrobot_ws/build/difrobot_py_examples/install.log --single-version-externally-managed install_data
+[2.991s] running egg_info
+[2.994s] writing ../../build/difrobot_py_examples/difrobot_py_examples.egg-info/PKG-INFO
+[2.995s] writing dependency_links to ../../build/difrobot_py_examples/difrobot_py_examples.egg-info/dependency_links.txt
+[2.996s] writing entry points to ../../build/difrobot_py_examples/difrobot_py_examples.egg-info/entry_points.txt
+[2.997s] writing requirements to ../../build/difrobot_py_examples/difrobot_py_examples.egg-info/requires.txt
+[2.998s] writing top-level names to ../../build/difrobot_py_examples/difrobot_py_examples.egg-info/top_level.txt
+[3.006s] reading manifest file '../../build/difrobot_py_examples/difrobot_py_examples.egg-info/SOURCES.txt'
+[3.009s] writing manifest file '../../build/difrobot_py_examples/difrobot_py_examples.egg-info/SOURCES.txt'
+[3.009s] running build
+[3.010s] running build_py
+[3.011s] running install
+[3.012s] running install_lib
+[3.017s] running install_data
+[3.017s] running install_egg_info
+[3.023s] removing '/home/user/difrobot_ws/install/difrobot_py_examples/lib/python3.10/site-packages/difrobot_py_examples-0.0.0-py3.10.egg-info' (and everything under it)
+[3.028s] Copying ../../build/difrobot_py_examples/difrobot_py_examples.egg-info to /home/user/difrobot_ws/install/difrobot_py_examples/lib/python3.10/site-packages/difrobot_py_examples-0.0.0-py3.10.egg-info
+[3.036s] running install_scripts
+[3.094s] Installing simple_service_client script to /home/user/difrobot_ws/install/difrobot_py_examples/lib/difrobot_py_examples
+[3.095s] Installing simple_service_server script to /home/user/difrobot_ws/install/difrobot_py_examples/lib/difrobot_py_examples
+[3.096s] Installing simple_tf_kinematics script to /home/user/difrobot_ws/install/difrobot_py_examples/lib/difrobot_py_examples
+[3.097s] Installing simple_turtlesim_kinematics script to /home/user/difrobot_ws/install/difrobot_py_examples/lib/difrobot_py_examples
+[3.099s] writing list of installed files to '/home/user/difrobot_ws/build/difrobot_py_examples/install.log'
+[3.154s] Invoked command in '/home/user/difrobot_ws/src/difrobot_py_examples' returned '0': PYTHONPATH=/home/user/difrobot_ws/build/difrobot_py_examples/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/user/difrobot_ws/install/difrobot_py_examples/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/difrobot_py_examples build --build-base /home/user/difrobot_ws/build/difrobot_py_examples/build install --record /home/user/difrobot_ws/build/difrobot_py_examples/install.log --single-version-externally-managed install_data

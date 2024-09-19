@@ -1,0 +1,49 @@
+[0.066s] Invoking command in '/home/user/difrobot_ws/build/difrobot_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/user/difrobot_ws/install/difrobot_py_examples:/opt/ros/humble /usr/bin/cmake --build /home/user/difrobot_ws/build/difrobot_controller -- -j12 -l12
+[0.243s] [  0%] Built target ament_cmake_python_copy_difrobot_controller
+[0.324s] [100%] Built target simple_controller
+[1.081s] running egg_info
+[1.084s] writing difrobot_controller.egg-info/PKG-INFO
+[1.085s] writing dependency_links to difrobot_controller.egg-info/dependency_links.txt
+[1.085s] writing top-level names to difrobot_controller.egg-info/top_level.txt
+[1.094s] reading manifest file 'difrobot_controller.egg-info/SOURCES.txt'
+[1.096s] writing manifest file 'difrobot_controller.egg-info/SOURCES.txt'
+[1.173s] [100%] Built target ament_cmake_python_build_difrobot_controller_egg
+[1.199s] Invoked command in '/home/user/difrobot_ws/build/difrobot_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/user/difrobot_ws/install/difrobot_py_examples:/opt/ros/humble /usr/bin/cmake --build /home/user/difrobot_ws/build/difrobot_controller -- -j12 -l12
+[1.272s] Invoking command in '/home/user/difrobot_ws/build/difrobot_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/user/difrobot_ws/install/difrobot_py_examples:/opt/ros/humble /usr/bin/cmake --install /home/user/difrobot_ws/build/difrobot_controller
+[1.287s] -- Install configuration: ""
+[1.288s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/environment/pythonpath.sh
+[1.288s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/environment/pythonpath.dsv
+[1.290s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages/difrobot_controller-0.0.0-py3.10.egg-info
+[1.290s] -- Installing: /home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages/difrobot_controller-0.0.0-py3.10.egg-info/PKG-INFO
+[1.291s] -- Installing: /home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages/difrobot_controller-0.0.0-py3.10.egg-info/dependency_links.txt
+[1.292s] -- Installing: /home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages/difrobot_controller-0.0.0-py3.10.egg-info/SOURCES.txt
+[1.292s] -- Installing: /home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages/difrobot_controller-0.0.0-py3.10.egg-info/top_level.txt
+[1.293s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages/difrobot_controller
+[1.293s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages/difrobot_controller/simple_controller.py
+[1.294s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages/difrobot_controller/__init__.py
+[1.408s] Listing '/home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages/difrobot_controller'...
+[1.422s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/include/include
+[1.422s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/include/include/difrobot_controller
+[1.423s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/include/include/difrobot_controller/simple_controller.hpp
+[1.423s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/lib/difrobot_controller/simple_controller
+[1.425s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/launch
+[1.425s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/launch/controller.launch.py
+[1.427s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/config
+[1.428s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/config/difrobot_controllers.yaml
+[1.428s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/lib/difrobot_controller/simple_controller.py
+[1.429s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/ament_index/resource_index/package_run_dependencies/difrobot_controller
+[1.430s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/ament_index/resource_index/parent_prefix_path/difrobot_controller
+[1.431s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/environment/ament_prefix_path.sh
+[1.431s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/environment/ament_prefix_path.dsv
+[1.432s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/environment/path.sh
+[1.433s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/environment/path.dsv
+[1.436s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/local_setup.bash
+[1.439s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/local_setup.sh
+[1.441s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/local_setup.zsh
+[1.441s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/local_setup.dsv
+[1.442s] -- Installing: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/package.dsv
+[1.443s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/ament_index/resource_index/packages/difrobot_controller
+[1.443s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/cmake/difrobot_controllerConfig.cmake
+[1.444s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/cmake/difrobot_controllerConfig-version.cmake
+[1.444s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/package.xml
+[1.445s] Invoked command in '/home/user/difrobot_ws/build/difrobot_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/user/difrobot_ws/install/difrobot_py_examples:/opt/ros/humble /usr/bin/cmake --install /home/user/difrobot_ws/build/difrobot_controller

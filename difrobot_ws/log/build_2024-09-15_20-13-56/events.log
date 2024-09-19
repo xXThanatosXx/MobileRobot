@@ -1,0 +1,403 @@
+[0.000000] (-) TimerEvent: {}
+[0.001806] (difrobot_controller) JobQueued: {'identifier': 'difrobot_controller', 'dependencies': OrderedDict()}
+[0.002751] (difrobot_description) JobQueued: {'identifier': 'difrobot_description', 'dependencies': OrderedDict()}
+[0.003045] (difrobot_msgs) JobQueued: {'identifier': 'difrobot_msgs', 'dependencies': OrderedDict()}
+[0.003697] (difrobot_py_examples) JobQueued: {'identifier': 'difrobot_py_examples', 'dependencies': OrderedDict([('difrobot_msgs', '/home/user/difrobot_ws/install/difrobot_msgs')])}
+[0.004527] (difrobot_msgs) JobStarted: {'identifier': 'difrobot_msgs'}
+[0.039172] (difrobot_controller) JobStarted: {'identifier': 'difrobot_controller'}
+[0.066399] (difrobot_description) JobStarted: {'identifier': 'difrobot_description'}
+[0.092800] (difrobot_msgs) JobProgress: {'identifier': 'difrobot_msgs', 'progress': 'cmake'}
+[0.097292] (difrobot_msgs) JobProgress: {'identifier': 'difrobot_msgs', 'progress': 'build'}
+[0.100925] (difrobot_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/user/difrobot_ws/build/difrobot_msgs', '--', '-j12', '-l12'], 'cwd': '/home/user/difrobot_ws/build/difrobot_msgs', 'env': OrderedDict([('HOSTNAME', 'd7a6b0117b52'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/user/difrobot_ws/install/difrobot_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/user'), ('OLDPWD', '/home/user'), ('ROS_PYTHON_VERSION', '3'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/user/difrobot_ws/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', 'host.docker.internal:0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/user/difrobot_ws/install/difrobot_py_examples:/home/user/difrobot_ws/install/difrobot_msgs:/home/user/difrobot_ws/install/difrobot_description:/home/user/difrobot_ws/install/difrobot_controller:/opt/ros/humble'), ('TERMINATOR_UUID', 'urn:uuid:90f46ffc-f9e5-45a3-ba18-1ff44e74abdb'), ('PWD', '/home/user/difrobot_ws/build/difrobot_msgs'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/home/user/difrobot_ws/install/difrobot_py_examples/lib/python3.10/site-packages:/home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages:/home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/user/difrobot_ws/install/difrobot_msgs:/home/user/difrobot_ws/install/difrobot_description:/home/user/difrobot_ws/install/difrobot_controller:/home/user/difrobot_ws/install/difrobot_py_examples:/opt/ros/humble')]), 'shell': False}
+[0.112808] (-) TimerEvent: {}
+[0.113565] (difrobot_controller) JobProgress: {'identifier': 'difrobot_controller', 'progress': 'cmake'}
+[0.114771] (difrobot_controller) JobProgress: {'identifier': 'difrobot_controller', 'progress': 'build'}
+[0.116437] (difrobot_controller) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/user/difrobot_ws/build/difrobot_controller', '--', '-j12', '-l12'], 'cwd': '/home/user/difrobot_ws/build/difrobot_controller', 'env': OrderedDict([('HOSTNAME', 'd7a6b0117b52'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/user/difrobot_ws/install/difrobot_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/user'), ('OLDPWD', '/home/user'), ('ROS_PYTHON_VERSION', '3'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/user/difrobot_ws/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', 'host.docker.internal:0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/user/difrobot_ws/install/difrobot_py_examples:/home/user/difrobot_ws/install/difrobot_msgs:/home/user/difrobot_ws/install/difrobot_description:/home/user/difrobot_ws/install/difrobot_controller:/opt/ros/humble'), ('TERMINATOR_UUID', 'urn:uuid:90f46ffc-f9e5-45a3-ba18-1ff44e74abdb'), ('PWD', '/home/user/difrobot_ws/build/difrobot_controller'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/home/user/difrobot_ws/install/difrobot_py_examples/lib/python3.10/site-packages:/home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages:/home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/user/difrobot_ws/install/difrobot_msgs:/home/user/difrobot_ws/install/difrobot_description:/home/user/difrobot_ws/install/difrobot_controller:/home/user/difrobot_ws/install/difrobot_py_examples:/opt/ros/humble')]), 'shell': False}
+[0.140931] (difrobot_description) JobProgress: {'identifier': 'difrobot_description', 'progress': 'cmake'}
+[0.146853] (difrobot_description) JobProgress: {'identifier': 'difrobot_description', 'progress': 'build'}
+[0.148293] (difrobot_description) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/user/difrobot_ws/build/difrobot_description', '--', '-j12', '-l12'], 'cwd': '/home/user/difrobot_ws/build/difrobot_description', 'env': OrderedDict([('HOSTNAME', 'd7a6b0117b52'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/user/difrobot_ws/install/difrobot_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/user'), ('OLDPWD', '/home/user'), ('ROS_PYTHON_VERSION', '3'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/user/difrobot_ws/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', 'host.docker.internal:0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/user/difrobot_ws/install/difrobot_py_examples:/home/user/difrobot_ws/install/difrobot_msgs:/home/user/difrobot_ws/install/difrobot_description:/home/user/difrobot_ws/install/difrobot_controller:/opt/ros/humble'), ('TERMINATOR_UUID', 'urn:uuid:90f46ffc-f9e5-45a3-ba18-1ff44e74abdb'), ('PWD', '/home/user/difrobot_ws/build/difrobot_description'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/home/user/difrobot_ws/install/difrobot_py_examples/lib/python3.10/site-packages:/home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages:/home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/user/difrobot_ws/install/difrobot_msgs:/home/user/difrobot_ws/install/difrobot_description:/home/user/difrobot_ws/install/difrobot_controller:/home/user/difrobot_ws/install/difrobot_py_examples:/opt/ros/humble')]), 'shell': False}
+[0.213143] (-) TimerEvent: {}
+[0.273306] (difrobot_description) CommandEnded: {'returncode': 0}
+[0.297971] (difrobot_msgs) StdoutLine: {'line': b'[  2%] Built target difrobot_msgs__cpp\n'}
+[0.302966] (difrobot_msgs) StdoutLine: {'line': b'[ 12%] Built target difrobot_msgs__rosidl_generator_c\n'}
+[0.313250] (-) TimerEvent: {}
+[0.355232] (difrobot_controller) StdoutLine: {'line': b'[  0%] Built target ament_cmake_python_copy_difrobot_controller\n'}
+[0.366550] (difrobot_msgs) StdoutLine: {'line': b'[ 12%] Built target ament_cmake_python_copy_difrobot_msgs\n'}
+[0.413428] (-) TimerEvent: {}
+[0.437662] (difrobot_controller) StdoutLine: {'line': b'[100%] Built target simple_controller\n'}
+[0.443914] (difrobot_msgs) StdoutLine: {'line': b'[ 23%] Built target difrobot_msgs__rosidl_typesupport_cpp\n'}
+[0.477700] (difrobot_msgs) StdoutLine: {'line': b'[ 33%] Built target difrobot_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[0.513030] (difrobot_msgs) StdoutLine: {'line': b'[ 43%] Built target difrobot_msgs__rosidl_typesupport_introspection_cpp\n'}
+[0.513602] (-) TimerEvent: {}
+[0.517235] (difrobot_description) JobProgress: {'identifier': 'difrobot_description', 'progress': 'install'}
+[0.547252] (difrobot_msgs) StdoutLine: {'line': b'[ 53%] Built target difrobot_msgs__rosidl_typesupport_c\n'}
+[0.570539] (difrobot_msgs) StdoutLine: {'line': b'[ 64%] Built target difrobot_msgs__rosidl_typesupport_introspection_c\n'}
+[0.587249] (difrobot_description) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/user/difrobot_ws/build/difrobot_description'], 'cwd': '/home/user/difrobot_ws/build/difrobot_description', 'env': OrderedDict([('HOSTNAME', 'd7a6b0117b52'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/user/difrobot_ws/install/difrobot_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/user'), ('OLDPWD', '/home/user'), ('ROS_PYTHON_VERSION', '3'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/user/difrobot_ws/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', 'host.docker.internal:0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/user/difrobot_ws/install/difrobot_py_examples:/home/user/difrobot_ws/install/difrobot_msgs:/home/user/difrobot_ws/install/difrobot_description:/home/user/difrobot_ws/install/difrobot_controller:/opt/ros/humble'), ('TERMINATOR_UUID', 'urn:uuid:90f46ffc-f9e5-45a3-ba18-1ff44e74abdb'), ('PWD', '/home/user/difrobot_ws/build/difrobot_description'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/home/user/difrobot_ws/install/difrobot_py_examples/lib/python3.10/site-packages:/home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages:/home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/user/difrobot_ws/install/difrobot_msgs:/home/user/difrobot_ws/install/difrobot_description:/home/user/difrobot_ws/install/difrobot_controller:/home/user/difrobot_ws/install/difrobot_py_examples:/opt/ros/humble')]), 'shell': False}
+[0.614307] (-) TimerEvent: {}
+[0.632933] (difrobot_msgs) StdoutLine: {'line': b'[ 74%] Built target difrobot_msgs__rosidl_typesupport_fastrtps_c\n'}
+[0.638411] (difrobot_description) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.642180] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/meshes\n'}
+[0.642612] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/meshes/caster_rear_link.STL\n'}
+[0.643005] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/meshes/wheel_left_link.STL\n'}
+[0.643394] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/meshes/wheel_right_link.STL\n'}
+[0.643779] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/meshes/caster_front_link.STL\n'}
+[0.644180] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/meshes/imu_link.STL\n'}
+[0.644574] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/meshes/base_link.STL\n'}
+[0.652051] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/urdf\n'}
+[0.652711] (difrobot_description) StdoutLine: {'line': b'-- Installing: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/urdf/difrobot_gazebo.xacro\n'}
+[0.653315] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/urdf/difrobot.urdf.xacro\n'}
+[0.653953] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/urdf/difrobot_ros2_control.xacro\n'}
+[0.654587] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/models\n'}
+[0.659126] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/models/sun\n'}
+[0.660216] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/models/sun/model-1_4.sdf\n'}
+[0.661398] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/models/sun/model.config\n'}
+[0.661898] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/models/sun/model.sdf\n'}
+[0.662312] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/models/sun/model-1_3.sdf\n'}
+[0.662663] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/models/sun/model-1_2.sdf\n'}
+[0.663007] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/models/ground_plane\n'}
+[0.663386] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/models/ground_plane/model-1_4.sdf\n'}
+[0.663747] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/models/ground_plane/model.config\n'}
+[0.664114] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/models/ground_plane/model.sdf\n'}
+[0.664486] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/models/ground_plane/model-1_3.sdf\n'}
+[0.664831] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/models/ground_plane/model-1_2.sdf\n'}
+[0.665190] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/launch\n'}
+[0.665521] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/launch/display.launch.py\n'}
+[0.665865] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/launch/gazebo.launch.py\n'}
+[0.666885] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/rviz\n'}
+[0.668205] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/rviz/display.rviz\n'}
+[0.668881] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/ament_index/resource_index/package_run_dependencies/difrobot_description\n'}
+[0.676807] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/ament_index/resource_index/parent_prefix_path/difrobot_description\n'}
+[0.678178] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/environment/ament_prefix_path.sh\n'}
+[0.678687] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/environment/ament_prefix_path.dsv\n'}
+[0.697906] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/environment/path.sh\n'}
+[0.698409] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/environment/path.dsv\n'}
+[0.698851] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/local_setup.bash\n'}
+[0.699254] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/local_setup.sh\n'}
+[0.699604] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/local_setup.zsh\n'}
+[0.699949] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/local_setup.dsv\n'}
+[0.700331] (difrobot_description) StdoutLine: {'line': b'-- Installing: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/package.dsv\n'}
+[0.700725] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/ament_index/resource_index/packages/difrobot_description\n'}
+[0.701091] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/cmake/difrobot_descriptionConfig.cmake\n'}
+[0.701604] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/cmake/difrobot_descriptionConfig-version.cmake\n'}
+[0.702033] (difrobot_description) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_description/share/difrobot_description/package.xml\n'}
+[0.702395] (difrobot_description) CommandEnded: {'returncode': 0}
+[0.715156] (-) TimerEvent: {}
+[0.815933] (-) TimerEvent: {}
+[0.825120] (difrobot_msgs) StdoutLine: {'line': b'[ 74%] Built target difrobot_msgs\n'}
+[0.916140] (-) TimerEvent: {}
+[1.008070] (difrobot_msgs) StdoutLine: {'line': b'[ 76%] Built target difrobot_msgs__py\n'}
+[1.017354] (-) TimerEvent: {}
+[1.119408] (-) TimerEvent: {}
+[1.154417] (difrobot_msgs) StdoutLine: {'line': b'[ 84%] Built target difrobot_msgs__rosidl_generator_py\n'}
+[1.186920] (difrobot_description) JobEnded: {'identifier': 'difrobot_description', 'rc': 0}
+[1.220949] (-) TimerEvent: {}
+[1.314294] (difrobot_msgs) StdoutLine: {'line': b'[ 89%] Built target difrobot_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[1.321107] (-) TimerEvent: {}
+[1.330109] (difrobot_msgs) StdoutLine: {'line': b'[ 94%] Built target difrobot_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[1.352885] (difrobot_msgs) StdoutLine: {'line': b'[100%] Built target difrobot_msgs__rosidl_typesupport_c__pyext\n'}
+[1.421338] (-) TimerEvent: {}
+[1.522748] (-) TimerEvent: {}
+[1.623479] (-) TimerEvent: {}
+[1.724187] (-) TimerEvent: {}
+[1.826506] (-) TimerEvent: {}
+[1.928262] (-) TimerEvent: {}
+[2.029995] (-) TimerEvent: {}
+[2.130791] (-) TimerEvent: {}
+[2.231903] (-) TimerEvent: {}
+[2.306097] (difrobot_controller) StdoutLine: {'line': b'running egg_info\n'}
+[2.315144] (difrobot_controller) StdoutLine: {'line': b'writing difrobot_controller.egg-info/PKG-INFO\n'}
+[2.322500] (difrobot_controller) StdoutLine: {'line': b'writing dependency_links to difrobot_controller.egg-info/dependency_links.txt\n'}
+[2.326594] (difrobot_controller) StdoutLine: {'line': b'writing top-level names to difrobot_controller.egg-info/top_level.txt\n'}
+[2.334404] (-) TimerEvent: {}
+[2.338125] (difrobot_controller) StdoutLine: {'line': b"reading manifest file 'difrobot_controller.egg-info/SOURCES.txt'\n"}
+[2.346829] (difrobot_controller) StdoutLine: {'line': b"writing manifest file 'difrobot_controller.egg-info/SOURCES.txt'\n"}
+[2.371371] (difrobot_msgs) StdoutLine: {'line': b'running egg_info\n'}
+[2.382564] (difrobot_msgs) StdoutLine: {'line': b'writing difrobot_msgs.egg-info/PKG-INFO\n'}
+[2.383621] (difrobot_msgs) StdoutLine: {'line': b'writing dependency_links to difrobot_msgs.egg-info/dependency_links.txt\n'}
+[2.388406] (difrobot_msgs) StdoutLine: {'line': b'writing top-level names to difrobot_msgs.egg-info/top_level.txt\n'}
+[2.403144] (difrobot_msgs) StdoutLine: {'line': b"reading manifest file 'difrobot_msgs.egg-info/SOURCES.txt'\n"}
+[2.415551] (difrobot_msgs) StdoutLine: {'line': b"writing manifest file 'difrobot_msgs.egg-info/SOURCES.txt'\n"}
+[2.435350] (-) TimerEvent: {}
+[2.484372] (difrobot_controller) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_difrobot_controller_egg\n'}
+[2.535833] (-) TimerEvent: {}
+[2.538058] (difrobot_controller) CommandEnded: {'returncode': 0}
+[2.554128] (difrobot_msgs) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_difrobot_msgs_egg\n'}
+[2.627419] (difrobot_msgs) CommandEnded: {'returncode': 0}
+[2.636456] (-) TimerEvent: {}
+[2.724506] (difrobot_controller) JobProgress: {'identifier': 'difrobot_controller', 'progress': 'install'}
+[2.725195] (difrobot_controller) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/user/difrobot_ws/build/difrobot_controller'], 'cwd': '/home/user/difrobot_ws/build/difrobot_controller', 'env': OrderedDict([('HOSTNAME', 'd7a6b0117b52'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/user/difrobot_ws/install/difrobot_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/user'), ('OLDPWD', '/home/user'), ('ROS_PYTHON_VERSION', '3'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/user/difrobot_ws/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', 'host.docker.internal:0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/user/difrobot_ws/install/difrobot_py_examples:/home/user/difrobot_ws/install/difrobot_msgs:/home/user/difrobot_ws/install/difrobot_description:/home/user/difrobot_ws/install/difrobot_controller:/opt/ros/humble'), ('TERMINATOR_UUID', 'urn:uuid:90f46ffc-f9e5-45a3-ba18-1ff44e74abdb'), ('PWD', '/home/user/difrobot_ws/build/difrobot_controller'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/home/user/difrobot_ws/install/difrobot_py_examples/lib/python3.10/site-packages:/home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages:/home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/user/difrobot_ws/install/difrobot_msgs:/home/user/difrobot_ws/install/difrobot_description:/home/user/difrobot_ws/install/difrobot_controller:/home/user/difrobot_ws/install/difrobot_py_examples:/opt/ros/humble')]), 'shell': False}
+[2.737693] (-) TimerEvent: {}
+[2.776885] (difrobot_controller) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[2.780404] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/environment/pythonpath.sh\n'}
+[2.781974] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/environment/pythonpath.dsv\n'}
+[2.783447] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages/difrobot_controller-0.0.0-py3.10.egg-info\n'}
+[2.792326] (difrobot_controller) StdoutLine: {'line': b'-- Installing: /home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages/difrobot_controller-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[2.803555] (difrobot_controller) StdoutLine: {'line': b'-- Installing: /home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages/difrobot_controller-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[2.804355] (difrobot_controller) StdoutLine: {'line': b'-- Installing: /home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages/difrobot_controller-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[2.806660] (difrobot_controller) StdoutLine: {'line': b'-- Installing: /home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages/difrobot_controller-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[2.807637] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages/difrobot_controller\n'}
+[2.809971] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages/difrobot_controller/simple_controller.py\n'}
+[2.810573] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages/difrobot_controller/__init__.py\n'}
+[2.838012] (-) TimerEvent: {}
+[2.960130] (-) TimerEvent: {}
+[3.066427] (-) TimerEvent: {}
+[3.129330] (difrobot_controller) StdoutLine: {'line': b"Listing '/home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages/difrobot_controller'...\n"}
+[3.162900] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/include/include\n'}
+[3.163900] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/include/include/difrobot_controller\n'}
+[3.164368] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/include/include/difrobot_controller/simple_controller.hpp\n'}
+[3.166635] (-) TimerEvent: {}
+[3.171132] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/lib/difrobot_controller/simple_controller\n'}
+[3.172345] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/launch\n'}
+[3.173555] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/launch/controller.launch.py\n'}
+[3.174656] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/config\n'}
+[3.175013] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/config/difrobot_controllers.yaml\n'}
+[3.175414] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/lib/difrobot_controller/simple_controller.py\n'}
+[3.176473] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/ament_index/resource_index/package_run_dependencies/difrobot_controller\n'}
+[3.177175] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/ament_index/resource_index/parent_prefix_path/difrobot_controller\n'}
+[3.177710] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/environment/ament_prefix_path.sh\n'}
+[3.178431] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/environment/ament_prefix_path.dsv\n'}
+[3.179044] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/environment/path.sh\n'}
+[3.181349] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/environment/path.dsv\n'}
+[3.184421] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/local_setup.bash\n'}
+[3.185611] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/local_setup.sh\n'}
+[3.188047] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/local_setup.zsh\n'}
+[3.189097] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/local_setup.dsv\n'}
+[3.193241] (difrobot_controller) StdoutLine: {'line': b'-- Installing: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/package.dsv\n'}
+[3.194959] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/ament_index/resource_index/packages/difrobot_controller\n'}
+[3.196956] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/cmake/difrobot_controllerConfig.cmake\n'}
+[3.202372] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/cmake/difrobot_controllerConfig-version.cmake\n'}
+[3.205978] (difrobot_controller) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_controller/share/difrobot_controller/package.xml\n'}
+[3.216297] (difrobot_controller) CommandEnded: {'returncode': 0}
+[3.269177] (-) TimerEvent: {}
+[3.319245] (difrobot_msgs) JobProgress: {'identifier': 'difrobot_msgs', 'progress': 'install'}
+[3.321209] (difrobot_msgs) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/user/difrobot_ws/build/difrobot_msgs'], 'cwd': '/home/user/difrobot_ws/build/difrobot_msgs', 'env': OrderedDict([('HOSTNAME', 'd7a6b0117b52'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/user/difrobot_ws/install/difrobot_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/user'), ('OLDPWD', '/home/user'), ('ROS_PYTHON_VERSION', '3'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/user/difrobot_ws/install'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', 'host.docker.internal:0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/home/user/difrobot_ws/install/difrobot_py_examples:/home/user/difrobot_ws/install/difrobot_msgs:/home/user/difrobot_ws/install/difrobot_description:/home/user/difrobot_ws/install/difrobot_controller:/opt/ros/humble'), ('TERMINATOR_UUID', 'urn:uuid:90f46ffc-f9e5-45a3-ba18-1ff44e74abdb'), ('PWD', '/home/user/difrobot_ws/build/difrobot_msgs'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/home/user/difrobot_ws/install/difrobot_py_examples/lib/python3.10/site-packages:/home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages:/home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/user/difrobot_ws/install/difrobot_msgs:/home/user/difrobot_ws/install/difrobot_description:/home/user/difrobot_ws/install/difrobot_controller:/home/user/difrobot_ws/install/difrobot_py_examples:/opt/ros/humble')]), 'shell': False}
+[3.371484] (-) TimerEvent: {}
+[3.401915] (difrobot_msgs) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[3.402781] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/ament_index/resource_index/rosidl_interfaces/difrobot_msgs\n'}
+[3.411572] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs\n'}
+[3.414203] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/msg\n'}
+[3.421876] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/msg/rosidl_generator_c__visibility_control.h\n'}
+[3.422810] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv\n'}
+[3.423177] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/add_two_ints.h\n'}
+[3.423557] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail\n'}
+[3.423913] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__type_support.h\n'}
+[3.424247] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__type_support.h\n'}
+[3.424569] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__functions.c\n'}
+[3.424870] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__struct.h\n'}
+[3.425177] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__functions.c\n'}
+[3.425488] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__functions.h\n'}
+[3.425816] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__functions.h\n'}
+[3.426506] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__struct.h\n'}
+[3.427037] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/get_transform.h\n'}
+[3.427485] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/environment/library_path.sh\n'}
+[3.441861] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/environment/library_path.dsv\n'}
+[3.451596] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/lib/libdifrobot_msgs__rosidl_generator_c.so\n'}
+[3.455124] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs\n'}
+[3.455893] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/msg\n'}
+[3.456290] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[3.456719] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv\n'}
+[3.457083] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail\n'}
+[3.457625] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__rosidl_typesupport_fastrtps_c.h\n'}
+[3.458043] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__rosidl_typesupport_fastrtps_c.h\n'}
+[3.458422] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/lib/libdifrobot_msgs__rosidl_typesupport_fastrtps_c.so\n'}
+[3.458788] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs\n'}
+[3.472952] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv\n'}
+[3.473940] (-) TimerEvent: {}
+[3.474332] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/add_two_ints.hpp\n'}
+[3.474742] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail\n'}
+[3.475142] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__traits.hpp\n'}
+[3.479430] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__traits.hpp\n'}
+[3.480178] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__struct.hpp\n'}
+[3.480711] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__builder.hpp\n'}
+[3.485915] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__struct.hpp\n'}
+[3.505117] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__builder.hpp\n'}
+[3.505600] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/get_transform.hpp\n'}
+[3.506959] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs\n'}
+[3.519548] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/msg\n'}
+[3.520128] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[3.521473] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv\n'}
+[3.521951] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail\n'}
+[3.522263] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[3.522552] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[3.522832] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/dds_fastrtps\n'}
+[3.524539] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/lib/libdifrobot_msgs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[3.524887] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs\n'}
+[3.525509] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/msg\n'}
+[3.526221] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[3.526822] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv\n'}
+[3.527385] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail\n'}
+[3.527906] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__type_support.c\n'}
+[3.532179] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__rosidl_typesupport_introspection_c.h\n'}
+[3.532900] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__rosidl_typesupport_introspection_c.h\n'}
+[3.565525] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__type_support.c\n'}
+[3.565953] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/lib/libdifrobot_msgs__rosidl_typesupport_introspection_c.so\n'}
+[3.566341] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/lib/libdifrobot_msgs__rosidl_typesupport_c.so\n'}
+[3.566681] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs\n'}
+[3.567031] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv\n'}
+[3.567430] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail\n'}
+[3.568068] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__type_support.cpp\n'}
+[3.568491] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__rosidl_typesupport_introspection_cpp.hpp\n'}
+[3.569061] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__type_support.cpp\n'}
+[3.569748] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__rosidl_typesupport_introspection_cpp.hpp\n'}
+[3.570218] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/lib/libdifrobot_msgs__rosidl_typesupport_introspection_cpp.so\n'}
+[3.570609] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/lib/libdifrobot_msgs__rosidl_typesupport_cpp.so\n'}
+[3.570991] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/environment/pythonpath.sh\n'}
+[3.571368] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/environment/pythonpath.dsv\n'}
+[3.571818] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs-0.0.0-py3.10.egg-info\n'}
+[3.572218] (difrobot_msgs) StdoutLine: {'line': b'-- Installing: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[3.572662] (difrobot_msgs) StdoutLine: {'line': b'-- Installing: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[3.573220] (difrobot_msgs) StdoutLine: {'line': b'-- Installing: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[3.573625] (difrobot_msgs) StdoutLine: {'line': b'-- Installing: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[3.573992] (-) TimerEvent: {}
+[3.585183] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs\n'}
+[3.585756] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/_difrobot_msgs_s.ep.rosidl_typesupport_c.c\n'}
+[3.586258] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/difrobot_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[3.586694] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/difrobot_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[3.587094] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/difrobot_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[3.587592] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/_difrobot_msgs_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[3.588018] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/_difrobot_msgs_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[3.588411] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/__init__.py\n'}
+[3.588800] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/srv\n'}
+[3.589183] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/srv/_get_transform_s.c\n'}
+[3.589620] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/srv/_get_transform.py\n'}
+[3.592045] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/srv/__init__.py\n'}
+[3.592512] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/srv/_add_two_ints_s.c\n'}
+[3.593098] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/srv/_add_two_ints.py\n'}
+[3.593483] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/libdifrobot_msgs__rosidl_generator_py.so\n'}
+[3.610050] (difrobot_controller) JobEnded: {'identifier': 'difrobot_controller', 'rc': 0}
+[3.680142] (-) TimerEvent: {}
+[3.783000] (-) TimerEvent: {}
+[3.805078] (difrobot_msgs) StdoutLine: {'line': b"Listing '/home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs'...\n"}
+[3.805926] (difrobot_msgs) StdoutLine: {'line': b"Listing '/home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/srv'...\n"}
+[3.831907] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/difrobot_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[3.833730] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/difrobot_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[3.834162] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/difrobot_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[3.844971] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/lib/libdifrobot_msgs__rosidl_generator_py.so\n'}
+[3.847679] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/srv/AddTwoInts.idl\n'}
+[3.848145] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/srv/GetTransform.idl\n'}
+[3.848507] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/srv/AddTwoInts.srv\n'}
+[3.848854] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/srv/AddTwoInts_Request.msg\n'}
+[3.849260] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/srv/AddTwoInts_Response.msg\n'}
+[3.849675] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/srv/GetTransform.srv\n'}
+[3.850056] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/srv/GetTransform_Request.msg\n'}
+[3.850429] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/srv/GetTransform_Response.msg\n'}
+[3.850840] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/ament_index/resource_index/package_run_dependencies/difrobot_msgs\n'}
+[3.851256] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/ament_index/resource_index/parent_prefix_path/difrobot_msgs\n'}
+[3.851774] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/environment/ament_prefix_path.sh\n'}
+[3.852178] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/environment/ament_prefix_path.dsv\n'}
+[3.852521] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/environment/path.sh\n'}
+[3.852931] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/environment/path.dsv\n'}
+[3.853337] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/local_setup.bash\n'}
+[3.853706] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/local_setup.sh\n'}
+[3.854067] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/local_setup.zsh\n'}
+[3.854429] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/local_setup.dsv\n'}
+[3.854785] (difrobot_msgs) StdoutLine: {'line': b'-- Installing: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/package.dsv\n'}
+[3.855575] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/ament_index/resource_index/packages/difrobot_msgs\n'}
+[3.856339] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/export_difrobot_msgs__rosidl_generator_cExport.cmake\n'}
+[3.856728] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/export_difrobot_msgs__rosidl_generator_cExport-noconfig.cmake\n'}
+[3.857047] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/export_difrobot_msgs__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[3.857865] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/export_difrobot_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[3.858302] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/export_difrobot_msgs__rosidl_generator_cppExport.cmake\n'}
+[3.858698] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/export_difrobot_msgs__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[3.861446] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/export_difrobot_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[3.863182] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/difrobot_msgs__rosidl_typesupport_introspection_cExport.cmake\n'}
+[3.866953] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/difrobot_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[3.868006] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/difrobot_msgs__rosidl_typesupport_cExport.cmake\n'}
+[3.868538] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/difrobot_msgs__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[3.868973] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/difrobot_msgs__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[3.869420] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/difrobot_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[3.869908] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/difrobot_msgs__rosidl_typesupport_cppExport.cmake\n'}
+[3.870345] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/difrobot_msgs__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[3.870780] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/export_difrobot_msgs__rosidl_generator_pyExport.cmake\n'}
+[3.871310] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/export_difrobot_msgs__rosidl_generator_pyExport-noconfig.cmake\n'}
+[3.871842] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/rosidl_cmake-extras.cmake\n'}
+[3.872291] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[3.872750] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[3.873182] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[3.873576] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[3.874065] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[3.903558] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[3.913466] (-) TimerEvent: {}
+[3.913937] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/difrobot_msgsConfig.cmake\n'}
+[3.914403] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/difrobot_msgsConfig-version.cmake\n'}
+[3.915477] (difrobot_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/package.xml\n'}
+[3.918243] (difrobot_msgs) CommandEnded: {'returncode': 0}
+[4.013700] (-) TimerEvent: {}
+[4.114691] (-) TimerEvent: {}
+[4.215925] (-) TimerEvent: {}
+[4.320401] (-) TimerEvent: {}
+[4.421495] (-) TimerEvent: {}
+[4.486338] (difrobot_msgs) JobEnded: {'identifier': 'difrobot_msgs', 'rc': 0}
+[4.495675] (difrobot_py_examples) JobStarted: {'identifier': 'difrobot_py_examples'}
+[4.522648] (-) TimerEvent: {}
+[4.625642] (-) TimerEvent: {}
+[4.726658] (-) TimerEvent: {}
+[4.827497] (-) TimerEvent: {}
+[4.928519] (-) TimerEvent: {}
+[5.029325] (-) TimerEvent: {}
+[5.130221] (-) TimerEvent: {}
+[5.231153] (-) TimerEvent: {}
+[5.332128] (-) TimerEvent: {}
+[5.433049] (-) TimerEvent: {}
+[5.533979] (-) TimerEvent: {}
+[5.634721] (-) TimerEvent: {}
+[5.735694] (-) TimerEvent: {}
+[5.836496] (-) TimerEvent: {}
+[5.937215] (-) TimerEvent: {}
+[6.038122] (-) TimerEvent: {}
+[6.138956] (-) TimerEvent: {}
+[6.240993] (-) TimerEvent: {}
+[6.341922] (-) TimerEvent: {}
+[6.442905] (-) TimerEvent: {}
+[6.544239] (-) TimerEvent: {}
+[6.645135] (-) TimerEvent: {}
+[6.746153] (-) TimerEvent: {}
+[6.847043] (-) TimerEvent: {}
+[6.948135] (-) TimerEvent: {}
+[7.049139] (-) TimerEvent: {}
+[7.150055] (-) TimerEvent: {}
+[7.250934] (-) TimerEvent: {}
+[7.351850] (-) TimerEvent: {}
+[7.459113] (-) TimerEvent: {}
+[7.560396] (-) TimerEvent: {}
+[7.661620] (-) TimerEvent: {}
+[7.755665] (difrobot_py_examples) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/difrobot_py_examples', 'build', '--build-base', '/home/user/difrobot_ws/build/difrobot_py_examples/build', 'install', '--record', '/home/user/difrobot_ws/build/difrobot_py_examples/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/user/difrobot_ws/src/difrobot_py_examples', 'env': {'HOSTNAME': 'd7a6b0117b52', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/user/difrobot_ws/install/difrobot_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/user', 'OLDPWD': '/home/user', 'ROS_PYTHON_VERSION': '3', 'COLORTERM': 'truecolor', 'COLCON_PREFIX_PATH': '/home/user/difrobot_ws/install', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': 'host.docker.internal:0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/user/difrobot_ws/install/difrobot_py_examples:/home/user/difrobot_ws/install/difrobot_msgs:/home/user/difrobot_ws/install/difrobot_description:/home/user/difrobot_ws/install/difrobot_controller:/opt/ros/humble', 'TERMINATOR_UUID': 'urn:uuid:90f46ffc-f9e5-45a3-ba18-1ff44e74abdb', 'PWD': '/home/user/difrobot_ws/build/difrobot_py_examples', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/home/user/difrobot_ws/build/difrobot_py_examples/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/user/difrobot_ws/install/difrobot_py_examples/lib/python3.10/site-packages:/home/user/difrobot_ws/install/difrobot_py_examples/lib/python3.10/site-packages:/home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages:/home/user/difrobot_ws/install/difrobot_controller/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/home/user/difrobot_ws/install/difrobot_msgs:/home/user/difrobot_ws/install/difrobot_description:/home/user/difrobot_ws/install/difrobot_controller'}, 'shell': False}
+[7.768793] (-) TimerEvent: {}
+[7.870342] (-) TimerEvent: {}
+[7.972364] (-) TimerEvent: {}
+[8.073279] (-) TimerEvent: {}
+[8.174195] (-) TimerEvent: {}
+[8.275143] (-) TimerEvent: {}
+[8.376232] (-) TimerEvent: {}
+[8.477042] (-) TimerEvent: {}
+[8.577781] (-) TimerEvent: {}
+[8.678877] (-) TimerEvent: {}
+[8.779635] (-) TimerEvent: {}
+[8.867307] (difrobot_py_examples) StdoutLine: {'line': b'running egg_info\n'}
+[8.870057] (difrobot_py_examples) StdoutLine: {'line': b'writing ../../build/difrobot_py_examples/difrobot_py_examples.egg-info/PKG-INFO\n'}
+[8.871251] (difrobot_py_examples) StdoutLine: {'line': b'writing dependency_links to ../../build/difrobot_py_examples/difrobot_py_examples.egg-info/dependency_links.txt\n'}
+[8.872556] (difrobot_py_examples) StdoutLine: {'line': b'writing entry points to ../../build/difrobot_py_examples/difrobot_py_examples.egg-info/entry_points.txt\n'}
+[8.874077] (difrobot_py_examples) StdoutLine: {'line': b'writing requirements to ../../build/difrobot_py_examples/difrobot_py_examples.egg-info/requires.txt\n'}
+[8.875221] (difrobot_py_examples) StdoutLine: {'line': b'writing top-level names to ../../build/difrobot_py_examples/difrobot_py_examples.egg-info/top_level.txt\n'}
+[8.879913] (-) TimerEvent: {}
+[8.882301] (difrobot_py_examples) StdoutLine: {'line': b"reading manifest file '../../build/difrobot_py_examples/difrobot_py_examples.egg-info/SOURCES.txt'\n"}
+[8.887391] (difrobot_py_examples) StdoutLine: {'line': b"writing manifest file '../../build/difrobot_py_examples/difrobot_py_examples.egg-info/SOURCES.txt'\n"}
+[8.888253] (difrobot_py_examples) StdoutLine: {'line': b'running build\n'}
+[8.888535] (difrobot_py_examples) StdoutLine: {'line': b'running build_py\n'}
+[8.890634] (difrobot_py_examples) StdoutLine: {'line': b'running install\n'}
+[8.891658] (difrobot_py_examples) StdoutLine: {'line': b'running install_lib\n'}
+[8.896848] (difrobot_py_examples) StdoutLine: {'line': b'running install_data\n'}
+[8.898426] (difrobot_py_examples) StdoutLine: {'line': b'running install_egg_info\n'}
+[8.903764] (difrobot_py_examples) StdoutLine: {'line': b"removing '/home/user/difrobot_ws/install/difrobot_py_examples/lib/python3.10/site-packages/difrobot_py_examples-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[8.909485] (difrobot_py_examples) StdoutLine: {'line': b'Copying ../../build/difrobot_py_examples/difrobot_py_examples.egg-info to /home/user/difrobot_ws/install/difrobot_py_examples/lib/python3.10/site-packages/difrobot_py_examples-0.0.0-py3.10.egg-info\n'}
+[8.921214] (difrobot_py_examples) StdoutLine: {'line': b'running install_scripts\n'}
+[8.980065] (-) TimerEvent: {}
+[9.019495] (difrobot_py_examples) StdoutLine: {'line': b'Installing simple_service_client script to /home/user/difrobot_ws/install/difrobot_py_examples/lib/difrobot_py_examples\n'}
+[9.020551] (difrobot_py_examples) StdoutLine: {'line': b'Installing simple_service_server script to /home/user/difrobot_ws/install/difrobot_py_examples/lib/difrobot_py_examples\n'}
+[9.021361] (difrobot_py_examples) StdoutLine: {'line': b'Installing simple_tf_kinematics script to /home/user/difrobot_ws/install/difrobot_py_examples/lib/difrobot_py_examples\n'}
+[9.023031] (difrobot_py_examples) StdoutLine: {'line': b'Installing simple_turtlesim_kinematics script to /home/user/difrobot_ws/install/difrobot_py_examples/lib/difrobot_py_examples\n'}
+[9.024456] (difrobot_py_examples) StdoutLine: {'line': b"writing list of installed files to '/home/user/difrobot_ws/build/difrobot_py_examples/install.log'\n"}
+[9.080437] (-) TimerEvent: {}
+[9.120581] (difrobot_py_examples) CommandEnded: {'returncode': 0}
+[9.155033] (difrobot_py_examples) JobEnded: {'identifier': 'difrobot_py_examples', 'rc': 0}
+[9.159461] (-) EventReactorShutdown: {}

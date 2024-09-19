@@ -1,0 +1,169 @@
+[0.076s] Invoking command in '/home/user/difrobot_ws/build/difrobot_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/user/difrobot_ws/install/difrobot_py_examples:/opt/ros/humble /usr/bin/cmake --build /home/user/difrobot_ws/build/difrobot_msgs -- -j12 -l12
+[0.233s] [  2%] Built target difrobot_msgs__cpp
+[0.259s] [ 12%] Built target difrobot_msgs__rosidl_generator_c
+[0.305s] [ 12%] Built target ament_cmake_python_copy_difrobot_msgs
+[0.369s] [ 28%] Built target difrobot_msgs__rosidl_typesupport_introspection_cpp
+[0.370s] [ 33%] Built target difrobot_msgs__rosidl_typesupport_fastrtps_cpp
+[0.393s] [ 43%] Built target difrobot_msgs__rosidl_typesupport_cpp
+[0.421s] [ 61%] Built target difrobot_msgs__rosidl_typesupport_c
+[0.424s] [ 64%] Built target difrobot_msgs__rosidl_typesupport_introspection_c
+[0.433s] [ 74%] Built target difrobot_msgs__rosidl_typesupport_fastrtps_c
+[0.521s] [ 74%] Built target difrobot_msgs
+[0.636s] [ 76%] Built target difrobot_msgs__py
+[0.737s] [ 84%] Built target difrobot_msgs__rosidl_generator_py
+[0.824s] [ 92%] Built target difrobot_msgs__rosidl_typesupport_introspection_c__pyext
+[0.824s] [ 94%] Built target difrobot_msgs__rosidl_typesupport_c__pyext
+[0.850s] [100%] Built target difrobot_msgs__rosidl_typesupport_fastrtps_c__pyext
+[1.423s] running egg_info
+[1.426s] writing difrobot_msgs.egg-info/PKG-INFO
+[1.427s] writing dependency_links to difrobot_msgs.egg-info/dependency_links.txt
+[1.428s] writing top-level names to difrobot_msgs.egg-info/top_level.txt
+[1.434s] reading manifest file 'difrobot_msgs.egg-info/SOURCES.txt'
+[1.439s] writing manifest file 'difrobot_msgs.egg-info/SOURCES.txt'
+[1.510s] [100%] Built target ament_cmake_python_build_difrobot_msgs_egg
+[1.540s] Invoked command in '/home/user/difrobot_ws/build/difrobot_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/user/difrobot_ws/install/difrobot_py_examples:/opt/ros/humble /usr/bin/cmake --build /home/user/difrobot_ws/build/difrobot_msgs -- -j12 -l12
+[1.802s] Invoking command in '/home/user/difrobot_ws/build/difrobot_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/user/difrobot_ws/install/difrobot_py_examples:/opt/ros/humble /usr/bin/cmake --install /home/user/difrobot_ws/build/difrobot_msgs
+[1.823s] -- Install configuration: ""
+[1.824s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/ament_index/resource_index/rosidl_interfaces/difrobot_msgs
+[1.824s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs
+[1.825s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/msg
+[1.826s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/msg/rosidl_generator_c__visibility_control.h
+[1.826s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv
+[1.827s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/add_two_ints.h
+[1.827s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail
+[1.828s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__type_support.h
+[1.828s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__type_support.h
+[1.828s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__functions.c
+[1.833s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__struct.h
+[1.835s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__functions.c
+[1.838s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__functions.h
+[1.840s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__functions.h
+[1.841s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__struct.h
+[1.841s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/get_transform.h
+[1.845s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/environment/library_path.sh
+[1.845s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/environment/library_path.dsv
+[1.846s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/lib/libdifrobot_msgs__rosidl_generator_c.so
+[1.847s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs
+[1.849s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/msg
+[1.849s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[1.850s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv
+[1.850s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail
+[1.850s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__rosidl_typesupport_fastrtps_c.h
+[1.851s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__rosidl_typesupport_fastrtps_c.h
+[1.852s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/lib/libdifrobot_msgs__rosidl_typesupport_fastrtps_c.so
+[1.853s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs
+[1.853s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv
+[1.853s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/add_two_ints.hpp
+[1.854s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail
+[1.854s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__traits.hpp
+[1.854s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__traits.hpp
+[1.855s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__struct.hpp
+[1.855s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__builder.hpp
+[1.856s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__struct.hpp
+[1.856s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__builder.hpp
+[1.857s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/get_transform.hpp
+[1.858s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs
+[1.858s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/msg
+[1.859s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[1.863s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv
+[1.864s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail
+[1.865s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__rosidl_typesupport_fastrtps_cpp.hpp
+[1.868s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__rosidl_typesupport_fastrtps_cpp.hpp
+[1.870s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/dds_fastrtps
+[1.871s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/lib/libdifrobot_msgs__rosidl_typesupport_fastrtps_cpp.so
+[1.873s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs
+[1.874s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/msg
+[1.876s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[1.878s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv
+[1.878s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail
+[1.878s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__type_support.c
+[1.879s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__rosidl_typesupport_introspection_c.h
+[1.879s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__rosidl_typesupport_introspection_c.h
+[1.880s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__type_support.c
+[1.880s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/lib/libdifrobot_msgs__rosidl_typesupport_introspection_c.so
+[1.880s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/lib/libdifrobot_msgs__rosidl_typesupport_c.so
+[1.881s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs
+[1.881s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv
+[1.881s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail
+[1.881s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__type_support.cpp
+[1.882s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__rosidl_typesupport_introspection_cpp.hpp
+[1.882s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/get_transform__type_support.cpp
+[1.883s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/include/difrobot_msgs/difrobot_msgs/srv/detail/add_two_ints__rosidl_typesupport_introspection_cpp.hpp
+[1.883s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/lib/libdifrobot_msgs__rosidl_typesupport_introspection_cpp.so
+[1.883s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/lib/libdifrobot_msgs__rosidl_typesupport_cpp.so
+[1.884s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/environment/pythonpath.sh
+[1.884s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/environment/pythonpath.dsv
+[1.884s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs-0.0.0-py3.10.egg-info
+[1.884s] -- Installing: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs-0.0.0-py3.10.egg-info/PKG-INFO
+[1.885s] -- Installing: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs-0.0.0-py3.10.egg-info/dependency_links.txt
+[1.885s] -- Installing: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs-0.0.0-py3.10.egg-info/SOURCES.txt
+[1.886s] -- Installing: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs-0.0.0-py3.10.egg-info/top_level.txt
+[1.887s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs
+[1.887s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/_difrobot_msgs_s.ep.rosidl_typesupport_c.c
+[1.888s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/difrobot_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[1.888s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/difrobot_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[1.888s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/difrobot_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[1.891s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/_difrobot_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[1.894s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/_difrobot_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[1.895s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/__init__.py
+[1.895s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/srv
+[1.895s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/srv/_get_transform_s.c
+[1.896s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/srv/_get_transform.py
+[1.896s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/srv/__init__.py
+[1.897s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/srv/_add_two_ints_s.c
+[1.897s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/srv/_add_two_ints.py
+[1.898s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/libdifrobot_msgs__rosidl_generator_py.so
+[1.996s] Listing '/home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs'...
+[1.997s] Listing '/home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/srv'...
+[2.010s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/difrobot_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[2.012s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/difrobot_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[2.014s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/local/lib/python3.10/dist-packages/difrobot_msgs/difrobot_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[2.015s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/lib/libdifrobot_msgs__rosidl_generator_py.so
+[2.016s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/srv/AddTwoInts.idl
+[2.017s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/srv/GetTransform.idl
+[2.018s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/srv/AddTwoInts.srv
+[2.018s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/srv/AddTwoInts_Request.msg
+[2.019s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/srv/AddTwoInts_Response.msg
+[2.020s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/srv/GetTransform.srv
+[2.021s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/srv/GetTransform_Request.msg
+[2.022s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/srv/GetTransform_Response.msg
+[2.024s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/ament_index/resource_index/package_run_dependencies/difrobot_msgs
+[2.025s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/ament_index/resource_index/parent_prefix_path/difrobot_msgs
+[2.025s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/environment/ament_prefix_path.sh
+[2.026s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/environment/ament_prefix_path.dsv
+[2.026s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/environment/path.sh
+[2.027s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/environment/path.dsv
+[2.027s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/local_setup.bash
+[2.028s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/local_setup.sh
+[2.028s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/local_setup.zsh
+[2.029s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/local_setup.dsv
+[2.029s] -- Installing: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/package.dsv
+[2.029s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/ament_index/resource_index/packages/difrobot_msgs
+[2.030s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/export_difrobot_msgs__rosidl_generator_cExport.cmake
+[2.030s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/export_difrobot_msgs__rosidl_generator_cExport-noconfig.cmake
+[2.033s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/export_difrobot_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[2.034s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/export_difrobot_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[2.034s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/export_difrobot_msgs__rosidl_generator_cppExport.cmake
+[2.034s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/export_difrobot_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[2.035s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/export_difrobot_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[2.035s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/difrobot_msgs__rosidl_typesupport_introspection_cExport.cmake
+[2.035s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/difrobot_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[2.036s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/difrobot_msgs__rosidl_typesupport_cExport.cmake
+[2.036s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/difrobot_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[2.036s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/difrobot_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[2.036s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/difrobot_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[2.037s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/difrobot_msgs__rosidl_typesupport_cppExport.cmake
+[2.039s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/difrobot_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[2.042s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/export_difrobot_msgs__rosidl_generator_pyExport.cmake
+[2.054s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/export_difrobot_msgs__rosidl_generator_pyExport-noconfig.cmake
+[2.054s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/rosidl_cmake-extras.cmake
+[2.055s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[2.055s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[2.056s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[2.057s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[2.059s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[2.060s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[2.064s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/difrobot_msgsConfig.cmake
+[2.066s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/cmake/difrobot_msgsConfig-version.cmake
+[2.068s] -- Up-to-date: /home/user/difrobot_ws/install/difrobot_msgs/share/difrobot_msgs/package.xml
+[2.068s] Invoked command in '/home/user/difrobot_ws/build/difrobot_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/user/difrobot_ws/install/difrobot_py_examples:/opt/ros/humble /usr/bin/cmake --install /home/user/difrobot_ws/build/difrobot_msgs
