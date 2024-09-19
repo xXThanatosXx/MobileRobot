@@ -1,7 +1,0 @@
-{
-  "package_name": "difrobot_msgs",
-  "non_idl_tuples": [
-    "/home/user/difrobot_ws/src/difrobot_msgs:srv/AddTwoInts.srv",
-    "/home/user/difrobot_ws/src/difrobot_msgs:srv/GetTransform.srv"
-  ]
-}
