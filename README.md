@@ -1,9 +1,8 @@
-# Clase Robot Gazebo
-
+<h1 align="center">Clase Robot Odometría </h1>
 
 El objetivo de la presente práctica es conocer los conceptos básico de ROS2 Humble (paquete, nodo, topicos, info y rqt), para la simulación del comportamiento de un robot móvil en Gazebo.
 
-### Compilación del proyecto de clase-Odometría
+### Compilación del proyecto 
 
 
 <p align="center">
