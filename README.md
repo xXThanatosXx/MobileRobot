@@ -1,295 +1,121 @@
-# MobileRobot
 
-Bienvenido al repositorio del curso de Mobile Robot. Este curso está diseñado para estudiantes e investigadores interesados en el campo de la robótica móvil y cubre desde conceptos básicos hasta aplicaciones avanzadas de robótica móvil.
+# Configuración de Arduino con ROS2 en Docker sobre Windows y WSL2
 
-## Estructura del Repositorio
+Esta guía te llevará a través de los pasos necesarios para configurar y ejecutar un contenedor Docker con **ROS2** en **Windows** utilizando **WSL2** y conectarlo a un **Arduino** a través de USB.
 
-Este repositorio está organizado de la siguiente manera:
+## 1. Instalar Docker Desktop con soporte para WSL2
 
-- `logos/`: Carpeta que contiene los logos relacionados con el curso.
-- `código/`: Ejemplos de código fuente en Python para diferentes módulos del curso.
-- `README.md`: Este archivo, que proporciona una visión general y guía sobre el repositorio.
-
-# Instalación de ROS2 Humble
-El objetivo de la presente práctica es instalar y configurar el entorno de trabajo de ROS2 Humble en Ubuntu 22.04, empleando una máquina virtual con VMWorkStation Player 17.
-
-## Recursos Adicionales
-
-Para complementar tu aprendizaje en el curso de Mobile Robot, aquí tienes algunos enlaces a recursos externos que podrían ser de tu interés:
-
-Nota: Descargar VMware-player-17.5.2-23775571.exe.tar y descomprimir y ejecutar el archivo .exe
-
-- [VMware-player-17.5.2-23775571.exe.tar](https://softwareupdate.vmware.com/cds/vmw-desktop/player/17.5.2/23775571/windows/core/)
-  
-- [ubuntu22.4.3](https://releases.ubuntu.com/jammy/ubuntu-22.04.4-desktop-amd64.iso)
-- [Documentación Oficial de ROS2 HUMble (Robot Operating System)](https://docs.ros.org/en/humble/index.html)
-- 📄 [📂](./Scripts/)Scripts de instalación de ros
-
-
-### Instalación de Dependencias
-Para configurar el entorno necesario para el curso en un sistema operativo Ubuntu, necesitarás instalar algunas dependencias y configurar tu entorno de desarrollo. 
-Primero Descargue los archivos de instalación ros2_install.sh y install_ros_packages.sh que se encuentran en la carpeta  [📂](./Scripts/)Scripts y siga los pasos que se indican en el video.
-
-
-<p align="center">
-  <a href="https://youtu.be/sk0WTxr-yic?si=M51wHld4yW2u4Ymt">
-    <img src="./Logos/imagen1.png" height="300">
-  </a>
-</p>
-<p align="center">
-<a href="https://www.youtube.com/watch?si=A5CDzYbwtK9ze-UW&v=YznWZz4OKRc&feature=youtu.be" target="_blank">**Enlace a Instalación de Ubuntu - Haga clic aquí para más información**</a>
-</p>
-<p align="center">
-<a href="https://youtu.be/sk0WTxr-yic?si=M51wHld4yW2u4Ymt" target="_blank">**Enlace a Video de instalación Ros2 Humble- Haga clic aquí para más información**</a>.
-</p>
-<p align="center">
-<a href="https://www.youtube.com/watch?v=FrRKkO6UKnQ" target="_blank">**Enlace a Video de instalación VSCode- Haga clic aquí para más información**</a>.
-</p>
-
-Abre una terminal y sigue los siguientes pasos.
-
-Presione 
+- Instalar wsl
 ```bash
-Crtl + alt + t
-
+wsl --install -d Ubuntu
 ```
-Cambiar ruta a carpeta Downloads o donde descargó los archvivos de instalación:
+Acualizar:
 ```bash
-cd Downloads
+wsl --update
 ```
-Convertir archivo en ejecutable:
+Apagar:
 ```bash
-sudo chmod +x ros2_install.sh
+wsl --shutdown
 ```
-Verificar si el archivo es ejecutable:
+Listar Wsl:
 ```bash
-ls -la
+wsl --list --verbose
 ```
-Ejecutar instalador:
+Ejecutar WSL:
 ```bash
-./ros2_install.sh
-```
-Regresar al directorio principal
-```bash
-cd
-```
-Hacer source al bashrc:
-```bash
-source .bashrc
-```
-###instalar paquetes adicionales
-En nueva terminal ejecutar los siguientes comandos en el espacio de trabajo principal
-
-Presione Crtl + alt + t
-```bash
-source .bashrc
-```
-```bash
-cd ..
-```
-```bash
-sudo apt-get update 
-```
-```bash
-sudo apt-get install ros-$ROS_DISTRO-joint-state-publisher ros-$ROS_DISTRO-xacro ros-$ROS_DISTRO-joint-state-publisher-gui ros-$ROS_DISTRO-tf2-* ros-$ROS_DISTRO-gazebo-* ros-$ROS_DISTRO-rviz-default-plugins
-```
-Cambiar a directorio de descargas
-```bash
-cd Downloads
-```
-Configurar el archivo install ros packages.sh como ejecutable:
-```bash
-sudo chmod +x install_ros_packages.sh
-```
-Verificar configuración
-```bash
-ls -la
-```
-Ejecutar el script:
-```bash
-./install_ros_packages.sh
-```
-Actualizar el espacio de trabajo en la ruta (home\ros):
-```bash
-source .bashrc
-```
-instalar pip en Python:
-```bash
-sudo apt-get install python3-pip
-```
-instalar paquete transform 3d:
-```bash
-pip install transforms3d
-```
-instalar terminal:
-```bash
-sudo apt-get install terminator
-```
-Revisar la versión de Ros instalada:
-```bash
-rosversion -d
-```
-# Instalación de ROS2 Humble con Docker
-1. [Instalar Docker](https://www.docker.com/)
- 
-2. [Instalar Xlaunch](https://sourceforge.net/projects/xming/)
- 
-Docker File:
-
-```python
-#change the distro if needed, you can also use a ubuntu image and make your custom ROS install on it.
-FROM ros:humble
-ARG DEBIAN_FRONTEND=noninteractive
-
-USER root
-
-RUN apt-get update
-
-RUN apt-get install -y build-essential sudo terminator iproute2 gedit lsb-release lsb-core wget nano
-
-RUN adduser user
-RUN adduser user sudo
-#remove password
-RUN passwd -d user
-
-USER user
-```
-
-Crear Imagen Ros2 Humble:
-![alt text](image.png)
-
-
-Guardar con el nombre (ros2-humble-img):
-![alt text](image-1.png)
-
-
-### Crear el contenedor
-```bash
-docker run --name ros2-humble --user=user --env=DISPLAY=host.docker.internal:0 --volume="C:\\:/mnt/c" --restart=no --runtime=runc --network=host -t -d ros2-humble-img
-```
-
-![alt text](image-2.png)
-
-
-1. Opcional: crear contenedor con acceso a carpeta
-```bash
-docker run --name ros2-humble --user=user --env=DISPLAY=host.docker.internal:0 --volume="C:\\:/mnt/c" --volume="C:\\Users\\UNIMAR\\Documents\\Docker\\shared_folder:/mnt/shared_folder" --restart=no --runtime=runc --network=host -t -d ros2-humble-img
-```
-verificar carpeta
-```bash
-cd /mnt/shared_folder
-```
-Copiar carpeta Host to Docker
-```bash
-docker cp "C:\Users\UNIMAR\Documents\Docker\shared_folder" ros2-humble:/home/user/test
-```
-Copiar carpeta Docker to Host
-```bash
-docker cp ros2-humble:/ruta/dentro/del/contenedor "C:\Users\UNIMAR\Documents\Docker\local_folder"
-
+wsl -d Ubuntu
 ```
 
 
+1. **Descargar e instalar Docker Desktop**:
+   - Ve a la [página oficial de Docker](https://www.docker.com/products/docker-desktop) y descarga Docker Desktop.
+   - Durante la instalación, selecciona la opción de usar **WSL 2** como backend.
 
-### ROS2 Configuración
+2. **Configurar WSL2**:
+   - Docker Desktop usa **WSL2** para ejecutar contenedores en Windows. Si aún no tienes WSL2 configurado, asegúrate de instalarlo siguiendo [esta guía](https://docs.microsoft.com/en-us/windows/wsl/install).
 
-```bash
-source /opt/ros/humble/setup.bash
-```
-```bash
-nano .bashrc
-```
-![alt text](image-3.png)
+   - identificar puerto USB:
+   Identificar puertos
+   ```bash
+   mode
+   ```
 
-Hacer source en bash:
-```bash
-source /opt/ros/humble/setup.bash
-```
-```bash
-sudo apt-get install ros-humble-rviz2
-```
+   - Verifica que WSL2 está instalado con:
+     ```bash
+     wsl --list --verbose
+     ```
 
-```bash
-source ~/.bashrc
-```
+## 2. Instalar y configurar `usbipd` para acceder a dispositivos USB
 
-```bash
-rviz2
-```
-### Descargar imagen Docker
-Abrir una terminal cmd y ejecutar los comandos:
+1. **Instalar `usbipd`**:
+   - Abre **PowerShell** como administrador y ejecuta:
+     ```bash
+     winget install --interactive --exact dorssel.usbipd-win
+     ```
 
-Descargar Imagen Docker Ros2 humble
-```bash
-docker pull xxthanatosxx/ros2-humble:1.0.0
+2. **Verificar dispositivos USB conectados**:
+   - Conecta tu **Arduino** a un puerto USB y verifica los dispositivos con:
+     ```bash
+     usbipd list
+     ```
 
-```
-Verificar imagen
-```bash
-docker images
+3. **Adjuntar el dispositivo USB a WSL2**:
+   - Adjunta el Arduino a WSL2 con:
+     ```bash
+     usbipd attach --busid 1-2 --wsl
+     ```
 
-```
-Crear contenedor (ros2-humble-container)
-```bash
-docker run -it --name ros2-humble-container xxthanatosxx/ros2-humble:1.0.0 /bin/bash
-
-```
-Iniciar el contenedor
-```bash
-docker start ros2-humble-container
-```
-Detener el contenedor
-```bash
-docker stop ros2-humble-container
-```
-# Crear imagen Docker a partir de contenedor
+4. **Verificar el dispositivo en WSL**:
+   - Verifica que el dispositivo esté disponible:
+     ```bash
+     ls /dev/ttyACM0
+     ```
+5. **Desactivar puerto**
+   ```bash
+     usbipd detach --busid <BUSID> 
+   ```
 
 
-```bash
-docker ps -a
-```
-Crear imagen de Contenedor: nombre ros2-humb y el CONTAINER ID 6485864c931d.
-```bash
-docker commit 6485864c931d xxthanatosxx/ros2-humble:1.0.0
-```
-Verificar imagen
-```bash
-docker images
 
-```
-Subir imagen a Docker Hub
-```bash
-docker push xxthanatosxx/ros2-humble:1.0.0
+## 3. Ejecutar el contenedor Docker con acceso al dispositivo USB
 
-```
+1. **Iniciar el contenedor Docker**:
+   ```bash
+   docker run --name ros-humble-usb --gpus all --cpus="6" --memory="8g" -it --device=/dev/ttyACM0 \
+       --env=DISPLAY=host.docker.internal:0 --volume="c:/mnt/c" \
+       --volume="c:/users/unimar/documents/docker/Shared_Folder:/mnt/shared_folder" \
+       --restart=no --runtime=runc --network=host -t ros2-humble-usb:latest
+   ```
+
+2. **Verificar el acceso al puerto USB**:
+   ```bash
+   ls /dev/ttyACM0
+   ```
+
+## 5. Configurar ROS2 y ejecutar nodos que interactúen con el Arduino
+
+1. **Dar permisos al puerto serie**:
+   ```bash
+   sudo chmod 666 /dev/ttyACM0
+   ```
+   ```bash
+   sudo usermod -aG dialout $USER
+   ```
+   
+
+2. **Ejecutar tu nodo ROS2**:
+   ```bash
+   ros2 run difrobot_firmware simple_serial_transmitter.py --ros-args -p port:=/dev/ttyACM0
+   ```
+
+## 6. Solución de problemas comunes
+
+- Si no puedes acceder al puerto USB, asegúrate de que está adjunto con `usbipd`.
+- Si ves errores de permisos, verifica que el usuario tiene permisos para acceder al puerto serie con `chmod 666 /dev/ttyACM0`.
+
+---
+
+¡Listo! Siguiendo estos pasos deberías poder configurar y ejecutar un contenedor Docker con ROS2 y comunicarte con tu Arduino a través del puerto USB.
 
 
-# Desinstalación de ROS2 Humble
-En una nueva terminal ejecutar:
-```bash
-sudo apt remove --purge ros-humble-*
-```
-
-```bash
-sudo apt autoremove
-```
-
-```bash
-sudo rm /etc/apt/sources.list.d/ros2.list
-```
-```bash
-sudo apt update
-```
-
-```bash
-nano ~/.bashrc
-```
-Eliminar las lineas:
-```bash
-# source ROS 2 environment
-source /opt/ros/humble/setup.bash
-```
-Actualizar bash:
-```bash
-source ~/.bashrc
-```
+https://learn.microsoft.com/en-us/windows/wsl/connect-usb
