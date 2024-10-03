@@ -79,9 +79,6 @@ Esta matriz toma la forma:
 ![alt text](image-2.png)
 
 
-
-
-
 ### 4. Función Callback
 
 La función `velCallback` se activa cada vez que se recibe un nuevo comando de velocidad. Toma las velocidades lineal (\(v\)) y angular (\(\omega\)), aplica la matriz de conversión y publica las velocidades de las ruedas.
@@ -124,4 +121,16 @@ dim: []
 data: [1,0]" : 
 ```
 
+## Velocidad
+
+```bash
+ ros2 launch  difrobot_description gazebo.launch.py 
+
+```
+```bash
+ros2 launch difrobot_controller controller.launch.py 
+```
+```bash
+ros2 topic pub /difrobot_controller/cmd_vel geometry_msgs/msg/TwistStamped "h
+```
 
