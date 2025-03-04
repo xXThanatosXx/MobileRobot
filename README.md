@@ -21,7 +21,7 @@ Nota: Descargar VMware-player-17.5.2-23775571.exe.tar y descomprimir y ejecutar 
 
 - [VMware-player-17.5.2-23775571.exe.tar](https://softwareupdate.vmware.com/cds/vmw-desktop/player/17.5.2/23775571/windows/core/)
   
-- [ubuntu22.4.3](https://releases.ubuntu.com/jammy/ubuntu-22.04.4-desktop-amd64.iso)
+- [ubuntu22.4.5](https://releases.ubuntu.com/jammy/ubuntu-22.04.5-desktop-amd64.iso)
 - [Documentación Oficial de ROS2 HUMble (Robot Operating System)](https://docs.ros.org/en/humble/index.html)
 - 📄 [📂](./Scripts/)Scripts de instalación de ros
 
