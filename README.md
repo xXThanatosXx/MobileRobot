@@ -58,15 +58,45 @@ wsl -d Ubuntu
      ```bash
      usbipd list
      ```
-
-3. **Adjuntar el dispositivo USB a WSL2**:
+3. **Compartir el dispositivo USB a WSL2**:
    - Adjunta el Arduino a WSL2 con:
      ```bash
-     usbipd attach --busid 1-2 --wsl
+     usbipd bind --busid 1-2
+     ```
+     - Verificar:
+        ```bash
+          usbipd list
+        ```
+
+4. **Adjuntar el dispositivo USB a WSL2**:
+   - Adjunta el Arduino a WSL2 con:
+     ```bash
+     usbipd attach --busid 1-4 --wsl
      ```
 
 4. **Verificar el dispositivo en WSL**:
    - Verifica que el dispositivo esté disponible:
+     ```bash
+     sudo apt install usbutils
+     ```
+     ```bash
+     lsusb
+     ```
+     ```bash
+     dmesg | grep tty
+     ```
+     ```bash
+     ls -l /dev/ttyUSB0
+     ```
+     Super usuario
+     ```bash
+     sudo usermod -aG dialout $USER
+     ```
+
+     ```bash
+     /dev/ttyUSB0
+     ```
+     
      ```bash
      ls /dev/ttyACM0
      ```
