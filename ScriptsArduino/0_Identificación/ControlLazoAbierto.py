@@ -8,7 +8,7 @@ N = len(t) # Numero de muestras
 
 ######################## Comunicacion Serial ###############
 
-port = 'COM13'  # Com Arduino
+port = 'COM3'  # Com Arduino
 baudRate = 115200 # Baudios
 
 arduino = serialArduino(port,baudRate)# Objeto serial

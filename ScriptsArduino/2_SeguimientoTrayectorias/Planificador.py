@@ -1,4 +1,4 @@
-from pyRobotics import *
+import numpy as np
 import matplotlib.pyplot as plt
 
 #variables de tiempo

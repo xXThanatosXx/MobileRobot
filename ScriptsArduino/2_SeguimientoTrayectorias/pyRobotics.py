@@ -1,16 +1,24 @@
 from threading import Thread
 import time
 import pyvista as pv
+from pyvistaqt import BackgroundPlotter
 import numpy as np
 import glob
+from pathlib import Path
 
 class robotics:
 
      def __init__(self,path="",color = None):
 
           self.color = color
-          self.path = path
-          filenames = glob.glob(self.path+"/*.stl")
+          base_path = Path(__file__).resolve().parent
+          candidate_path = Path(path)
+          if candidate_path.is_absolute():
+               self.path = candidate_path
+          else:
+               self.path = (base_path / candidate_path).resolve()
+
+          filenames = sorted(glob.glob(str(self.path / "*.stl")))
           self.robot = []
           self.robotCopy = []
           self.isTrajectory = False
@@ -19,9 +27,12 @@ class robotics:
                self.robot.append(pv.PolyData(filename))
                self.robotCopy.append(pv.PolyData(filename))
 
-     def configureScene(self,bounds, window_size =[1024, 768], title="Python Robotics"):
+          if not self.robot:
+               raise FileNotFoundError(f"No se encontraron archivos STL en: {self.path}")
+
+     def configureScene(self,bounds, window_size =(1024, 768), title="Python Robotics"):
           self.bounds = bounds
-          self.plotter = pv.BackgroundPlotter(window_size=window_size,title=title)
+          self.plotter = BackgroundPlotter(window_size=tuple(window_size),title=title)
           self.plotter.set_background(color='white')
      
      def initRobot(self,x1,y1,phi,escala):
@@ -36,9 +47,12 @@ class robotics:
                self.robot[i].points *= self.escala
                self.robotCopy[i].points *= self.escala
                if self.color == None:
-                    self.plotter.add_mesh(self.robotCopy[i],'black')
+                    self.plotter.add_mesh(self.robotCopy[i], color='black')
                else:
-                    self.plotter.add_mesh(self.robotCopy[i],self.color[i])
+                    self.plotter.add_mesh(self.robotCopy[i], color=self.color[i])
+
+          self.robotUniciclo(self.x1[0],self.y1[0],self.phi[0],0)
+          self.plotter.render()
 
           
      def initTrajectory(self,hx,hy):
@@ -65,7 +79,7 @@ class robotics:
           cpos = [(-8, -8, 8), # zoom x y z
           (0.5, 0.5, 0.5), # Movimiento x y z
           (0.28, 0.28, 0.28)]
-          self.plotter.show_bounds(grid='True',location = 'outer',color = '#000000',bounds = self.bounds, xlabel = 'x [m]', ylabel = 'y [m]', zlabel = 'z [m]')
+          self.plotter.show_bounds(grid='back',location = 'outer',color = '#000000',bounds = self.bounds, xtitle = 'x [m]', ytitle = 'y [m]', ztitle = 'z [m]')
           #self.plotter.camera_position = cpos
           self.plotter.view_isometric()
           
@@ -89,11 +103,14 @@ class robotics:
                          [np.sin(phi), np.cos(phi),0],
                          [    0         ,     0         ,1]])
                          
+          translation = np.array([x1, y1, 0.0])
 
-               
           for i in range(len(self.robotCopy)):
-               self.robotCopy[i].points = (Rz@self.robot[i].points.transpose()).transpose()
-               self.robotCopy[i].translate([x1,y1,0])
+               transformed_points = (Rz @ self.robot[i].points.transpose()).transpose() + translation
+               self.robotCopy[i].points[:] = transformed_points
+               self.robotCopy[i].Modified()
+
+          self.plotter.render()
                
 
      def plotTrajectory(self,hx,hy,k):
