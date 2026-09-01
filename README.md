@@ -122,6 +122,10 @@ instalar terminal:
 ```bash
 sudo apt-get install terminator
 ```
+Instalar pkg
+```bash
+sudo apt install python3-rospkg
+```
 Revisar la versión de Ros instalada:
 ```bash
 rosversion -d
