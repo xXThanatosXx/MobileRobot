@@ -1,90 +1,85 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-#---------- After executing $ sudo apt update && sudo apt upgrade
+# Install ROS 2 Humble on Ubuntu 22.04 (Jammy).
+set -Eeuo pipefail
 
-THISDIR=$(realpath `dirname $0`) #Get this directory
+ROS_DISTRO="humble"
+WORKSPACE_NAME="colcon_ws"
+BASHRC_MARKER="# MobileRobot ROS 2 Humble"
 
-
-info() { #Function to print a message ">>>" in blue color
-    echo ""
-    echo -e "\e[34m>>>\e[0m ${@}"
+info() {
+    printf '\n\033[34m>>>\033[0m %s\n' "$*"
 }
 
-echo -e "\n"
-info "WARNING: IF YOU HAVE ANOTHER ROS DISTRO, COMMENT THE 'source /opt/ros/OTHER_ROS_DISTRO/setup.bash' LINE IN THE .bashrc file."
-echo "Press Enter to continue ..."
-read
+fail() {
+    printf '\nError: %s\n' "$*" >&2
+    exit 1
+}
 
+if [[ "${EUID}" -eq 0 ]]; then
+    fail "Run this script as a regular user. It will request sudo when needed."
+fi
 
-cd $HOME
-echo "[Set the ROS2 version and name of the ros2 workspace]"
-name_ros_version='humble'
-ros2_pkg='desktop'
-name_workspace='colcon_ws'
-info "\e[34mThe ROS_DOMAIN_ID setup will be 0. You can modify it later in the .bashrc file\e[0m"
+if [[ ! -r /etc/os-release ]]; then
+    fail "This script must run on Ubuntu 22.04."
+fi
 
-info "ROS2 version: ${name_ros_version}"
-info "ROS2 packages: ${ros2_pkg}"
-info "ROS 2 workspace: $HOME/${name_workspace} \n"
+# shellcheck disable=SC1091
+source /etc/os-release
+if [[ "${ID:-}" != "ubuntu" || "${VERSION_CODENAME:-}" != "jammy" ]]; then
+    fail "ROS 2 Humble requires Ubuntu 22.04 Jammy. Detected: ${PRETTY_NAME:-unknown}."
+fi
 
-echo "PRESS [ENTER] TO CONTINUE THE INSTALLATION (or wait for 10 seconds)"
-echo "IF YOU WANT TO CANCEL, PRESS [CTRL] + [C] NOW"
-read -t 10
+info "ROS 2 Humble will be installed in Ubuntu 22.04 Jammy."
+read -r -p "Press Enter to continue or Ctrl+C to cancel..."
 
-
-echo "[Set Locale]"
-sudo apt update && sudo apt install locales
+info "Configuring locale and Ubuntu repositories"
+sudo apt update
+sudo apt install -y locales software-properties-common curl
 sudo locale-gen en_US en_US.UTF-8
 sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
-export LANG=en_US.UTF-8
+sudo add-apt-repository -y universe
 
-echo "[Setup Sources]"
-sudo rm -rf /var/lib/apt/lists/* && sudo apt update && sudo apt install -y curl gnupg2 lsb-release
-sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg
-sudo sh -c 'echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null'
+info "Configuring the official ROS 2 apt repository"
+ROS_APT_SOURCE_VERSION="$(curl -fsSL https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | grep -F '"tag_name"' | awk -F '"' '{print $4}')"
+[[ -n "${ROS_APT_SOURCE_VERSION}" ]] || fail "Could not determine the ros2-apt-source version."
 
-sudo apt update #----------------
+ROS_APT_SOURCE_DEB="/tmp/ros2-apt-source.deb"
+curl -fL -o "${ROS_APT_SOURCE_DEB}" "https://github.com/ros-infrastructure/ros-apt-source/releases/download/${ROS_APT_SOURCE_VERSION}/ros2-apt-source_${ROS_APT_SOURCE_VERSION}.${VERSION_CODENAME}_all.deb"
+sudo dpkg -i "${ROS_APT_SOURCE_DEB}"
+rm -f "${ROS_APT_SOURCE_DEB}"
 
-info "[Installing ROS 2 packages] ..."
-sleep 2
-sudo apt install -y ros-$name_ros_version-$ros2_pkg
-sleep 3
+info "Installing ROS 2 ${ROS_DISTRO} and development tools"
+sudo apt update
+sudo apt install -y \
+    "ros-${ROS_DISTRO}-desktop" \
+    python3-argcomplete \
+    python3-colcon-common-extensions \
+    python3-vcstool \
+    python3-rosdep
 
-info "[Environment setup]"
-sleep 3 #
-source /opt/ros/$name_ros_version/setup.sh
-sudo apt install -y python3-argcomplete python3-colcon-common-extensions python3-vcstool python3-rosdep2
-
-info "[Make the $name_workspace and test colcon build]"
-sleep 3 #
-mkdir -p $HOME/$name_workspace/src
-cd $HOME/$name_workspace
-colcon build --symlink-install
-
+if [[ ! -f /etc/ros/rosdep/sources.list.d/20-default.list ]]; then
+    info "Initializing rosdep"
+    sudo rosdep init
+fi
 rosdep update
 
+WORKSPACE_PATH="${HOME}/${WORKSPACE_NAME}"
+mkdir -p "${WORKSPACE_PATH}/src"
 
-info "[Set the ROS evironment and alias]"
-sleep 3 #
-sh -c "echo \"alias nb='nano ~/.bashrc'\" >> ~/.bashrc"
-sh -c "echo \"alias sb='source ~/.bashrc'\" >> ~/.bashrc"
+if ! grep -Fqx "${BASHRC_MARKER}" "${HOME}/.bashrc" 2>/dev/null; then
+    info "Adding ROS 2 environment setup to ${HOME}/.bashrc"
+    cat >> "${HOME}/.bashrc" <<EOF
 
-sh -c "echo \"source /opt/ros/$name_ros_version/setup.bash\" >> ~/.bashrc"
-sh -c "echo \"source ~/$name_workspace/install/setup.bash\" >> ~/.bashrc"
-sh -c "echo \"source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash\" >> ~/.bashrc"
+${BASHRC_MARKER}
+source /opt/ros/${ROS_DISTRO}/setup.bash
+if [ -f "${WORKSPACE_PATH}/install/setup.bash" ]; then
+    source "${WORKSPACE_PATH}/install/setup.bash"
+fi
+source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
+export ROS_DOMAIN_ID=0
+EOF
+fi
 
-sh -c "echo \"export ROS_DOMAIN_ID=0\" >> ~/.bashrc"
-
-#exec bash
-
-info "The source bash lines were added to the .bash file\n"
-sleep 3 #
-echo -e "source /opt/ros/$name_ros_version/setup.bash"
-echo -e "source ~/$name_workspace/install/setup.bash"
-echo -e "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash \n"
-
-cd $THIS_DIR
-info "[ROS 2 Installation Complete!!!]"
- 
-
-
+info "Installation complete. Open a new terminal or run: source ~/.bashrc"
+info "Workspace created at: ${WORKSPACE_PATH}"

@@ -59,7 +59,7 @@ cd Downloads
 ```
 Convertir archivo en ejecutable:
 ```bash
-sudo chmod +x ros2_install.sh
+chmod +x ros2_install.sh
 ```
 Verificar si el archivo es ejecutable:
 ```bash
@@ -75,17 +75,14 @@ cd
 ```
 Hacer source al bashrc:
 ```bash
-source .bashrc
+source ~/.bashrc
 ```
 ###instalar paquetes adicionales
 En nueva terminal ejecutar los siguientes comandos en el espacio de trabajo principal
 
 Presione Crtl + alt + t
 ```bash
-source .bashrc
-```
-```bash
-cd ..
+source ~/.bashrc
 ```
 ```bash
 sudo apt-get update 
@@ -99,7 +96,7 @@ cd Downloads
 ```
 Configurar el archivo install ros packages.sh como ejecutable:
 ```bash
-sudo chmod +x install_ros_packages.sh
+chmod +x install_ros_packages.sh
 ```
 Verificar configuración
 ```bash
@@ -111,7 +108,7 @@ Ejecutar el script:
 ```
 Actualizar el espacio de trabajo en la ruta (home\ros):
 ```bash
-source .bashrc
+source ~/.bashrc
 ```
 instalar pip en Python:
 ```bash
