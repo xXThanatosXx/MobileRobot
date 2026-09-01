@@ -16,6 +16,12 @@ fail() {
     exit 1
 }
 
+apt_update() {
+    if ! sudo apt-get update -o APT::Update::Error-Mode=any; then
+        fail "APT could not update every repository. Check your Ubuntu mirror and network connection, then run this script again."
+    fi
+}
+
 if [[ "${EUID}" -eq 0 ]]; then
     fail "Run this script as a regular user. It will request sudo when needed."
 fi
@@ -34,7 +40,7 @@ info "ROS 2 Humble will be installed in Ubuntu 22.04 Jammy."
 read -r -p "Press Enter to continue or Ctrl+C to cancel..."
 
 info "Configuring locale and Ubuntu repositories"
-sudo apt update
+apt_update
 sudo apt install -y locales software-properties-common curl
 sudo locale-gen en_US en_US.UTF-8
 sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
@@ -50,7 +56,7 @@ sudo dpkg -i "${ROS_APT_SOURCE_DEB}"
 rm -f "${ROS_APT_SOURCE_DEB}"
 
 info "Installing ROS 2 ${ROS_DISTRO} and development tools"
-sudo apt update
+apt_update
 sudo apt install -y \
     "ros-${ROS_DISTRO}-desktop" \
     python3-argcomplete \
