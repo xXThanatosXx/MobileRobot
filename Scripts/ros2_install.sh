@@ -16,10 +16,32 @@ fail() {
     exit 1
 }
 
-apt_update() {
-    if ! sudo apt-get update -o APT::Update::Error-Mode=any; then
-        fail "APT could not update every repository. Check your Ubuntu mirror and network connection, then run this script again."
+use_main_ubuntu_mirror() {
+    local sources_file="/etc/apt/sources.list"
+    local backup_file="${sources_file}.mobile-robot-backup"
+
+    if [[ ! -f "${sources_file}" ]] || ! grep -Eq 'https?://co\.archive\.ubuntu\.com/ubuntu' "${sources_file}"; then
+        return 1
     fi
+
+    if [[ ! -e "${backup_file}" ]]; then
+        sudo cp "${sources_file}" "${backup_file}"
+    fi
+
+    sudo sed -Ei 's|https?://co\.archive\.ubuntu\.com/ubuntu|http://archive.ubuntu.com/ubuntu|g' "${sources_file}"
+    info "The Colombia Ubuntu mirror was unavailable. Switched to archive.ubuntu.com."
+}
+
+apt_update() {
+    if sudo apt-get update -o APT::Update::Error-Mode=any; then
+        return
+    fi
+
+    if use_main_ubuntu_mirror && sudo apt-get update -o APT::Update::Error-Mode=any; then
+        return
+    fi
+
+    fail "APT could not update every repository. Check your network connection and Ubuntu mirror."
 }
 
 if [[ "${EUID}" -eq 0 ]]; then
@@ -45,6 +67,7 @@ sudo apt install -y locales software-properties-common curl
 sudo locale-gen en_US en_US.UTF-8
 sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 sudo add-apt-repository -y universe
+apt_update
 
 info "Configuring the official ROS 2 apt repository"
 ROS_APT_SOURCE_VERSION="$(curl -fsSL https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest | grep -F '"tag_name"' | awk -F '"' '{print $4}')"
